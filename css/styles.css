@@ -1867,3 +1867,8 @@ html.gate-on .gate { position: fixed; inset: 0; z-index: 1000; display: grid; pl
 }
 :root[data-theme="light"] .stat-tiles .dl-tile b { background: none; -webkit-background-clip: border-box; background-clip: border-box; color: #17834c; }
 @media (prefers-color-scheme: light) { :root:not([data-theme="dark"]) .stat-tiles .dl-tile b { background: none; -webkit-background-clip: border-box; background-clip: border-box; color: #17834c; } }
+
+/* two places to give: the buttons stack beside the text */
+.support-btns { display: grid; gap: 10px; }
+.support-btns .btn { justify-content: center; text-align: center; }
+@media (max-width: 860px) { .support-btns { grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); } }

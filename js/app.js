@@ -373,13 +373,14 @@
   /* ---------- support ---------- */
   (function () {
     const sp = site.support, box = $("supportCard");
-    if (!sp || !sp.kofi) { $("support").remove(); return; }
+    if (!sp || !sp.places || !sp.places.length) { $("support").remove(); return; }
     box.innerHTML =
       `<div class="support-cup" aria-hidden="true">☕</div>` +
       `<div><p class="eyebrow">Optional</p><h2>${UI.esc(sp.title)}</h2><p>${UI.esc(sp.text)}</p>` +
       `<ul>${sp.points.map((t) => `<li>${UI.esc(t)}</li>`).join("")}</ul>` +
       `<p class="disclaimer">${UI.esc(sp.note)}</p></div>` +
-      `<a class="btn primary kofi" href="${sp.kofi}" target="_blank" rel="noopener">Support on Ko-fi <span aria-hidden="true">↗</span></a>`;
+      `<div class="support-btns">` + sp.places.map(([name, url], i) =>
+        `<a class="btn${i === 0 ? " primary" : ""} kofi" href="${url}" target="_blank" rel="noopener">${UI.esc(name)} <span aria-hidden="true">↗</span></a>`).join("") + `</div>`;
   })();
 
   const links = [];

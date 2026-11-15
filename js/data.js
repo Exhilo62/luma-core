@@ -125,11 +125,15 @@ window.LUMA = {
       ["★", "Achievements for more 3DS games", "Luma Core's own achievement sets started with one 3DS game. Sets for more 3DS games are planned.", "project.html?id=achievements"]
     ],
     /* Small print shown under each home section and on the matching project pages. */
-    /* Support: one plain link to Ko-fi, no third-party script. Leave "kofi" empty to hide it everywhere. */
+    /* Support: plain links, no third-party script. Each place is [name, address]; remove a line to drop it,
+       or empty the list to hide the Support section, the heart and the footer links everywhere. */
     support: {
-      kofi: "https://ko-fi.com/exhilo",
+      places: [
+        ["Ko-fi", "https://ko-fi.com/exhilo"],
+        ["Buy Me a Coffee", "https://buymeacoffee.com/exhilo"]
+      ],
       title: "Support the project",
-      text: "Luma Core, its texture packs and its game tweaks are free. If you would like to help, you can leave a tip on Ko-fi.",
+      text: "Luma Core, its texture packs and its game tweaks are free. If you would like to help, you can leave a tip on Ko-fi or Buy Me a Coffee.",
       points: [
         "Donations are never required.",
         "Any donation is appreciated.",

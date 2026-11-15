@@ -125,16 +125,17 @@
   }
 
   /* Footer brand row and links, the same on every page. */
+  const places = (L.site.support && L.site.support.places) || [];
   const foot = document.querySelector("footer .wrap");
   if (foot) {
     foot.insertAdjacentHTML("afterbegin",
       `<div class="foot-top"><a class="brand" href="index.html"><picture><source srcset="img/logo-icon.png" media="(prefers-reduced-motion: reduce)"><img src="img/logo-anim.gif" alt="" width="38" height="38" loading="lazy"></picture><img class="wordmark" src="img/wordmark.png" alt="Luma Core"></a>` +
       `<nav aria-label="Footer"><a href="index.html#packs">3DS packs</a><a href="index.html#ds">DS games</a><a href="index.html#companions">Companions</a>` +
       `<a href="index.html#apps">Apps</a><a href="index.html#progress">Progress</a><a href="index.html#next">What's next</a><a href="guide.html">Guide</a><a href="install.html">Manual install</a><a href="index.html#about">About</a><a href="credits.html">Credits</a>` +
-      (L.site.support && L.site.support.kofi ? `<a class="foot-kofi" href="${L.site.support.kofi}" target="_blank" rel="noopener">Support on Ko-fi</a>` : "") + `</nav></div>`);
+      places.map(([name, url]) => `<a class="foot-kofi" href="${url}" target="_blank" rel="noopener">♥ ${esc(name)}</a>`).join("") + `</nav></div>`);
     if (L.site.ai) foot.insertAdjacentHTML("beforeend", `<p class="foot-ai">${esc(L.site.ai)}</p>`);
     document.querySelectorAll("[data-ai]").forEach((el) => (el.textContent = L.site.ai || ""));
-    if (L.site.support && L.site.support.kofi) foot.insertAdjacentHTML("beforeend", `<p class="foot-ai">Donations are never required and always appreciated. All funds go into more texture packs, game tweaks and Luma Core's own development.</p>`);
+    if (places.length) foot.insertAdjacentHTML("beforeend", `<p class="foot-ai">Donations are never required and always appreciated. All funds go into more texture packs, game tweaks and Luma Core's own development.</p>`);
   }
 
   /* Fade sections in as they scroll into view. Skipped when motion is reduced. */
@@ -287,7 +288,8 @@
     const bar = document.querySelector(".nav .wrap"), toggle = document.querySelector("[data-theme-toggle]");
     if (!bar || !toggle) return;
     toggle.insertAdjacentHTML("beforebegin", `<button class="icon-btn" type="button" data-search aria-label="Search the site" title="Search ( / )">⌕</button>`);
-    if (L.site.support && L.site.support.kofi) toggle.insertAdjacentHTML("beforebegin", `<a class="icon-btn kofi-btn" href="${L.site.support.kofi}" target="_blank" rel="noopener" aria-label="Support on Ko-fi (optional)" title="Support on Ko-fi (optional)">♥</a>`);
+    if (places.length === 1) toggle.insertAdjacentHTML("beforebegin", `<a class="icon-btn kofi-btn" href="${places[0][1]}" target="_blank" rel="noopener" aria-label="Support on ${esc(places[0][0])} (optional)" title="Support on ${esc(places[0][0])} (optional)">♥</a>`);
+    else if (places.length) toggle.insertAdjacentHTML("beforebegin", `<a class="icon-btn kofi-btn" href="index.html#support" aria-label="Support the project (optional)" title="Support the project (optional)">♥</a>`);
     const kinds = { texture: "Texture pack", ds: "DS game", app: "Luma Core" };
     const plain = (s) => s.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
     const index = [

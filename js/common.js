@@ -129,7 +129,7 @@
   if (foot) {
     foot.insertAdjacentHTML("afterbegin",
       `<div class="foot-top"><a class="brand" href="index.html"><picture><source srcset="img/logo-icon.png" media="(prefers-reduced-motion: reduce)"><img src="img/logo-anim.gif" alt="" width="38" height="38" loading="lazy"></picture><img class="wordmark" src="img/wordmark.png" alt="Luma Core"></a>` +
-      `<nav aria-label="Footer"><a href="index.html#packs">Texture packs</a><a href="index.html#ds">DS games</a><a href="index.html#companions">Companions</a>` +
+      `<nav aria-label="Footer"><a href="index.html#packs">3DS packs</a><a href="index.html#ds">DS games</a><a href="index.html#companions">Companions</a>` +
       `<a href="index.html#apps">Apps</a><a href="index.html#progress">Progress</a><a href="index.html#next">What's next</a><a href="guide.html">Guide</a><a href="install.html">Manual install</a><a href="index.html#about">About</a><a href="credits.html">Credits</a></nav></div>`);
   }
 

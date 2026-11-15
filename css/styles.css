@@ -1380,3 +1380,52 @@ footer::before { content: "LUMA CORE"; position: absolute; left: 50%; bottom: -0
 .shots a:hover img { transform: scale(1.04); }
 
 @media (max-width: 860px) { .dock a { width: 74px; } .dock img { width: 50px; height: 50px; } }
+
+/* =====================================================================
+   Achievements: named, tiered badge cards
+   ===================================================================== */
+.tier-tabs { margin-bottom: 20px; }
+.tier-tabs button { display: inline-flex; align-items: center; gap: 8px; }
+.tier-tabs small { opacity: 0.7; font-weight: 400; }
+.tier-tabs i, .badge-card .meta i { width: 10px; height: 10px; border-radius: 50%; flex: none; }
+i.bronze { background: #d08a4e; } i.silver { background: #cfd6e4; } i.gold { background: #ffd24d; } i.platinum { background: linear-gradient(135deg, #9fe6ff, #e2c8ff); }
+.badge-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 14px; }
+.badge-card { --t: #d08a4e; position: relative; display: grid; gap: 6px; align-content: start; justify-items: center; text-align: center; padding: 18px 14px 16px; border-radius: 18px;
+  border: 1px solid color-mix(in srgb, var(--t) 45%, var(--line)); background: linear-gradient(180deg, color-mix(in srgb, var(--t) 12%, var(--surface)), var(--surface) 60%);
+  transition: translate 0.2s, box-shadow 0.2s, border-color 0.2s; }
+.badge-card.silver { --t: #cfd6e4; } .badge-card.gold { --t: #ffd24d; } .badge-card.platinum { --t: #b9d9ff; }
+.badge-card[hidden] { display: none; }
+.badge-card:hover { translate: 0 -5px; border-color: var(--t); box-shadow: 0 16px 36px color-mix(in srgb, var(--t) 28%, transparent); }
+.badge-card img { width: 78px; height: 78px; object-fit: contain; filter: drop-shadow(0 6px 14px color-mix(in srgb, var(--t) 45%, transparent)); transition: scale 0.25s cubic-bezier(0.3, 1.5, 0.5, 1), rotate 0.25s; }
+.badge-card:hover img { scale: 1.12; rotate: -4deg; }
+.badge-card b { font-size: 1rem; line-height: 1.2; }
+.badge-card .how { color: var(--muted); font-size: 0.84rem; line-height: 1.35; }
+.badge-card .meta { display: inline-flex; align-items: center; gap: 6px; margin-top: 4px; font-size: 0.72rem; letter-spacing: 0.06em; text-transform: uppercase; color: color-mix(in srgb, var(--t) 70%, var(--muted)); font-weight: 600; }
+.badge-card.platinum { background: linear-gradient(160deg, color-mix(in srgb, #9fe6ff 16%, var(--surface)), var(--surface) 55%, color-mix(in srgb, #e2c8ff 16%, var(--surface))); }
+:root[data-theme="light"] .badge-card .meta { color: var(--muted); }
+@media (max-width: 860px) { .badge-grid { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); } }
+
+/* =====================================================================
+   The top of the home page, opened up: wider headline, more air between parts
+   ===================================================================== */
+.intro { padding: 84px 0 34px; gap: 34px; }
+.intro img.logo { width: min(640px, 88%); }
+.intro h1 { max-width: 22ch; font-size: clamp(2.3rem, 5.2vw, 4.2rem); line-height: 1.14; margin-top: 6px; }
+.intro p.lead { max-width: 54rem; font-size: clamp(1.1rem, 1.8vw, 1.4rem); line-height: 1.6; }
+.intro .hero-actions { gap: 18px; margin-top: 8px; }
+.intro .hero-actions .btn { padding: 17px 30px; font-size: 1.05rem; }
+.pills { gap: 14px 16px; margin-top: 18px; max-width: 1000px; }
+.pills span { padding: 10px 20px; font-size: 0.98rem; }
+.wip-pill { margin-top: 10px; padding: 11px 22px; }
+.marquee { margin-top: 56px; }
+@media (max-width: 860px) {
+  .intro { padding: 44px 0 20px; gap: 24px; }
+  .intro h1 { max-width: 14ch; }
+  .pills { gap: 10px; }
+  .pills span { padding: 8px 14px; font-size: 0.9rem; }
+  .marquee { margin-top: 34px; }
+}
+
+/* keep the tier dot beside its text when a badge's last line wraps */
+.badge-card .meta { display: block; text-align: center; line-height: 1.5; }
+.badge-card .meta i { display: inline-block; margin-right: 6px; vertical-align: 0; }

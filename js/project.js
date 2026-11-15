@@ -82,11 +82,28 @@
       `</div></section></div>`
     : "";
 
-  const wall = p.wall
-    ? `<section class="block" style="padding-top:0"><div class="wrap"><div class="section-head"><h2>${UI.esc(p.wall.title)}</h2>` +
+  /* A wall of small pictures. With "items" it becomes a set of named, tiered cards that can be filtered. */
+  const TIERS = [["bronze", "Bronze", 5], ["silver", "Silver", 10], ["gold", "Gold", 25], ["platinum", "Platinum", 50]];
+  let wall = "";
+  if (p.wall && p.wall.items) {
+    const it = p.wall.items;
+    wall =
+      `<section class="block" style="padding-top:0" id="wall"><div class="wrap"><div class="section-head"><h2>${UI.esc(p.wall.title)}</h2>` +
+      `<p class="muted">${UI.esc(p.wall.text)}</p></div>` +
+      `<div class="tabs tier-tabs" role="group" aria-label="Filter by tier"><button type="button" data-tier="all" aria-pressed="true">All <small>${it.length}</small></button>` +
+      TIERS.map(([k, label]) => `<button type="button" data-tier="${k}" aria-pressed="false"><i class="${k}"></i>${label} <small>${it.filter((x) => x[3] === k).length}</small></button>`).join("") + `</div>` +
+      `<div class="badge-grid">` +
+      it.map(([file, name, text, tier, group]) =>
+        `<div class="badge-card ${tier}" data-tier="${tier}"><img src="img/badges/${file}.webp" alt="" loading="lazy">` +
+        `<b>${UI.esc(name)}</b><span class="how">${UI.esc(text)}</span>` +
+        `<span class="meta"><i class="${tier}"></i>${TIERS.find((t) => t[0] === tier)[2]} points · ${UI.esc(group)}</span></div>`).join("") +
+      `</div></div></section>`;
+  } else if (p.wall) {
+    wall =
+      `<section class="block" style="padding-top:0"><div class="wrap"><div class="section-head"><h2>${UI.esc(p.wall.title)}</h2>` +
       `<p class="muted">${UI.esc(p.wall.text)}</p></div><div class="wall">` +
-      p.wall.images.map((src, i) => `<img src="${src}" alt="" loading="lazy" style="--d:${i % 12}">`).join("") + `</div></div></section>`
-    : "";
+      p.wall.images.map((src) => `<img src="${src}" alt="" loading="lazy">`).join("") + `</div></div></section>`;
+  }
 
   const milestones = p.milestones
     ? `<h2 style="font-size:1.3rem;margin-top:30px">Milestones</h2><ul class="checks" style="margin-top:12px">` +
@@ -167,6 +184,14 @@
     main.insertAdjacentHTML("afterend",
       `<div class="rel"><p class="rel-head">Latest release ${UI.esc(r.tag)}${when ? " · " + when : ""}</p>` +
       files.map(([label, a]) => `<a class="rel-file" href="${a.url}"><span>${label}</span><small>${(a.size / 1e6).toFixed(1)} MB</small></a>`).join("") + `</div>`);
+  });
+
+  /* Tier buttons above the achievements. */
+  page.addEventListener("click", (e) => {
+    const b = e.target.closest(".tier-tabs button");
+    if (!b) return;
+    page.querySelectorAll(".tier-tabs button").forEach((x) => x.setAttribute("aria-pressed", x === b));
+    page.querySelectorAll(".badge-card").forEach((c) => (c.hidden = b.dataset.tier !== "all" && c.dataset.tier !== b.dataset.tier));
   });
 
   /* Open the comparison large, with the slider still working. */

@@ -388,4 +388,28 @@
   $("aboutLinks").innerHTML = links.join("");
   if (site.logo) $("aboutLogo").innerHTML = `<img src="${site.logo}" alt="${UI.esc(site.name)} logo">`;
   $("facts").innerHTML = site.facts.map(([n, t]) => `<div class="fact"><b>${n}</b><span>${t}</span></div>`).join("");
+  /* ---------- the opening screen ---------- */
+  (function () {
+    const root = document.documentElement, box = $("gate");
+    if (!box) return;
+    if (!root.classList.contains("gate-on")) { box.remove(); return; }
+    const btn = $("gateEnter");
+    let leaving = false;
+    function enter() {
+      if (leaving) return;
+      leaving = true;
+      try { sessionStorage.setItem("luma-gate", "1"); } catch (e) {}
+      const calm = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      root.classList.add("gate-leave");
+      setTimeout(() => { root.classList.remove("gate-on", "gate-leave"); box.remove(); document.removeEventListener("keydown", onKey, true); }, calm ? 0 : 1250);
+    }
+    function onKey(e) {
+      if (e.key === "Enter" || e.key === " " || e.key === "Escape") { e.preventDefault(); e.stopPropagation(); enter(); }
+      else if (e.key === "Tab") { e.preventDefault(); btn.focus(); }   /* keep the keyboard on the one control */
+      else e.stopPropagation();                                        /* nothing behind the intro should react */
+    }
+    box.addEventListener("click", enter);
+    document.addEventListener("keydown", onKey, true);
+    btn.focus({ preventScroll: true });
+  })();
 })();

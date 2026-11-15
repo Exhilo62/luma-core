@@ -19,6 +19,26 @@
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
+  <!-- The opening screen: "Mage's Arcane Gazette presents Luma Core". Shown once per visit, on the plain home address only. -->
+  <script>
+    (function () {
+      var seen = false;
+      try { seen = sessionStorage.getItem("luma-gate") === "1"; } catch (e) {}
+      var force = /[?&]intro\b/.test(location.search);
+      if (force || (!seen && !location.hash)) document.documentElement.classList.add("gate-on");
+    })();
+  </script>
+  <div class="gate" id="gate" role="dialog" aria-modal="true" aria-label="Mage's Arcane Gazette presents Luma Core">
+    <div class="gate-stars" aria-hidden="true"></div>
+    <div class="gate-inner">
+      <img class="gate-gazette" src="img/gazette-logo.webp" alt="Mage's Arcane Gazette" width="760" height="760">
+      <p class="gate-by">Mage's Arcane Gazette</p>
+      <p class="gate-presents"><span>presents</span></p>
+      <img class="gate-luma" src="img/logo-banner.png" alt="Luma Core" width="1100" height="367">
+      <button type="button" class="btn primary gate-enter" id="gateEnter">Enter <span aria-hidden="true">→</span></button>
+      <p class="gate-hint">Click anywhere, or press Enter</p>
+    </div>
+  </div>
   <header class="nav">
     <div class="wrap">
       <a class="brand" href="index.html" aria-label="Luma Core home">

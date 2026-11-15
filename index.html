@@ -15,7 +15,7 @@
   <meta name="description" content="Luma Core: a dual-screen home for your 3DS library, plus 4K texture packs.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Cinzel:wght@500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
@@ -30,12 +30,20 @@
   </script>
   <div class="gate" id="gate" role="dialog" aria-modal="true" aria-label="Mage's Arcane Gazette presents Luma Core">
     <div class="gate-stars" aria-hidden="true"></div>
+    <div class="gate-frame" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
     <div class="gate-inner">
-      <img class="gate-gazette" src="img/gazette-logo.webp" alt="Mage's Arcane Gazette" width="760" height="760">
+      <div class="gate-crest"><img class="gate-gazette" src="img/gazette-logo.webp" alt="" width="760" height="760"></div>
       <p class="gate-by">Mage's Arcane Gazette</p>
+      <p class="gate-motto">News, nonsense &amp; questionable engineering</p>
       <p class="gate-presents"><span>presents</span></p>
-      <img class="gate-luma" src="img/logo-banner.png" alt="Luma Core" width="1100" height="367">
+      <div class="gate-hero"><img class="gate-luma" src="img/logo-banner.png" alt="Luma Core" width="1100" height="367"><span class="gate-shine" aria-hidden="true"></span></div>
+      <p class="gate-tag">A 3DS-style Home for your dual-screen handheld</p>
       <button type="button" class="btn primary gate-enter" id="gateEnter">Enter <span aria-hidden="true">→</span></button>
+      <a class="gate-also" href="project.html?id=dqxi-english-patch">
+        <img src="img/icon-dqxi.png" alt="" width="44" height="44">
+        <span><small>Also from the Gazette</small><b>Dragon Quest XI English Patch</b></span>
+        <em>Beta</em>
+      </a>
       <p class="gate-hint">Click anywhere, or press Enter</p>
     </div>
   </div>

@@ -404,11 +404,16 @@
       setTimeout(() => { root.classList.remove("gate-on", "gate-leave"); box.remove(); document.removeEventListener("keydown", onKey, true); }, calm ? 0 : 1250);
     }
     function onKey(e) {
+      if ((e.key === "Enter" || e.key === " ") && e.target.closest && e.target.closest(".gate-also")) { e.stopPropagation(); return; }   /* let the link open */
       if (e.key === "Enter" || e.key === " " || e.key === "Escape") { e.preventDefault(); e.stopPropagation(); enter(); }
-      else if (e.key === "Tab") { e.preventDefault(); btn.focus(); }   /* keep the keyboard on the one control */
+      else if (e.key === "Tab") { e.preventDefault(); const also = box.querySelector(".gate-also"); (document.activeElement === btn && also ? also : btn).focus(); }   /* Tab moves between the two controls */
       else e.stopPropagation();                                        /* nothing behind the intro should react */
     }
-    box.addEventListener("click", enter);
+    box.addEventListener("click", (e) => {
+      /* the Dragon Quest XI link goes straight to its page; anything else opens Luma Core */
+      if (e.target.closest("a")) { try { sessionStorage.setItem("luma-gate", "1"); } catch (err) {} return; }
+      enter();
+    });
     document.addEventListener("keydown", onKey, true);
     btn.focus({ preventScroll: true });
   })();

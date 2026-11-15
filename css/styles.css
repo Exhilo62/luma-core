@@ -1575,3 +1575,9 @@ i.bronze { background: #d08a4e; } i.silver { background: #cfd6e4; } i.gold { bac
   .ribbon-text { padding-inline: 16px; }
   .ribbon-track img { width: 46px; height: 46px; }
 }
+
+/* light mode: the system and Planned tags on companion cards need darker lettering */
+:root[data-theme="light"] .comp .sys.gbc { color: #5a2bb8; } :root[data-theme="light"] .comp .sys.gba { color: #1250b8; } :root[data-theme="light"] .comp.soon .sys { color: #4a2fb0; }
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) .comp .sys.gbc { color: #5a2bb8; } :root:not([data-theme="dark"]) .comp .sys.gba { color: #1250b8; } :root:not([data-theme="dark"]) .comp.soon .sys { color: #4a2fb0; }
+}

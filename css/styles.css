@@ -1664,3 +1664,24 @@ td .sys.\33 ds { background: #d8434a; } td .sys.ds { background: #1f8fc9; }
 tbody tr { transition: background 0.2s; }
 tbody tr:hover { background: color-mix(in srgb, var(--accent-2) 7%, transparent); }
 #dlRows td:nth-child(4) { white-space: nowrap; }
+
+/* =====================================================================
+   Polish pass 19: a secret shower of stars, places to go on the 404 page
+   ===================================================================== */
+.star-shower { position: fixed; inset: 0; z-index: 300; pointer-events: none; overflow: hidden; }
+.star-shower i { position: absolute; top: -60px; font-style: normal; text-shadow: 0 0 14px currentColor; animation: star-fall 3s cubic-bezier(0.3, 0, 0.7, 1) forwards; }
+@keyframes star-fall { to { translate: var(--sway) 115vh; rotate: 540deg; } }
+.secret-note { position: fixed; left: 50%; bottom: 34px; translate: -50% 0; z-index: 301; padding: 12px 22px; border-radius: 999px; font-weight: 700; color: #231803; white-space: nowrap; max-width: calc(100vw - 32px);
+  background: linear-gradient(180deg, #ffe9a3, #ffb52e); box-shadow: 0 12px 34px rgba(255, 181, 46, 0.5); animation: secret-in 5.6s ease forwards; }
+@keyframes secret-in { 0% { opacity: 0; translate: -50% 24px; } 8%, 88% { opacity: 1; translate: -50% 0; } 100% { opacity: 0; translate: -50% 12px; } }
+
+.lost-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-top: 30px; }
+.lost-links a { position: relative; padding: 9px 16px 9px 32px; border-radius: 12px; font-weight: 600; font-size: 0.92rem; color: var(--text); text-decoration: none;
+  border: 1px solid color-mix(in srgb, var(--k) 50%, var(--line)); background: color-mix(in srgb, var(--k) 10%, var(--surface)); transition: translate 0.2s, box-shadow 0.2s; }
+.lost-links a::before { content: ""; position: absolute; left: 13px; top: 50%; translate: 0 -50%; width: 10px; height: 10px; border-radius: 3px; background: var(--k); box-shadow: 0 0 10px var(--k); }
+.lost-links a:hover { translate: 0 -3px; box-shadow: 0 10px 24px color-mix(in srgb, var(--k) 30%, transparent); }
+
+@media (max-width: 860px) {
+  /* downloads table: keep game names on fewer lines; the table scrolls sideways */
+  #dlRows td:first-child { min-width: 190px; }
+}

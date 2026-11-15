@@ -340,6 +340,33 @@
     });
   })();
 
+  /* A small secret: the classic code (up up down down left right left right B A) sets off a shower of stars. */
+  (function () {
+    const code = ["ArrowUp", "ArrowUp", "ArrowDown", "ArrowDown", "ArrowLeft", "ArrowRight", "ArrowLeft", "ArrowRight", "b", "a"];
+    let at = 0;
+    document.addEventListener("keydown", (e) => {
+      if (e.target.closest && e.target.closest("input, textarea, select")) return;
+      const k = e.key.length === 1 ? e.key.toLowerCase() : e.key;
+      at = k === code[at] ? at + 1 : k === code[0] ? 1 : 0;
+      if (at < code.length) return;
+      at = 0;
+      const calm = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      const colors = ["#ffd766", "#ffab2e", "#6ee7ff", "#b58cff", "#ff8fb1", "#ffffff"];
+      const box = document.createElement("div");
+      box.className = "star-shower";
+      box.setAttribute("aria-hidden", "true");
+      if (!calm) for (let i = 0; i < 70; i++) {
+        box.insertAdjacentHTML("beforeend", `<i style="left:${Math.random() * 100}%;color:${colors[i % colors.length]};font-size:${14 + Math.random() * 26}px;animation-delay:${Math.random() * 1.4}s;animation-duration:${2.2 + Math.random() * 1.8}s;--sway:${(Math.random() - 0.5) * 240}px">✦</i>`);
+      }
+      const note = document.createElement("div");
+      note.className = "secret-note";
+      note.setAttribute("role", "status");
+      note.textContent = "✦ Secret found: a wish on every star ✦";
+      document.body.append(box, note);
+      setTimeout(() => { box.remove(); note.remove(); }, 5600);
+    });
+  })();
+
   /* A shooting star now and then. */
   if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
     document.body.insertAdjacentHTML("beforeend", `<div class="shooting" aria-hidden="true"></div>`);

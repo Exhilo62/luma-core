@@ -1622,3 +1622,24 @@ i.bronze { background: #d08a4e; } i.silver { background: #cfd6e4; } i.gold { bac
   .sys-card:last-child { grid-column: 1 / -1; }
   .sys-code { font-size: 1.9rem; }
 }
+
+/* =====================================================================
+   Polish pass 17: flip between projects of the same kind
+   ===================================================================== */
+.p-top { display: flex; align-items: center; justify-content: space-between; gap: 14px; margin-bottom: 26px; flex-wrap: wrap; }
+.p-top .back { margin-bottom: 0; }
+.flip { display: inline-flex; align-items: center; gap: 10px; padding: 5px; border-radius: 999px; border: 1px solid var(--line); background: color-mix(in srgb, var(--surface) 70%, transparent); backdrop-filter: blur(8px); }
+.flip > a { width: 36px; height: 36px; border-radius: 50%; display: grid; place-items: center; font-size: 1.4rem; line-height: 1; padding-bottom: 3px; color: var(--text); text-decoration: none; background: var(--surface-2); transition: background 0.2s, color 0.2s, translate 0.2s; }
+.flip > a:hover, .flip > a:focus-visible { background: linear-gradient(180deg, #ffd766, #ffab2e); color: #231803; }
+.flip > a[rel="prev"]:hover { translate: -2px 0; } .flip > a[rel="next"]:hover { translate: 2px 0; }
+.flip-dots { display: inline-flex; gap: 6px; align-items: center; }
+.flip-dots a { width: 8px; height: 8px; border-radius: 50%; background: color-mix(in srgb, var(--muted) 45%, transparent); transition: scale 0.2s, background 0.2s; }
+.flip-dots a:hover { scale: 1.5; background: var(--accent-2); }
+.flip-dots a.on { width: 22px; border-radius: 99px; background: linear-gradient(90deg, var(--accent), var(--accent-2)); }
+.flip-n { font-size: 0.86rem; color: var(--muted); font-variant-numeric: tabular-nums; letter-spacing: 0.04em; }
+.flip-n b { color: var(--text); }
+/* a lone screenshot gets room instead of sitting small in an empty row */
+.gallery.solo { grid-template-columns: minmax(0, 640px); }
+@media (max-width: 860px) {
+  .flip-dots { display: none; }
+}

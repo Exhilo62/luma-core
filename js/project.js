@@ -23,6 +23,15 @@
   /* Up to three others of the same kind, starting with the one after this. */
   const sameKind = projects.filter((q) => q.category === p.category);
   const at = sameKind.indexOf(p);
+  const prevP = sameKind[(at - 1 + sameKind.length) % sameKind.length], nextP = sameKind[(at + 1) % sameKind.length];
+  /* Left and right arrow keys flip to the previous or next project of the same kind. */
+  document.addEventListener("keydown", (e) => {
+    if (e.altKey || e.ctrlKey || e.metaKey || e.shiftKey || sameKind.length < 2) return;
+    if (e.target.closest("input, textarea, select, button, [contenteditable], dialog, .lightbox, .search")) return;
+    if (document.querySelector(".lightbox, .search, dialog[open]")) return;
+    if (e.key === "ArrowLeft") location.href = "project.html?id=" + prevP.id;
+    if (e.key === "ArrowRight") location.href = "project.html?id=" + nextP.id;
+  });
   const related = [1, 2, 3].map((n) => sameKind[(at + n) % sameKind.length]).filter((q, i, arr) => q !== p && arr.indexOf(q) === i);
   document.title = p.title + " · " + site.name;
 
@@ -113,7 +122,7 @@
 
   const gallery = p.images.gallery && p.images.gallery.length
     ? `<section class="block" style="padding-top:0"><div class="wrap"><div class="section-head"><h2>Screenshots</h2></div>` +
-      `<div class="gallery">${p.images.gallery.map((src) => `<a href="${src}"><img src="${src}" alt="${UI.esc(p.title)} screenshot" loading="lazy"></a>`).join("")}</div></div></section>`
+      `<div class="gallery${p.images.gallery.length === 1 ? " solo" : ""}">${p.images.gallery.map((src) => `<a href="${src}"><img src="${src}" alt="${UI.esc(p.title)} screenshot" loading="lazy"></a>`).join("")}</div></div></section>`
     : "";
 
   /* Top of the page: text on the left, picture on the right. Very wide
@@ -137,7 +146,14 @@
     `<section class="p-hero" style="--c1:${p.colors[0]};--c2:${p.colors[1]}">` +
     (backdrop ? `<img class="p-backdrop" src="${backdrop}" alt=""${p.images.art && p.images.artFilter ? ` style="filter:blur(34px) brightness(0.5) ${p.images.artFilter}"` : ""}>` : "") +
     `<div class="wrap">` +
-    `<a class="back" href="index.html#${isPack ? "packs" : isDs ? "ds" : "apps"}"><span aria-hidden="true">←</span> All projects</a>` +
+    `<div class="p-top"><a class="back" href="index.html#${isPack ? "packs" : isDs ? "ds" : "apps"}"><span aria-hidden="true">←</span> ${isPack ? "All 3DS packs" : isDs ? "All DS games" : "All Luma apps"}</a>` +
+    (sameKind.length > 1
+      ? `<nav class="flip" aria-label="${isPack ? "3DS packs" : isDs ? "DS games" : "Luma apps"}">` +
+        `<a href="project.html?id=${prevP.id}" rel="prev" title="${UI.esc(prevP.title)}" aria-label="Previous: ${UI.esc(prevP.title)}">‹</a>` +
+        `<span class="flip-dots" aria-hidden="true">${sameKind.map((q) => `<a href="project.html?id=${q.id}" tabindex="-1" title="${UI.esc(q.title)}"${q === p ? ' class="on"' : ""}></a>`).join("")}</span>` +
+        `<span class="flip-n"><b>${String(at + 1).padStart(2, "0")}</b> / ${String(sameKind.length).padStart(2, "0")}</span>` +
+        `<a href="project.html?id=${nextP.id}" rel="next" title="${UI.esc(nextP.title)}" aria-label="Next: ${UI.esc(nextP.title)}">›</a></nav>`
+      : "") + `</div>` +
     `<div class="p-top${wide ? " stack" : ""}">` +
     `<div class="p-head">` +
     (p.images.logo ? `<img class="p-logo" src="${p.images.logo}" alt="">`
@@ -164,7 +180,7 @@
 
     gallery + wall +
 
-    `<section class="block" style="padding-top:0"><div class="wrap"><div class="section-head"><p class="eyebrow">Keep exploring</p><h2>${isPack ? "More texture packs" : isDs ? "More optimized games" : "More from Luma Core"}</h2></div>` +
+    `<section class="block" style="padding-top:0"><div class="wrap"><div class="section-head"><p class="eyebrow">Keep exploring</p><h2>${isPack ? "More 3DS texture packs" : isDs ? "More optimized games" : "More from Luma Core"}</h2></div>` +
     (p.category === "app"
       ? `<nav class="dock" aria-label="Luma apps">` + sameKind.filter((q) => q.images.icon).map((q) =>
           `<a href="project.html?id=${q.id}" style="--c1:${q.colors[0]}"${q === p ? ` aria-current="page"` : ""}><img src="${q.images.icon}" alt=""><span>${UI.esc(q.title.replace(" English Patch", ""))}</span></a>`).join("") + `</nav>`

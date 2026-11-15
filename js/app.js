@@ -272,6 +272,18 @@
       `<span class="ribbon-view" aria-hidden="true"><span class="ribbon-track">${row}${row}</span></span>`;
   })();
 
+  /* ---------- what each system gets ---------- */
+  (function () {
+    const n = (k, one, many) => `${k} ${k === 1 ? one : many}`;
+    const comp = (sys) => site.companions.filter((c) => c[1] === sys).length;
+    const fill = { gbc: n(comp("GBC"), "game", "games"), gba: n(comp("GBA"), "games", "games"), ds: n(dsGames.length, "game", "games"), packs: n(packs.length, "texture pack", "texture packs") };
+    $("sysRow").innerHTML = site.systems.map(([code, name, color, href, go, points]) =>
+      `<a class="sys-card" href="${href}" style="--k:${color}"><span class="sys-code" aria-hidden="true">${code}</span>` +
+      `<b>${UI.esc(name)}</b><ul>` +
+      points.map((t, i) => `<li${i === 0 ? ' class="lead"' : ""}>${UI.esc(t.replace(/\{(\w+)\}/, (m, k) => fill[k]))}</li>`).join("") +
+      `</ul><span class="sys-go">${UI.esc(go)} <span aria-hidden="true">→</span></span></a>`).join("");
+  })();
+
   /* ---------- progress ---------- */
   function row(p) {
     return (

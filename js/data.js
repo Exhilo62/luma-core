@@ -78,6 +78,20 @@ window.LUMA = {
         [50, 96.5, "The Open bar", "Opens whatever is highlighted. When a game is waiting behind Home, it offers Resume."]
       ]
     },
+    /* "What each system gets": one card per system. [code, name, colour, link, link text, points].
+       {gbc}, {gba}, {ds} and {packs} are filled in with live counts by app.js. */
+    systems: [
+      ["GB", "Game Boy", "#9bbc0f", "guide.html#games-and-system-folders", "In the guide",
+        ["Its own folder on the shelf", "Save states and fast forward", "RetroAchievements"]],
+      ["GBC", "Game Boy Color", "#b06bff", "#companions", "See the companion",
+        ["{gbc} with a bottom-screen companion", "Save states and fast forward", "RetroAchievements"]],
+      ["GBA", "Game Boy Advance", "#5b6dff", "#companions", "See the companions",
+        ["{gba} with a bottom-screen companion", "Save states and fast forward", "RetroAchievements"]],
+      ["DS", "Nintendo DS", "#39c8ff", "#ds", "See the DS games",
+        ["{ds} tuned for the Thor", "HD textures and widescreen", "RetroAchievements"]],
+      ["3DS", "Nintendo 3DS", "#ff5a5f", "#packs", "See the 3DS packs",
+        ["{packs} at 4K", "Luma Core's own achievement sets", "Luma Pass: StreetPass by file"]]
+    ],
     /* The showcase's second mode: Luma Core Home as it looks on the Thor.
        Each picture is a capture of both screens, top screen above bottom screen.
        [picture, title, tagline line 1, tagline line 2, guide section, colour 1, colour 2] */

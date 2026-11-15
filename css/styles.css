@@ -1500,3 +1500,31 @@ i.bronze { background: #d08a4e; } i.silver { background: #cfd6e4; } i.gold { bac
   .anatomy-list li.on { translate: none; }
   .dot-n { width: 28px; height: 28px; font-size: 0.82rem; }
 }
+
+/* =====================================================================
+   Polish pass 14: Forged tags, and fixes from a light-mode and phone check
+   ===================================================================== */
+.block-tags, .comp-top { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+.forged-tag { position: relative; display: inline-flex; align-items: center; padding: 6px 13px 6px 27px; border-radius: 999px; white-space: nowrap;
+  font-size: 0.74rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #231803; text-shadow: none;
+  background: linear-gradient(180deg, #ffe9a3, #ffb52e); box-shadow: 0 4px 14px rgba(255, 181, 46, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.7); }
+.forged-tag::before { content: "✦"; position: absolute; left: 11px; top: 50%; translate: 0 -50%; font-size: 0.8rem; }
+.forged-tag.small { padding: 3px 9px 3px 21px; font-size: 0.64rem; box-shadow: none; }
+.forged-tag.small::before { left: 8px; font-size: 0.66rem; }
+@media (prefers-reduced-motion: no-preference) {
+  a.block:hover .forged-tag { animation: forged-glint 0.9s ease; }
+  @keyframes forged-glint { 50% { box-shadow: 0 4px 24px rgba(255, 220, 120, 0.95), inset 0 1px 0 rgba(255, 255, 255, 0.9); scale: 1.06; } }
+}
+
+/* light mode: the white half of the wordmark needs an edge to read against a pale bar */
+:root[data-theme="light"] .brand img.wordmark { filter: drop-shadow(0 0 1px #16235c) drop-shadow(0 0 1px #16235c) drop-shadow(0 2px 4px rgba(22, 35, 92, 0.4)); }
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) .brand img.wordmark { filter: drop-shadow(0 0 1px #16235c) drop-shadow(0 0 1px #16235c) drop-shadow(0 2px 4px rgba(22, 35, 92, 0.4)); }
+}
+
+@media (max-width: 860px) {
+  /* the dock scrolls sideways on a phone: fade its right edge as a hint */
+  .dock { -webkit-mask-image: linear-gradient(90deg, #000 80%, transparent); mask-image: linear-gradient(90deg, #000 80%, transparent); padding-right: 40px; }
+  /* the big faint section numbers crowd the headings at this size */
+  main > section.block[id] > .wrap > .section-head::after { display: none; }
+}

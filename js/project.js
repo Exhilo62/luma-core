@@ -142,7 +142,7 @@
     `<div class="p-head">` +
     (p.images.logo ? `<img class="p-logo" src="${p.images.logo}" alt="">`
       : p.images.icon ? `<img class="p-logo icon" src="${p.images.icon}" alt="">` : "") +
-    `${UI.chip(p)}<p class="eyebrow">${UI.esc(p.platform)}</p>` +
+    `<span class="block-tags">${UI.chip(p)}${UI.forged(p)}</span><p class="eyebrow">${UI.esc(p.platform)}</p>` +
     `<h1>${UI.esc(p.title)}</h1><p class="tagline">${p.tagline.map((t) => `<span>${UI.esc(t)}</span>`).join(" ")}</p>` +
     statTiles + compat + `</div>` + visual +
     `</div></div></section>` +

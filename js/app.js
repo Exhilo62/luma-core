@@ -279,7 +279,7 @@
     .join("");
   $("companionGrid").innerHTML = site.companions
     .map(([title, system, tabs, detail]) =>
-      `<div class="comp"><span class="sys ${system.toLowerCase()}">${system}</span><b>${UI.esc(title)}</b>` +
+      `<div class="comp"><span class="comp-top"><span class="sys ${system.toLowerCase()}">${system}</span><span class="forged-tag small">Forged</span></span><b>${UI.esc(title)}</b>` +
       `<span class="tabs-line">${tabs.map((t) => `<i>${UI.esc(t)}</i>`).join("")}</span>` +
       (detail ? `<span class="comp-detail">${UI.esc(detail)}</span>` : "") + `</div>`)
     .join("");

@@ -97,6 +97,11 @@
     return `<span class="chip ${p.status}">${statusHTML(p)}</span>`;
   }
 
+  /* Games Luma Core made something for wear a gold Forged tag, as they do in the app. */
+  function forged(p) {
+    return p.category === "texture" || p.category === "ds" ? `<span class="forged-tag">Forged</span>` : "";
+  }
+
   /* Large artwork block. images.art is the background (falls back to the main
      shot), images.logo an optional title logo for the top-right corner. */
   function card(p, i) {
@@ -109,7 +114,7 @@
     return (
       `<a class="block" href="project.html?id=${p.id}" style="--c1:${p.colors[0]};--c2:${p.colors[1]}">` +
       `<img class="block-bg${p.images.artBlur ? " blur" : ""}" src="${art}" alt="" loading="lazy" style="object-position:${pos}${p.images.artFilter ? ";filter:" + p.images.artFilter : ""}">` + feature +
-      `<div class="block-top">${chip(p)}${corner}</div>` +
+      `<div class="block-top"><span class="block-tags">${chip(p)}${forged(p)}</span>${corner}</div>` +
       `<div class="block-body"><p class="eyebrow">${esc(p.platform)}</p>` +
       `<h3>${esc(p.title)}</h3>` +
       `<p class="tagline">${p.tagline.map((t) => `<span>${esc(t)}</span>`).join("")}</p>` +
@@ -351,5 +356,5 @@
     return `<div class="meter" role="progressbar" aria-label="${esc(p.title)} progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="${p.progress}"><span style="width:${p.progress}%"></span></div>`;
   }
 
-  window.LumaUI = { meter, statusHTML, esc, placeholder, icon, shot, visual, chip, statusText, card };
+  window.LumaUI = { meter, statusHTML, forged, esc, placeholder, icon, shot, visual, chip, statusText, card };
 })();

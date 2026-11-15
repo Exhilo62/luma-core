@@ -1854,3 +1854,16 @@ html.gate-on .gate { position: fixed; inset: 0; z-index: 1000; display: grid; pl
   html.gate-on .gate-also { animation-delay: 3s; }
   html.gate-on .gate-hint { animation-delay: 3.3s; }
 }
+
+/* live download count on a project page */
+.stat-tiles .dl-tile { border-color: color-mix(in srgb, #4fd38a 55%, var(--line)); }
+.stat-tiles .dl-tile b { background: linear-gradient(180deg, #a8f5c8, #2fbf74); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.dl-count { margin-top: 12px; font-size: 0.84rem; color: var(--muted); max-width: 560px; line-height: 1.5; }
+.live-dot { display: inline-block; width: 8px; height: 8px; margin-right: 8px; border-radius: 50%; background: #4fd38a; box-shadow: 0 0 0 0 rgba(79, 211, 138, 0.7); vertical-align: 1px; }
+@media (prefers-reduced-motion: no-preference) {
+  .live-dot { animation: live-ping 2.2s ease-out infinite; }
+  @keyframes live-ping { to { box-shadow: 0 0 0 9px rgba(79, 211, 138, 0); } }
+  .stat-tiles .dl-tile { animation: gate-rise 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) backwards; }
+}
+:root[data-theme="light"] .stat-tiles .dl-tile b { background: none; -webkit-background-clip: border-box; background-clip: border-box; color: #17834c; }
+@media (prefers-color-scheme: light) { :root:not([data-theme="dark"]) .stat-tiles .dl-tile b { background: none; -webkit-background-clip: border-box; background-clip: border-box; color: #17834c; } }

@@ -251,4 +251,41 @@
     frame.allowFullscreen = true;
     b.replaceWith(frame);
   });
+  /* ---------- live download count, read from the project's GitHub releases ---------- */
+  (function () {
+    if (!p.github) return;
+    const key = "luma-downloads:" + p.github;
+    function load() {
+      try {
+        const hit = JSON.parse(sessionStorage.getItem(key) || "null");
+        if (hit && Date.now() - hit.at < 3600000) return Promise.resolve(hit.d);
+      } catch (e) {}
+      const all = [];
+      const fetchPage = (n) => fetch(`https://api.github.com/repos/${p.github}/releases?per_page=100&page=${n}`, { headers: { Accept: "application/vnd.github+json" } })
+        .then((res) => { if (!res.ok) throw new Error(res.status); return res.json(); })
+        .then((list) => { all.push(...list); return list.length === 100 && n < 10 ? fetchPage(n + 1) : all; });
+      return fetchPage(1).then((list) => {
+        const d = { releases: list.length, total: 0, win: 0, android: 0, linux: 0 };
+        list.forEach((r) => (r.assets || []).forEach((a) => {
+          d.total += a.download_count;
+          if (/android/i.test(a.name)) d.android += a.download_count;
+          else if (/linux/i.test(a.name)) d.linux += a.download_count;
+          else if (/English_Patch_v/i.test(a.name)) d.win += a.download_count;
+        }));
+        try { sessionStorage.setItem(key, JSON.stringify({ at: Date.now(), d })); } catch (e) {}
+        return d;
+      });
+    }
+    load().then((d) => {
+      const tiles = page.querySelector(".stat-tiles");
+      if (!tiles || !d.total) return;
+      const n = (v) => v.toLocaleString("en-US");
+      tiles.insertAdjacentHTML("beforeend", `<div class="dl-tile"><b>${n(d.total)}</b><span>Downloads</span></div>`);
+      const parts = [["Windows patch", d.win], ["Android patcher", d.android], ["Linux patch", d.linux]].filter((x) => x[1]);
+      tiles.insertAdjacentHTML("afterend",
+        `<p class="dl-count"><span class="live-dot" aria-hidden="true"></span>Live from GitHub: ${n(d.total)} downloads across ${d.releases} releases` +
+        (parts.length ? ` (${parts.map(([k, v]) => `${k} ${n(v)}`).join(", ")})` : "") +
+        `. Every file fetched counts once, so someone who updates through several versions is counted each time.</p>`);
+    }).catch(() => {});
+  })();
 })();

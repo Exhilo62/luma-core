@@ -622,23 +622,54 @@ window.LUMA = {
       progress: null,
       note: "Part of Luma Core.",
       description:
-        "Luma Friends connects Luma Core players with no account and no server. Each player gets a friend code and trades cards: your name, color, picture and greeting, plus anything else you choose to share. The same list also shows your Steam friends, who you follow on RetroAchievements, and Discord.",
+        "Luma Friends puts everyone you play with in one place: Luma Core friends, your Steam friends, who you follow on RetroAchievements, and Discord. Luma friends trade cards with no account and no server. Steam Chat and Discord open on the top screen with a Luma Core dock below, and their messages show up in Luma Core's Notifications.",
       features: [
+        "One list for Luma, Steam, RetroAchievements and Discord friends",
+        "Steam Chat and Discord open on the top screen, with a Luma Core dock on the bottom",
+        "Steam and Discord messages appear in Luma Core's Notifications",
         "A friend code made from a key that never leaves the device",
         "Signed cards, so nobody can change yours",
         "Add friends by card file or QR code",
-        "Nearby: swap cards with Luma Core devices on the same Wi-Fi",
-        "Steam, RetroAchievements and Discord in the same list"
+        "Nearby: swap cards with Luma Core devices on the same Wi-Fi"
       ],
       sections: [
+        { h: "Every friend in one list", p: "Home's Friends tab and the Luma Friends tile show the same list. Your own Luma Friends row sits at the top with your friend code, then Discord's row, then friends who are playing, online or away, your Luma friends, and friends who are offline." },
+        { h: "Steam", list: [
+          "Your Steam friends list comes from Steam with your own Steam Web API key, which is kept encrypted. Your Steam friends list needs to be public.",
+          "With Valve's Steam Chat app installed, Open Steam Chat puts it on the top screen, with Luma Core's dock on the bottom screen. The main Steam app is used if that is the one you have.",
+          "Steam Chat opens on its chat list; it cannot jump straight to one friend's chat.",
+          "Without the app, Chat (web) opens the chat in Luma Core's own browser, with a line pointing you to the app.",
+          "A Steam friend's menu also has their Profile, Open in your browser, and Ask again to refresh who is online."
+        ] },
+        { h: "Discord", list: [
+          "With the Discord app installed, opening Discord's row puts the real Discord app on the top screen.",
+          "Luma Core's dock sits on the bottom screen: Back to Luma, Discord on top, and your latest Discord messages.",
+          "Without the app, Discord's web app opens in Luma Core's own browser, with a Get the Discord app option.",
+          "You sign in to Discord yourself. Luma Core never sees your password."
+        ] },
+        { h: "The dock", p: "While Steam Chat or Discord is on the top screen, the bottom screen becomes a small Luma Core dock. Back to Luma returns you to Home, the second button brings the app back to the front, and the latest messages are listed underneath. The dock closes by itself when you go back to Home." },
+        { h: "Messages in Notifications", list: [
+          "Discord and Steam messages are listed in Home's Notifications tab, alongside downloads and achievements, and count toward the dot on the bar.",
+          "A Discord entry shows who or where it came from, a one-line preview, the time and the sender's small picture. Unread messages from one conversation fold into a single entry.",
+          "Luma Core keeps the last 20 Discord conversations.",
+          "It is linked both ways: read a message in the app or clear it from Android's list and it leaves Notifications too; clear it in Luma Core and it leaves Android's list.",
+          "Swipe a notification to the right to clear just that one.",
+          "Each kind has its own switch in Settings, under General and then Notifications."
+        ] },
+        { h: "You stay in control", list: [
+          "Reading messages needs Android's Notification access for Luma Core. It is off until you turn it on yourself, and Luma Core explains why before sending you to Android's page.",
+          "Luma Core passes over every other app's notifications. It never posts, answers or dismisses anything for you.",
+          "Forget them deletes the messages Luma Core has kept, even after you turn access off."
+        ] },
+        { h: "RetroAchievements", p: "The people you follow on RetroAchievements appear in the same list, using your own RetroAchievements web key rather than your password. Their pages open in Luma Core's own browser." },
         { h: "Your card", p: "You choose what your card shares, each part on or off: favorite games, recently played, achievements, your RetroAchievements name and total playtime. Share it as a QR code or as a file through any app." },
         { h: "Nearby", p: "The Nearby tab finds other Luma Core devices on the same Wi-Fi while it is open. Ask to swap, check that both screens show the same 4-digit number, and the cards trade, encrypted." },
-        { h: "Other services", p: "Steam and RetroAchievements need your own keys, which are kept encrypted. With the Discord app installed, Discord opens on the top screen with Luma Core's dock on the bottom." },
-        { h: "Private by design", p: "Nothing is uploaded: a card goes only where you send it. You can remove or block anyone at any time, and Reset my Luma identity gives you a new code." }
+        { h: "Private by design", p: "Nothing is uploaded: a card goes only where you send it. You can remove or block anyone at any time, and Reset my Luma identity gives you a new code." },
+        { h: "Planned", p: "Live status for Luma friends and one-step Discord friend requests are planned for a later version. Until then, Luma friends show without a live status." }
       ],
-      guide: [["Luma Friends and the Friends tab", "luma-friends-and-the-friends-tab"], ["Luma Pass", "luma-pass"], ["Privacy", "privacy"]],
+      guide: [["Luma Friends and the Friends tab", "luma-friends-and-the-friends-tab"], ["Notifications", "notifications"], ["Luma Pass", "luma-pass"], ["Privacy", "privacy"]],
       colors: ["#f06aa0", "#7a2a5e"],
-      images: { icon: "img/tile-friends.webp", art: "img/art/vista-purple.jpg", artPos: "center 35%", artFilter: "hue-rotate(55deg) saturate(1.25)", feature: "img/tile-friends.webp", after: "guide/img/friends-luma-card.jpg", before: "", aspect: "1280 / 720", gallery: ["guide/img/friends-luma-tools.jpg"] },
+      images: { icon: "img/tile-friends.webp", art: "img/art/vista-purple.jpg", artPos: "center 35%", artFilter: "hue-rotate(55deg) saturate(1.25)", feature: "img/tile-friends.webp", after: "guide/img/friends-luma-card.jpg", before: "", aspect: "1280 / 720", gallery: ["guide/img/friends-luma-tools.jpg", "img/friends-steam-dock.jpg", "img/friends-steam-menu.jpg"] },
       links: { download: "", source: "" }
     },
     {

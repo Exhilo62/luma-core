@@ -17,6 +17,9 @@
     let s = esc(text);
     const codes = [];
     s = s.replace(/`([^`]+)`/g, (m, c) => "\u0000" + (codes.push(c) - 1) + "\u0000");
+    /* A bold controller button, such as **A** or **L / R**, is drawn as a small button cap. */
+    s = s.replace(/\*\*((?:A|B|X|Y|L2|R2|L|R|Start|Select)(?: \/ (?:A|B|X|Y|L2|R2|L|R))?)\*\*/g, (m, keys) =>
+      keys.split(" / ").map((k) => `<kbd class="pad ${k.length === 1 && "ABXY".includes(k) ? "face " + k.toLowerCase() : "wide"}">${k}</kbd>`).join('<span class="pad-or">/</span>'));
     s = s.replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>");
     s = s.replace(/(^|[^*\w])\*([^*\n]+)\*(?!\w)/g, "$1<em>$2</em>");
     /* Links to sections stay links; links to other .md files become plain text. */

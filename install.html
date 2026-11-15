@@ -162,11 +162,11 @@
       projects.forEach((p) => {
         if (!p.pack) return;
         const name = p.category === "app" ? p.title.replace(" English Patch", "") + " HD pack" : p.title;
-        rows.push([name, p.pack, p.id]);
-        if (p.pack.addon) rows.push([name + ": title screen add-on", Object.assign({ system: p.pack.system, code: p.pack.code, open: p.pack.open }, p.pack.addon), p.id]);
+        rows.push([name, p.pack, p.id, p.images.icon]);
+        if (p.pack.addon) rows.push([name + ": title screen add-on", Object.assign({ system: p.pack.system, code: p.pack.code, open: p.pack.open }, p.pack.addon), p.id, p.images.icon]);
       });
-      document.getElementById("dlRows").innerHTML = rows.map(([name, k, id]) =>
-        `<tr><td><a href="project.html?id=${id}">${UI.esc(name)}</a></td><td>${k.system}</td><td><code>${k.code}</code></td><td>${k.size}</td>` +
+      document.getElementById("dlRows").innerHTML = rows.map(([name, k, id, icon]) =>
+        `<tr><td><a class="dl-name" href="project.html?id=${id}">${icon ? `<img src="${icon}" alt="" loading="lazy">` : `<span class="dl-noicon" aria-hidden="true"></span>`}<span>${UI.esc(name)}</span></a></td><td><span class="sys ${k.system.toLowerCase()}">${k.system}</span></td><td><code>${k.code}</code></td><td>${k.size}</td>` +
         `<td>${site.downloadsOpen || k.open ? `<a class="dl" href="${site.packHost}/${k.file}">Download</a>` : `<span class="dl-soon">Coming soon</span>`}</td></tr>`).join("");
       document.getElementById("dlNote").textContent = site.downloadsOpen
         ? "Downloads come straight from Luma Core's own storage. They are large, so use Wi-Fi; an interrupted download can be resumed by most browsers and download managers."

@@ -17,6 +17,7 @@
     notice      optional call-out shown at the top of the project page
     description paragraph for the project page
     features    bullet list for the project page
+    wall        optional grid of small pictures: { title, text, images: [...] }
     videos      optional YouTube videos: [["videoId", "Title"], ...]
     sections    optional extra sections: { h: heading, p: text, list: [..] }
     guide       optional links into the guide: [["Label", "section-anchor"], ...]
@@ -151,7 +152,10 @@ window.LUMA = {
     companionShots: [
       ["guide/img/companion-golden-sun.jpg", "Golden Sun: the party"],
       ["guide/img/companion-crystal.jpg", "Pokémon Crystal: the trainer"],
-      ["guide/img/companion-aria.jpg", "Castlevania: Aria of Sorrow"]
+      ["guide/img/companion-aria.jpg", "Castlevania: Aria of Sorrow"],
+      ["img/comp-crystal-party.jpg", "Pokémon Crystal: the party"],
+      ["img/comp-crystal-map.jpg", "Pokémon Crystal: the town map"],
+      ["img/comp-harvest-moon.jpg", "Harvest Moon: the villagers"]
     ],
     companions: [
       ["Pokémon Crystal", "GBC", ["Party", "Trainer", "Map"]],
@@ -536,7 +540,7 @@ window.LUMA = {
       ],
       guide: [["Luma Themes", "luma-themes"], ["Home and the Home bar", "home-and-the-home-bar"], ["Settings", "settings"]],
       colors: ["#a06bff", "#4a2fb0"],
-      images: { icon: "img/tile-themes.webp", art: "img/art/vista-rainbow.jpg", artPos: "center 35%", feature: "img/tile-themes.webp", after: "img/app-themes-3ds.jpg", before: "", aspect: "1280 / 435", gallery: ["img/app-themes-system.jpg"] },
+      images: { icon: "img/tile-themes.webp", art: "img/art/vista-rainbow.jpg", artPos: "center 35%", feature: "img/tile-themes.webp", after: "img/app-themes-3ds.jpg", before: "", aspect: "1280 / 435", gallery: ["img/app-themes-system.jpg", "img/art/vista-moon.jpg", "img/art/vista-purple.jpg", "img/art/vista-rainbow.jpg"] },
       links: { download: "", source: "" }
     },
     {
@@ -662,6 +666,11 @@ window.LUMA = {
         { h: "RetroAchievements", p: "For DS, Game Boy, Game Boy Color and Game Boy Advance games. Sign in with your own account; only a token is kept. Hardcore mode is on by default, which blocks loading save states. Unlocks earned offline are sent when you are back online." }
       ],
       guide: [["Achievements and RetroAchievements", "achievements-and-retroachievements"], ["Quick Resume", "quick-resume"], ["Notifications", "notifications"]],
+      wall: {
+        title: "All 43 badges",
+        text: "Every Luma Core achievement has its own badge. Here is the full set.",
+        images: ["img/badges/artwork.webp", "img/badges/completionist.webp", "img/badges/ds_10.webp", "img/badges/extra.webp", "img/badges/favorites_5.webp", "img/badges/first_3ds.webp", "img/badges/first_ds.webp", "img/badges/first_gb.webp", "img/badges/forged.webp", "img/badges/game_achievement.webp", "img/badges/game_info.webp", "img/badges/games_25.webp", "img/badges/games_5.webp", "img/badges/games_50.webp", "img/badges/gb_10.webp", "img/badges/home_10.webp", "img/badges/home_badge.webp", "img/badges/home_folder.webp", "img/badges/library_100.webp", "img/badges/library_500.webp", "img/badges/look.webp", "img/badges/manual.webp", "img/badges/mii.webp", "img/badges/n3ds_10.webp", "img/badges/night_owl.webp", "img/badges/one_25h.webp", "img/badges/one_5h.webp", "img/badges/ra_signin.webp", "img/badges/ra_unlock.webp", "img/badges/save_state.webp", "img/badges/session_2h.webp", "img/badges/system_files.webp", "img/badges/texture_pack.webp", "img/badges/theme_5.webp", "img/badges/theme_build.webp", "img/badges/theme_install.webp", "img/badges/time_100h.webp", "img/badges/time_10h.webp", "img/badges/time_1h.webp", "img/badges/time_50h.webp", "img/badges/trifecta.webp", "img/badges/zippass_in.webp", "img/badges/zippass_out.webp"]
+      },
       colors: ["#ffc94d", "#d1632f"],
       images: { icon: "img/tile-achievements.webp", art: "img/art/vista-rainbow.jpg", artPos: "center 35%", artFilter: "sepia(0.65) saturate(1.7) hue-rotate(-12deg)", feature: "img/tile-achievements.webp", after: "img/app-achievements.jpg", before: "", aspect: "1280 / 1421", gallery: ["img/app-achievements-popup.jpg"] },
       links: { download: "", source: "" }

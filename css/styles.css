@@ -1353,3 +1353,30 @@ footer::before { content: "LUMA CORE"; position: absolute; left: 50%; bottom: -0
 .cmp-frame .compare .handle::after { width: 46px; height: 46px; font-size: 1rem; }
 
 @media (max-width: 860px) { .enlarge { bottom: 40px; right: 8px; } .systems { margin-top: 0; } }
+
+/* =====================================================================
+   Polish pass 11
+   ===================================================================== */
+
+/* dock of Luma app tiles */
+.dock { display: flex; gap: 6px; width: max-content; max-width: 100%; overflow-x: auto; scrollbar-width: none; margin: 0 0 26px; padding: 12px 14px 10px; border-radius: 26px;
+  border: 1px solid var(--line); background: color-mix(in srgb, var(--surface) 80%, transparent); backdrop-filter: blur(10px); box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35); }
+.dock::-webkit-scrollbar { display: none; }
+.dock a { display: grid; justify-items: center; gap: 6px; width: 86px; flex: none; padding: 4px 2px; border-radius: 16px; font-size: 0.72rem; font-weight: 600; color: var(--muted); text-align: center; line-height: 1.15; transition: color 0.2s; }
+.dock img { width: 58px; height: 58px; border-radius: 16px; transition: translate 0.25s cubic-bezier(0.3, 1.5, 0.5, 1), scale 0.25s cubic-bezier(0.3, 1.5, 0.5, 1), box-shadow 0.25s; box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4); }
+.dock a:hover { color: var(--text); }
+.dock a:hover img { translate: 0 -10px; scale: 1.14; box-shadow: 0 16px 30px color-mix(in srgb, var(--c1) 45%, rgba(0, 0, 0, 0.5)); }
+
+/* wall of small pictures (achievement badges) */
+.wall { display: grid; grid-template-columns: repeat(auto-fill, minmax(84px, 1fr)); gap: 14px; }
+.wall img { width: 100%; aspect-ratio: 1; object-fit: contain; border-radius: 18px; padding: 8px; border: 1px solid var(--line); background: color-mix(in srgb, var(--surface) 86%, transparent);
+  transition: translate 0.2s, scale 0.2s, border-color 0.2s, box-shadow 0.2s; }
+.wall img:hover { translate: 0 -5px; scale: 1.08; border-color: var(--accent); box-shadow: 0 14px 30px rgba(255, 171, 46, 0.25); }
+
+/* six companion screenshots sit in two rows */
+.shots { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.shots a { display: block; border-radius: 14px; overflow: hidden; }
+.shots img { transition: transform 0.4s; }
+.shots a:hover img { transform: scale(1.04); }
+
+@media (max-width: 860px) { .dock a { width: 74px; } .dock img { width: 50px; height: 50px; } }

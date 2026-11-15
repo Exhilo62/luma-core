@@ -224,6 +224,10 @@
     `<p class="tagline"><span>More 3DS games are planned,</span><span>and these packs keep improving.</span></p>` +
     `<span class="btn">See what's next <span aria-hidden="true">→</span></span></div></a>`;
   $("appGrid").innerHTML = apps.map(UI.card).join("");
+  /* A dock of the Luma apps' own tiles, like the Home bar: each opens its page. */
+  $("appDock").innerHTML = apps.filter((p) => p.images.icon)
+    .map((p) => `<a href="project.html?id=${p.id}" style="--c1:${p.colors[0]}"><img src="${p.images.icon}" alt=""><span>${UI.esc(p.title.replace(" English Patch", ""))}</span></a>`)
+    .join("");
   $("dsGrid").innerHTML = dsGames.map(UI.card).join("");
 
   /* ---------- progress ---------- */

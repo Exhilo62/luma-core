@@ -82,6 +82,12 @@
       `</div></section></div>`
     : "";
 
+  const wall = p.wall
+    ? `<section class="block" style="padding-top:0"><div class="wrap"><div class="section-head"><h2>${UI.esc(p.wall.title)}</h2>` +
+      `<p class="muted">${UI.esc(p.wall.text)}</p></div><div class="wall">` +
+      p.wall.images.map((src, i) => `<img src="${src}" alt="" loading="lazy" style="--d:${i % 12}">`).join("") + `</div></div></section>`
+    : "";
+
   const milestones = p.milestones
     ? `<h2 style="font-size:1.3rem;margin-top:30px">Milestones</h2><ul class="checks" style="margin-top:12px">` +
       p.milestones.map((m) => `<li class="${m.done ? "done" : ""}">${UI.esc(m.name)}</li>`).join("") + `</ul>`
@@ -138,7 +144,7 @@
     (site.disclaimers[p.category] ? `<p class="disclaimer">${UI.esc(site.disclaimers[p.category])}</p>` : "") +
     `</aside></div></section>` +
 
-    gallery +
+    gallery + wall +
 
     `<section class="block" style="padding-top:0"><div class="wrap"><div class="section-head"><p class="eyebrow">Keep exploring</p><h2>${isPack ? "More texture packs" : isDs ? "More optimized games" : "More from Luma Core"}</h2></div><div class="pager three">` +
     related.map((q) =>

@@ -1290,3 +1290,27 @@ footer::before { content: "LUMA CORE"; position: absolute; left: 50%; bottom: -0
   .beta-actions { grid-template-columns: 1fr; }
   main > section.block[id] > .wrap > .section-head::after { font-size: 5rem; top: -0.1em; }
 }
+
+/* =====================================================================
+   Polish pass 9: the showcase has a second mode, Luma Core Home on the Thor
+   ===================================================================== */
+.mode-tabs { display: flex; justify-content: center; gap: 4px; width: max-content; margin: 0 auto 16px; padding: 5px; border-radius: 999px;
+  background: color-mix(in srgb, var(--surface) 80%, transparent); border: 1px solid var(--line); backdrop-filter: blur(8px); }
+.mode-tabs button { padding: 10px 22px; border-radius: 999px; border: 0; background: none; color: var(--muted); font: inherit; font-weight: 600; cursor: pointer; transition: color 0.2s, background 0.2s; }
+.mode-tabs button:hover { color: var(--text); }
+.mode-tabs button[aria-pressed="true"] { background: linear-gradient(180deg, #ffd766, #ffab2e); color: #231803; box-shadow: 0 6px 18px rgba(255, 171, 46, 0.3); }
+
+/* a capture of both screens, split between the Thor's two displays */
+.screen-shot { position: absolute; inset: 0; background-repeat: no-repeat; background-color: #000; }
+.screen-shot.top { background-size: 100% auto; background-position: 50% 0; }
+.screen-shot.bot { background-size: 155% auto; background-position: 50% 100%; }
+.t-bottom { position: relative; }
+.hero[data-mode="screens"] .t-top::before { display: none; }
+@media (prefers-reduced-motion: no-preference) {
+  .screen-shot, #heroTop .compare, #heroTop img.shot, #heroBottom .panel { animation: screen-on 0.45s ease both; }
+  @keyframes screen-on { from { opacity: 0; filter: brightness(1.8); } to { opacity: 1; filter: none; } }
+}
+
+/* showcase text slides in when the selection changes */
+.hero-info > * { transition: none; }
+@media (max-width: 860px) { .mode-tabs button { padding: 9px 16px; font-size: 0.92rem; } }

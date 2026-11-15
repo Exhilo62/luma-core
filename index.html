@@ -54,7 +54,11 @@
 
     <section class="hero" id="top" aria-label="Featured texture packs">
       <div class="wrap">
-        <p class="eyebrow showcase-label">Featured texture packs · drag the slider</p>
+        <div class="mode-tabs" role="group" aria-label="What the Thor shows">
+          <button type="button" data-mode="packs" aria-pressed="true">Texture packs</button>
+          <button type="button" data-mode="screens" aria-pressed="false">Luma Core Home</button>
+        </div>
+        <p class="eyebrow showcase-label" id="showcaseLabel">Featured texture packs · drag the slider</p>
         <div class="hero-grid">
           <div class="thor" role="img" aria-label="AYN Thor showing the selected texture pack">
             <div class="t-rig">
@@ -83,7 +87,7 @@
             </div>
           </div>
         </div>
-        <nav class="strip" id="heroStrip" aria-label="Select texture pack"></nav>
+        <nav class="strip" id="heroStrip" aria-label="Choose what to show"></nav>
       </div>
     </section>
 

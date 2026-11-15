@@ -8,34 +8,59 @@
   const pad = (n) => String(n).padStart(2, "0");
   const calm = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-  /* ---------- hero showcase ---------- */
+  /* ---------- hero showcase ----------
+     Two modes share the Thor: our texture packs (with the before/after slider),
+     and Luma Core Home as it looks on the device. */
   const hero = document.querySelector(".hero");
   let current = 0;
   let timer = null;
+  let mode = "packs";
 
-  $("heroTotal").textContent = pad(packs.length);
-  $("heroStrip").innerHTML = packs
-    .map((p, i) => `<button type="button" data-i="${i}"><img src="${UI.icon(p)}" alt=""><span>${UI.esc(p.title)}</span></button>`)
-    .join("");
-
-  function show(i) {
-    current = (i + packs.length) % packs.length;
-    const p = packs[current];
-    hero.style.setProperty("--c1", p.colors[0]);
-    hero.style.setProperty("--c2", p.colors[1]);
-    $("heroNum").textContent = pad(current + 1);
-    $("heroPlatform").textContent = p.platform;
-    $("heroTitle").textContent = p.title;
-    $("heroTagline").innerHTML = p.tagline.map((t) => `<span>${UI.esc(t)}</span>`).join("");
-    $("heroLink").href = "project.html?id=" + p.id;
-    $("heroTop").innerHTML = UI.visual(p);
-    $("heroTop").style.setProperty("--fill", `url("${new URL(UI.shot(p), location.href).href}")`);
-    $("heroBottom").innerHTML =
+  const abs = (src) => new URL(src, location.href).href;
+  const packSlide = (p) => ({
+    title: p.title, platform: p.platform, tagline: p.tagline, colors: p.colors, icon: UI.icon(p),
+    link: "project.html?id=" + p.id, linkText: "Explore pack", fill: abs(UI.shot(p)),
+    top: UI.visual(p),
+    bottom:
       `<div class="panel" style="--c1:${p.colors[0]}">` +
       `<div class="row"><img src="${UI.icon(p)}" alt=""><b>${UI.esc(p.title)}</b></div>` +
       `<small>${UI.statusText(p)}</small>` +
       `<div class="meter"><span style="width:${p.progress}%"></span></div>` +
-      `<small>${p.progress}% complete${p.pack ? " · " + p.pack.size : ""}</small></div>`;
+      `<small>${p.progress}% complete${p.pack ? " · " + p.pack.size : ""}</small></div>`
+  });
+  const screenSlide = ([img, title, line1, line2, anchor, c1, c2]) => ({
+    title, platform: "Luma Core Home · on the AYN Thor", tagline: [line1, line2], colors: [c1, c2], icon: "img/logo-icon.png",
+    link: "guide.html#" + anchor, linkText: "Read in the guide", fill: abs(img),
+    top: `<div class="screen-shot top" role="img" aria-label="${UI.esc(title)}: top screen" style="background-image:url('${abs(img)}')"></div>`,
+    bottom: `<div class="screen-shot bot" role="img" aria-label="${UI.esc(title)}: bottom screen" style="background-image:url('${abs(img)}')"></div>`
+  });
+  const decks = { packs: packs.map(packSlide), screens: site.screens.map(screenSlide) };
+  const labels = { packs: "Featured texture packs · drag the slider", screens: "Luma Core Home · as it looks on the Thor" };
+  let slides = decks.packs;
+
+  function buildStrip() {
+    $("heroTotal").textContent = pad(slides.length);
+    $("heroStrip").innerHTML = slides
+      .map((s, i) => `<button type="button" data-i="${i}"><img src="${s.icon}" alt=""><span>${UI.esc(s.title)}</span></button>`)
+      .join("");
+    $("showcaseLabel").textContent = labels[mode];
+    hero.dataset.mode = mode;
+  }
+
+  function show(i) {
+    current = (i + slides.length) % slides.length;
+    const s = slides[current];
+    hero.style.setProperty("--c1", s.colors[0]);
+    hero.style.setProperty("--c2", s.colors[1]);
+    $("heroNum").textContent = pad(current + 1);
+    $("heroPlatform").textContent = s.platform;
+    $("heroTitle").textContent = s.title;
+    $("heroTagline").innerHTML = s.tagline.map((t) => `<span>${UI.esc(t)}</span>`).join("");
+    $("heroLink").href = s.link;
+    $("heroLink").innerHTML = `${s.linkText} <span aria-hidden="true">→</span>`;
+    $("heroTop").innerHTML = s.top;
+    $("heroTop").style.setProperty("--fill", `url("${s.fill}")`);
+    $("heroBottom").innerHTML = s.bottom;
     document.querySelectorAll("#heroStrip button").forEach((b, n) => b.setAttribute("aria-current", n === current));
   }
 
@@ -43,6 +68,16 @@
     clearInterval(timer);
     if (on && !calm) timer = setInterval(() => show(current + 1), 7000);
   }
+
+  document.querySelector(".mode-tabs").onclick = (e) => {
+    const b = e.target.closest("button");
+    if (!b || b.dataset.mode === mode) return;
+    mode = b.dataset.mode;
+    slides = decks[mode];
+    document.querySelectorAll(".mode-tabs button").forEach((x) => x.setAttribute("aria-pressed", x === b));
+    buildStrip();
+    show(0);
+  };
 
   hero.addEventListener("keydown", (e) => {
     if (e.target.matches("input")) return; /* arrow keys on the slider move the slider */
@@ -61,6 +96,7 @@
   hero.addEventListener("mouseleave", () => autoplay(true));
 
   /* site.heroStart picks which pack the showcase opens on. */
+  buildStrip();
   show(Math.max(0, packs.findIndex((p) => p.id === site.heroStart)));
   autoplay(true);
 

@@ -65,6 +65,17 @@ window.LUMA = {
     downloadsNote: "Pack downloads open when Luma Core comes out for beta testing.",
     /* Where the texture pack downloads live. Change this one line if the storage moves to its own domain. */
     packHost: "https://pub-8df91139c462411da2e445572576158e.r2.dev",
+    /* The showcase's second mode: Luma Core Home as it looks on the Thor.
+       Each picture is a capture of both screens, top screen above bottom screen.
+       [picture, title, tagline line 1, tagline line 2, guide section, colour 1, colour 2] */
+    screens: [
+      ["guide/img/games-systems.jpg", "Every system on one shelf", "Game Boy to 3DS,", "each in its own folder.", "games-and-system-folders", "#6ee7ff", "#2a4fa8"],
+      ["guide/img/forged-tab.jpg", "The Forged tab", "The games we made something for,", "with their banner up top.", "forged-games", "#ffb347", "#8f3d1a"],
+      ["guide/img/quick-resume.jpg", "Quick Resume", "Your last three games,", "ready where you left off.", "quick-resume", "#4fd38a", "#1c6a7a"],
+      ["guide/img/suspend-window.jpg", "Pause behind Home", "Press Home and the game waits", "in a small window.", "playing-games", "#b58cff", "#3d2f73"],
+      ["guide/img/my-home-folder.jpg", "Folders on My Home", "Rest one tile on another", "to make a folder.", "my-home", "#ff8fc7", "#6a3fd1"],
+      ["guide/img/notifications.jpg", "Notifications", "Downloads, achievements and what's new,", "in one list.", "notifications", "#ffd766", "#a8611e"]
+    ],
     /* The beta call-out on the home page. */
     beta: {
       title: "Beta testing is on the way",

@@ -125,6 +125,20 @@ window.LUMA = {
       ["★", "Achievements for more 3DS games", "Luma Core's own achievement sets started with one 3DS game. Sets for more 3DS games are planned.", "project.html?id=achievements"]
     ],
     /* Small print shown under each home section and on the matching project pages. */
+    /* Support: one plain link to Ko-fi, no third-party script. Leave "kofi" empty to hide it everywhere. */
+    support: {
+      kofi: "https://ko-fi.com/exhilo",
+      title: "Support the project",
+      text: "Luma Core, its texture packs and its game tweaks are free. If you would like to help, you can leave a tip on Ko-fi.",
+      points: [
+        "Donations are never required.",
+        "Any donation is appreciated.",
+        "All funds go into the ongoing work: more texture packs and game tweaks for Luma Core, and Luma Core's own development."
+      ],
+      note: "A donation is a gift. It does not buy a download, early access or anything else, and it never includes any game."
+    },
+    /* Shown in the footer of every page and in the About section. */
+    ai: "AI disclosure: all Luma Core projects use AI. That includes the Luma Core app, the texture packs, the DS game tweaks, the companions and this website.",
     disclaimers: {
       texture: "Every texture pack is subject to change with user feedback, and will keep being updated as Luma Core advances and continues through development.",
       ds: "Every optimization is subject to change with user feedback, and will keep being updated as Luma Core advances and continues through development.",

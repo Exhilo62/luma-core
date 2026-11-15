@@ -106,7 +106,8 @@
     : "";
   const visual =
     `<div class="p-pic"><div class="p-visual" style="--r:${ratio.toFixed(3)};aspect-ratio:${aw} / ${ah}">${UI.visual(p)}</div>` +
-    (hasSlider ? `<p class="hint">Drag the slider to compare ${UI.esc(labels[0])} with ${UI.esc(labels[1])}.</p>` : "") + `</div>`;
+    (hasSlider ? `<button class="enlarge" type="button">Enlarge <span aria-hidden="true">⤢</span></button>` +
+      `<p class="hint">Drag the slider to compare ${UI.esc(labels[0])} with ${UI.esc(labels[1])}.</p>` : "") + `</div>`;
 
   page.innerHTML =
     `<section class="p-hero" style="--c1:${p.colors[0]};--c2:${p.colors[1]}">` +
@@ -160,6 +161,23 @@
     main.insertAdjacentHTML("afterend",
       `<div class="rel"><p class="rel-head">Latest release ${UI.esc(r.tag)}${when ? " · " + when : ""}</p>` +
       files.map(([label, a]) => `<a class="rel-file" href="${a.url}"><span>${label}</span><small>${(a.size / 1e6).toFixed(1)} MB</small></a>`).join("") + `</div>`);
+  });
+
+  /* Open the comparison large, with the slider still working. */
+  page.addEventListener("click", (e) => {
+    if (!e.target.closest(".enlarge")) return;
+    const box = document.createElement("div");
+    box.className = "lightbox cmp";
+    box.setAttribute("role", "dialog");
+    box.setAttribute("aria-label", "Comparison");
+    box.innerHTML = `<div class="cmp-frame" style="--r:${ratio.toFixed(3)};aspect-ratio:${aw} / ${ah}">${UI.visual(p)}</div>` +
+      `<button type="button" aria-label="Close">×</button>`;
+    const close = () => { box.remove(); document.removeEventListener("keydown", onKey); };
+    const onKey = (ev) => { if (ev.key === "Escape") close(); };
+    box.addEventListener("click", (ev) => { if (ev.target === box || ev.target.closest("button")) close(); });
+    document.addEventListener("keydown", onKey);
+    document.body.appendChild(box);
+    box.querySelector("input").focus();
   });
 
   page.addEventListener("click", (e) => {

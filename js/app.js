@@ -61,7 +61,16 @@
     $("heroTop").innerHTML = s.top;
     $("heroTop").style.setProperty("--fill", `url("${s.fill}")`);
     $("heroBottom").innerHTML = s.bottom;
-    document.querySelectorAll("#heroStrip button").forEach((b, n) => b.setAttribute("aria-current", n === current));
+    const strip = $("heroStrip");
+    strip.querySelectorAll("button").forEach((b, n) => b.setAttribute("aria-current", n === current));
+    /* keep the chosen item in view inside the strip, without moving the page */
+    const btn = strip.children[current];
+    if (btn && strip.scrollWidth > strip.clientWidth) strip.scrollTo({ left: btn.offsetLeft - (strip.clientWidth - btn.clientWidth) / 2, behavior: calm ? "auto" : "smooth" });
+    /* the text beside the Thor slides in each time the selection changes */
+    const info = document.querySelector(".hero-info");
+    info.classList.remove("swap");
+    void info.offsetWidth;
+    info.classList.add("swap");
   }
 
   function autoplay(on) {

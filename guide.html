@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>User guide · Luma Core</title>
+  <meta name="description" content="The Luma Core user guide: setup, Home, games, Luma Shop, Luma Saves, Luma Themes and more.">
+  <meta name="theme-color" content="#0a0c13">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Luma Core">
+  <meta property="og:title" content="Luma Core: a 3DS-style Home for your dual-screen handheld">
+  <meta property="og:description" content="Game Boy to 3DS on one shelf, both screens used everywhere, and our own 4K texture packs. Built for the AYN Thor.">
+  <meta property="og:image" content="img/logo-banner.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="img/logo-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header class="nav">
+    <div class="wrap">
+      <a class="brand" href="index.html" aria-label="Luma Core home">
+        <picture><source srcset="img/logo-icon.png" media="(prefers-reduced-motion: reduce)"><img src="img/logo-anim.gif" alt="" width="38" height="38"></picture>
+        <img class="wordmark" src="img/wordmark.png" alt="Luma Core">
+      </a>
+      <nav aria-label="Sections">
+        <a href="index.html#packs">Texture packs</a>
+        <a href="index.html#ds">DS games</a>
+        <a href="index.html#apps">Apps</a>
+        <a href="index.html#progress">Progress</a>
+        <a href="guide.html" aria-current="page">Guide</a>
+        <a href="index.html#about">About</a>
+      </nav>
+      <button class="icon-btn" type="button" data-theme-toggle aria-label="Switch between light and dark mode">◐</button>
+    </div>
+  </header>
+
+  <main class="wrap guide-layout">
+    <aside class="guide-toc">
+      <label class="guide-search"><span>Search the guide</span>
+        <input type="search" id="guideSearch" placeholder="Try: save states" autocomplete="off"></label>
+      <p class="guide-found" id="guideFound" aria-live="polite"></p>
+      <details open>
+        <summary>Contents</summary>
+        <nav id="toc" aria-label="Guide contents"></nav>
+      </details>
+    </aside>
+    <article class="guide" id="guide"><p class="muted">Loading the guide…</p></article>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <p>© <span data-year></span> <span data-site-name></span>. A fan project, and a continuous work in progress. Texture packs are for emulators and do nothing on a real 3DS. Not affiliated with or endorsed by Nintendo or any game publisher.</p>
+      <p>All game names and artwork belong to their respective owners. You need your own legally obtained copies of the games.</p>
+    </div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/common.js"></script>
+  <script src="js/guide.js"></script>
+</body>
+</html>

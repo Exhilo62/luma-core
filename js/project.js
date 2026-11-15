@@ -1,0 +1,176 @@
+/* Project detail page: project.html?id=<id> */
+(function () {
+  const { site, projects } = window.LUMA;
+  const UI = window.LumaUI;
+  const page = document.getElementById("page");
+  const id = new URLSearchParams(location.search).get("id");
+  const index = projects.findIndex((p) => p.id === id);
+
+  if (index < 0) {
+    document.title = "Not found · " + site.name;
+    page.innerHTML =
+      `<section class="block"><div class="wrap"><div class="section-head"><h1>Project not found</h1>` +
+      `<p class="muted">That project doesn't exist, or its link has changed.</p></div>` +
+      `<a class="btn primary" href="index.html">Back to all projects</a></div></section>`;
+    return;
+  }
+
+  const p = projects[index];
+  const prev = projects[(index - 1 + projects.length) % projects.length];
+  const next = projects[(index + 1) % projects.length];
+  const isPack = p.category === "texture";
+  const isDs = p.category === "ds";
+  /* Up to three others of the same kind, starting with the one after this. */
+  const sameKind = projects.filter((q) => q.category === p.category);
+  const at = sameKind.indexOf(p);
+  const related = [1, 2, 3].map((n) => sameKind[(at + n) % sameKind.length]).filter((q, i, arr) => q !== p && arr.indexOf(q) === i);
+  document.title = p.title + " · " + site.name;
+
+  /* Download buttons. A pack downloads from Luma Core's storage; other projects use their own link. */
+  const packUrl = (file) => `${site.packHost}/${file}`;
+  const checksum = (k) => `<details class="sum"><summary>Checksum (SHA-256)</summary><code>${k.sha256}</code></details>`;
+  let download;
+  const open = site.downloadsOpen || (p.pack && p.pack.open);
+  const closedNote = `<p class="soon-note">${UI.esc(site.downloadsNote)}</p>`;
+  if (p.links.download) {
+    download = `<a class="btn primary" href="${p.links.download}">Download${p.status === "beta" ? " beta" : ""}${p.version ? ` <span data-ver="${p.id}">${UI.esc(p.version)}</span>` : ""}</a>`;
+    if (p.pack && open) {
+      download += `<a class="btn" href="${packUrl(p.pack.file)}">HD texture pack · ${p.pack.size}</a>` +
+        (p.pack.addon ? `<a class="btn small" href="${packUrl(p.pack.addon.file)}">Title screen add-on · ${p.pack.addon.size}</a>` : "") +
+        checksum(p.pack) + `<a class="btn small" href="install.html#dqxi">How to install the pack →</a>`;
+    } else if (p.pack) {
+      download += `<span class="btn" aria-disabled="true">HD texture pack · coming soon</span>` + closedNote;
+    }
+  } else if (p.pack && open) {
+    download = `<a class="btn primary" href="${packUrl(p.pack.file)}">Download pack · ${p.pack.size}</a>` + checksum(p.pack) +
+      `<a class="btn small" href="install.html#${isDs ? "ds" : "azahar-pc"}">Manual install guide →</a>`;
+  } else if (p.pack) {
+    download = `<span class="btn" aria-disabled="true">Download coming soon</span>` + closedNote +
+      `<a class="btn small" href="install.html#${isDs ? "ds" : "azahar-pc"}">Manual install guide →</a>`;
+  } else {
+    download = `<span class="btn" aria-disabled="true">Download coming soon</span>`;
+  }
+  const source = p.links.source ? `<a class="btn" href="${p.links.source}">Source / details</a>` : "";
+
+  const [aw, ah] = (p.images.aspect || "5 / 3").split("/").map(Number);
+  const hasSlider = p.images.before || (isPack && !p.images.after);
+  const labels = p.images.labels || ["the original", "the 4K pack"];
+
+  /* Extra sections. Packs and DS games also get their shared notes. */
+  const allSections = (p.sections || []).concat(isPack ? site.packSections : isDs ? site.dsSections : []);
+  const rich = (t) => UI.esc(t).replace(/`([^`]+)`/g, "<code>$1</code>");
+  const sections = allSections.length
+    ? `<div class="p-sections">` + allSections.map((sec) =>
+        `<section><h2>${UI.esc(sec.h)}</h2>` +
+        (sec.p ? `<p>${rich(sec.p)}</p>` : "") +
+        (sec.list ? `<ul>${sec.list.map((i) => `<li>${rich(i)}</li>`).join("")}</ul>` : "") +
+        `</section>`).join("") + `</div>`
+    : "";
+  const guideLinks = p.guide || (isPack ? site.packGuide : isDs ? site.dsGuide : []);
+  const guide = guideLinks.length
+    ? `<div class="p-sections"><section><h2>In the guide</h2><div class="guide-links">` +
+      guideLinks.map(([label, anchor]) => `<a href="guide.html#${anchor}">${UI.esc(label)} →</a>`).join("") + `</div></section></div>`
+    : "";
+
+  /* Videos show as a picture with a play button; the player loads only when clicked. */
+  const videos = p.videos && p.videos.length
+    ? `<div class="p-sections"><section><h2>Watch</h2><div class="videos">` +
+      p.videos.map(([vid, title]) =>
+        `<button class="yt" type="button" data-yt="${vid}" aria-label="Play video: ${UI.esc(title)}">` +
+        `<img src="https://i.ytimg.com/vi/${vid}/hqdefault.jpg" alt="" loading="lazy"><span class="yt-play" aria-hidden="true"></span>` +
+        `<span class="yt-title">${UI.esc(title)}</span></button>`).join("") +
+      `</div></section></div>`
+    : "";
+
+  const milestones = p.milestones
+    ? `<h2 style="font-size:1.3rem;margin-top:30px">Milestones</h2><ul class="checks" style="margin-top:12px">` +
+      p.milestones.map((m) => `<li class="${m.done ? "done" : ""}">${UI.esc(m.name)}</li>`).join("") + `</ul>`
+    : "";
+
+  const gallery = p.images.gallery && p.images.gallery.length
+    ? `<section class="block" style="padding-top:0"><div class="wrap"><div class="section-head"><h2>Screenshots</h2></div>` +
+      `<div class="gallery">${p.images.gallery.map((src) => `<a href="${src}"><img src="${src}" alt="${UI.esc(p.title)} screenshot" loading="lazy"></a>`).join("")}</div></div></section>`
+    : "";
+
+  /* Top of the page: text on the left, picture on the right. Very wide
+     pictures (app screens spanning both displays) go underneath instead. */
+  const ratio = aw / ah;
+  const wide = ratio > 1.9;
+  const backdrop = p.images.art || p.images.after;
+  const statTiles = p.stats
+    ? `<div class="stat-tiles">${p.stats.map(([k, v]) => `<div><b${p.github && v === p.version ? ` data-ver="${p.id}"` : ""}>${UI.esc(v)}</b><span>${UI.esc(k)}</span></div>`).join("")}</div>`
+    : "";
+  const worksWith = isPack ? ["Azahar", "Citra-based emulators", "Luma Core"] : isDs ? ["Luma Core only"] : [];
+  const compat = worksWith.length
+    ? `<p class="compat"><span class="compat-label">Works with</span>${worksWith.map((w) => `<span>${w}</span>`).join("")}</p>`
+    : "";
+  const visual =
+    `<div class="p-pic"><div class="p-visual" style="--r:${ratio.toFixed(3)};aspect-ratio:${aw} / ${ah}">${UI.visual(p)}</div>` +
+    (hasSlider ? `<p class="hint">Drag the slider to compare ${UI.esc(labels[0])} with ${UI.esc(labels[1])}.</p>` : "") + `</div>`;
+
+  page.innerHTML =
+    `<section class="p-hero" style="--c1:${p.colors[0]};--c2:${p.colors[1]}">` +
+    (backdrop ? `<img class="p-backdrop" src="${backdrop}" alt=""${p.images.art && p.images.artFilter ? ` style="filter:blur(34px) brightness(0.5) ${p.images.artFilter}"` : ""}>` : "") +
+    `<div class="wrap">` +
+    `<a class="back" href="index.html#${isPack ? "packs" : isDs ? "ds" : "apps"}"><span aria-hidden="true">←</span> All projects</a>` +
+    `<div class="p-top${wide ? " stack" : ""}">` +
+    `<div class="p-head">` +
+    (p.images.logo ? `<img class="p-logo" src="${p.images.logo}" alt="">`
+      : p.images.icon ? `<img class="p-logo icon" src="${p.images.icon}" alt="">` : "") +
+    `${UI.chip(p)}<p class="eyebrow">${UI.esc(p.platform)}</p>` +
+    `<h1>${UI.esc(p.title)}</h1><p class="tagline">${p.tagline.map((t) => `<span>${UI.esc(t)}</span>`).join(" ")}</p>` +
+    statTiles + compat + `</div>` + visual +
+    `</div></div></section>` +
+
+    `<section class="block"><div class="wrap p-body"><div>` +
+    (p.notice ? `<p class="notice"><b>${UI.esc(UI.statusText(p).split(" · ")[0])}</b>${UI.esc(p.notice)}</p>` : "") +
+    `<p class="lead">${UI.esc(p.description)}</p>` +
+    `<ul class="features">${p.features.map((f) => `<li>${UI.esc(f)}</li>`).join("")}</ul>` +
+    milestones + videos + sections + guide +
+    `</div><aside class="side">` +
+    (p.progress == null
+      ? `<div><p class="eyebrow">Status</p><p class="pct" style="font-size:1.5rem">${UI.statusHTML(p)}</p></div>`
+      : `<div><p class="eyebrow">Progress</p><p class="pct">${p.progress}%</p></div>`) +
+    UI.meter(p) +
+    (p.note ? `<p class="muted" style="font-size:.92rem">${UI.esc(p.note)}</p>` : "") +
+    download + source +
+    (site.disclaimers[p.category] ? `<p class="disclaimer">${UI.esc(site.disclaimers[p.category])}</p>` : "") +
+    `</aside></div></section>` +
+
+    gallery +
+
+    `<section class="block" style="padding-top:0"><div class="wrap"><div class="section-head"><p class="eyebrow">Keep exploring</p><h2>${isPack ? "More texture packs" : isDs ? "More optimized games" : "More from Luma Core"}</h2></div><div class="pager three">` +
+    related.map((q) =>
+      `<a class="pg" href="project.html?id=${q.id}" style="--c1:${q.colors[0]};--c2:${q.colors[1]}">` +
+      `<img src="${q.images.art || UI.shot(q)}" alt="" loading="lazy"${q.images.artFilter ? ` style="filter:${q.images.artFilter}"` : ""}>` +
+      `<span class="pg-label">${UI.esc(UI.statusText(q))}</span><b>${UI.esc(q.title)}</b>` +
+      `<span class="pg-sub">${UI.esc(q.platform)}</span></a>`).join("") +
+    `</div></div></section>`;
+
+  /* When GitHub answers with the latest release, point the buttons at its files. */
+  document.addEventListener("luma-release", (e) => {
+    if (e.detail.id !== p.id) return;
+    const r = e.detail.release;
+    const main = page.querySelector(".side .btn.primary");
+    if (!main) return;
+    main.href = r.url;
+    const kinds = [[/android.*\.apk$/i, "Android app"], [/linux/i, "Linux, Steam Deck, macOS"], [/patch_v[\d.]+\.zip$/i, "Windows"]];
+    const files = kinds.map(([re, label]) => { const a = r.assets.find((x) => re.test(x.name)); return a ? [label, a] : null; }).filter(Boolean);
+    const when = r.date ? new Date(r.date).toLocaleDateString("en-US", { year: "numeric", month: "short", day: "numeric" }) : "";
+    main.insertAdjacentHTML("afterend",
+      `<div class="rel"><p class="rel-head">Latest release ${UI.esc(r.tag)}${when ? " · " + when : ""}</p>` +
+      files.map(([label, a]) => `<a class="rel-file" href="${a.url}"><span>${label}</span><small>${(a.size / 1e6).toFixed(1)} MB</small></a>`).join("") + `</div>`);
+  });
+
+  page.addEventListener("click", (e) => {
+    const b = e.target.closest(".yt");
+    if (!b) return;
+    const frame = document.createElement("iframe");
+    frame.className = "yt-frame";
+    frame.src = `https://www.youtube-nocookie.com/embed/${b.dataset.yt}?autoplay=1&rel=0`;
+    frame.title = b.querySelector(".yt-title").textContent;
+    frame.allow = "autoplay; encrypted-media; picture-in-picture; fullscreen";
+    frame.allowFullscreen = true;
+    b.replaceWith(frame);
+  });
+})();

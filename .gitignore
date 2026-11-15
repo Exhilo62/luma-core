@@ -1,0 +1,7 @@
+# editor and tool settings
+.claude/
+
+# operating system files
+Thumbs.db
+desktop.ini
+.DS_Store

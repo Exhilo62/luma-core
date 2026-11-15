@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Credits · Luma Core</title>
+  <meta name="description" content="Thank you to the people and projects Luma Core is built on.">
+  <meta name="theme-color" content="#0a0c13">
+  <link rel="icon" href="img/logo-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header class="nav">
+    <div class="wrap">
+      <a class="brand" href="index.html" aria-label="Luma Core home">
+        <picture><source srcset="img/logo-icon.png" media="(prefers-reduced-motion: reduce)"><img src="img/logo-anim.gif" alt="" width="38" height="38"></picture>
+        <img class="wordmark" src="img/wordmark.png" alt="Luma Core">
+      </a>
+      <nav aria-label="Sections">
+        <a href="index.html#packs">Texture packs</a>
+        <a href="index.html#ds">DS games</a>
+        <a href="index.html#apps">Apps</a>
+        <a href="index.html#progress">Progress</a>
+        <a href="guide.html">Guide</a>
+        <a href="index.html#about">About</a>
+      </nav>
+      <button class="icon-btn" type="button" data-theme-toggle aria-label="Switch between light and dark mode">◐</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="intro wrap credits-top" aria-label="Credits">
+      <p class="eyebrow">Thank you</p>
+      <h1><span class="grad">Credits</span></h1>
+      <p class="lead" id="creditsIntro"></p>
+    </section>
+
+    <section class="block" id="people">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow">People</p>
+          <h2>Thanks to our <span class="grad">community</span></h2>
+          <p class="muted" id="peopleNote"></p>
+        </div>
+        <div class="credit-grid" id="peopleGrid"></div>
+      </div>
+    </section>
+
+    <div id="creditGroups"></div>
+
+    <section class="block" id="libraries">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow">Also inside</p>
+          <h2>Libraries</h2>
+          <p class="muted">Smaller open-source libraries that ship inside Luma Core.</p>
+        </div>
+        <div class="lib-list" id="libList"></div>
+        <p class="disclaimer" id="licenceNote"></p>
+        <p class="disclaimer" id="madeNote"></p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <p>© <span data-year></span> <span data-site-name></span>. A fan project, and a continuous work in progress. Not affiliated with or endorsed by Nintendo or any game publisher.</p>
+      <p>All game names and artwork belong to their respective owners. You need your own legally obtained copies of the games.</p>
+    </div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/credits.js"></script>
+  <script src="js/common.js"></script>
+  <script>
+    (function () {
+      const C = window.LUMA_CREDITS, UI = window.LumaUI;
+      const card = ([name, by, what, url]) => {
+        const inner = `<b>${UI.esc(name)}</b>` + (by ? `<span class="by">${UI.esc(by)}</span>` : "") +
+          (what ? `<span class="what">${UI.esc(what)}</span>` : "") + (url ? `<span class="go" aria-hidden="true">↗</span>` : "");
+        return url ? `<a class="credit" href="${url}" rel="noopener">${inner}</a>` : `<div class="credit">${inner}</div>`;
+      };
+      document.getElementById("creditsIntro").textContent = C.intro;
+      document.getElementById("peopleNote").textContent = C.peopleNote;
+      document.getElementById("peopleGrid").innerHTML = C.people.map(card).join("");
+      document.getElementById("creditGroups").innerHTML = C.groups.filter((g) => !g.hidden).map((g) =>
+        `<section class="block"><div class="wrap"><div class="section-head"><h2>${UI.esc(g.title)}</h2>` +
+        (g.intro ? `<p class="muted">${UI.esc(g.intro)}</p>` : "") + `</div>` +
+        `<div class="credit-grid">${g.items.map(card).join("")}</div></div></section>`).join("");
+      document.getElementById("libList").innerHTML = C.libraries.map((l) => `<span>${UI.esc(l)}</span>`).join("");
+      document.getElementById("licenceNote").textContent = C.licence;
+      document.getElementById("madeNote").textContent = C.made;
+    })();
+  </script>
+</body>
+</html>

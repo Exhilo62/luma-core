@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Manual install · Luma Core</title>
+  <meta name="description" content="Download Luma Core's texture packs and install them by hand in Azahar or Luma Core.">
+  <meta name="theme-color" content="#0a0c13">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Luma Core">
+  <meta property="og:title" content="Luma Core: a 3DS-style Home for your dual-screen handheld">
+  <meta property="og:description" content="Game Boy to 3DS on one shelf, both screens used everywhere, and our own 4K texture packs. Built for the AYN Thor.">
+  <meta property="og:image" content="img/logo-banner.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="img/logo-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header class="nav">
+    <div class="wrap">
+      <a class="brand" href="index.html" aria-label="Luma Core home">
+        <picture><source srcset="img/logo-icon.png" media="(prefers-reduced-motion: reduce)"><img src="img/logo-anim.gif" alt="" width="38" height="38"></picture>
+        <img class="wordmark" src="img/wordmark.png" alt="Luma Core">
+      </a>
+      <nav aria-label="Sections">
+        <a href="index.html#packs">Texture packs</a>
+        <a href="index.html#ds">DS games</a>
+        <a href="index.html#apps">Apps</a>
+        <a href="index.html#progress">Progress</a>
+        <a href="guide.html">Guide</a>
+        <a href="index.html#about">About</a>
+      </nav>
+      <button class="icon-btn" type="button" data-theme-toggle aria-label="Switch between light and dark mode">◐</button>
+    </div>
+  </header>
+
+  <main class="wrap guide-layout">
+    <aside class="guide-toc">
+      <details open>
+        <summary>On this page</summary>
+        <nav aria-label="Install guide contents">
+          <a class="l2" href="#downloads">Downloads</a>
+          <a class="l2" href="#before">Before you start</a>
+          <a class="l2" href="#azahar-pc">3DS packs: Azahar on PC</a>
+          <a class="l2" href="#azahar-android">3DS packs: Azahar on Android</a>
+          <a class="l2" href="#luma-core">3DS packs: Luma Core by hand</a>
+          <a class="l2" href="#ds">DS packs</a>
+          <a class="l2" href="#dqxi">Dragon Quest XI pack</a>
+          <a class="l2" href="#verify">Check your download</a>
+          <a class="l2" href="#remove">Removing a pack</a>
+          <a class="l2" href="#trouble">If it doesn't work</a>
+        </nav>
+      </details>
+    </aside>
+
+    <article class="guide">
+      <h1>Manual install</h1>
+      <blockquote><strong>The easy way:</strong> inside Luma Core, open the Luma Shop and install a pack from Texture packs. It downloads, checks and installs the pack for you. This page is for installing by hand.</blockquote>
+      <p id="openLine">Every texture pack can also be downloaded here and installed yourself, in the Azahar emulator on a PC or Android device, or straight into Luma Core's own folder.</p>
+
+      <h2 id="downloads">Downloads</h2>
+      <p>Each download is one zip file. Inside is a single folder named after the game's ID, with the pack's textures in it.</p>
+      <div class="table-wrap"><table>
+        <thead><tr><th>Pack</th><th>System</th><th>Game ID</th><th>Size</th><th>Download</th></tr></thead>
+        <tbody id="dlRows"></tbody>
+      </table></div>
+      <p class="disclaimer" id="dlNote"></p>
+
+      <h2 id="before">Before you start</h2>
+      <ul>
+        <li><strong>You need your own copy of the game.</strong> A pack only changes how the game looks; it contains no game.</li>
+        <li><strong>Packs are for emulators.</strong> They do nothing on a real 3DS or DS.</li>
+        <li><strong>Leave room to unzip.</strong> Keep about twice the pack's size free: once for the zip, once for the unzipped files. You can delete the zip afterwards.</li>
+        <li><strong>Don't rename anything.</strong> The emulator finds each texture by its file name, and each pack's <code>pack.json</code> belongs to that pack.</li>
+        <li><strong>Big packs need a capable device.</strong> If a game stutters or runs out of memory with a pack installed, remove the pack.</li>
+      </ul>
+
+      <h2 id="azahar-pc">3DS packs: Azahar on PC</h2>
+      <ol>
+        <li>In Azahar's game list, right-click the game and choose <em>Open Custom Texture Location</em>. A folder opens whose name is the game's ID, inside <code>load/textures</code>.</li>
+        <li>Go up one level, to the <code>textures</code> folder.</li>
+        <li>Unzip the pack there. You should end up with <code>load/textures/&lt;game ID&gt;/</code> containing <code>pack.json</code> and thousands of <code>.png</code> files. If the game's folder already existed and is empty, let the unzip merge into it.</li>
+        <li>In Azahar, open <em>Emulation &gt; Configure &gt; Graphics &gt; Utility</em> and tick <em>Use custom textures</em>. <em>Preload</em> is optional: faster in game, but a slower start and more memory.</li>
+        <li>Start the game.</li>
+      </ol>
+
+      <h2 id="azahar-android">3DS packs: Azahar on Android</h2>
+      <ol>
+        <li>Unzip the pack with a file manager. You get one folder named after the game's ID.</li>
+        <li>Move that folder into Azahar's <code>load/textures</code> folder, so the path ends in <code>load/textures/&lt;game ID&gt;/</code>.</li>
+        <li>In Azahar's settings, open <em>Graphics</em> and turn on <em>Use custom textures</em>.</li>
+        <li>Start the game.</li>
+      </ol>
+
+      <h2 id="luma-core">3DS packs: Luma Core by hand</h2>
+      <p>Luma Core keeps its packs in its own folder on your storage, and looks there first.</p>
+      <ol>
+        <li>Unzip the pack with a file manager. You get one folder named after the game's ID.</li>
+        <li>Move that folder into <code>LumaCore/textures</code>, so the path is <code>LumaCore/textures/&lt;game ID&gt;/</code>.</li>
+        <li>Make sure HD texture packs are switched on: it is step 4 of the first-time setup, and you can run the setup again from <em>Settings &gt; General &gt; Library</em>.</li>
+        <li>Start the game. To play without the pack, highlight the game, press X, choose <em>Forged</em> and set it to <em>Off</em>.</li>
+      </ol>
+      <p>Luma Core checks a hand-installed pack's files, and treats a copy that matches as one of ours. Don't mix files from another pack into the same folder.</p>
+
+      <h2 id="ds">DS packs</h2>
+      <p>The Pokémon HeartGold and Mario Kart DS packs are made for Luma Core's DS player. They don't work in other DS emulators.</p>
+      <ol>
+        <li>Unzip the pack. You get one folder named after the game's code: <code>IPKE</code> for HeartGold, <code>AMCE</code> for Mario Kart DS.</li>
+        <li>Move that folder into <code>LumaCore/textures</code>, so the path is <code>LumaCore/textures/IPKE/</code> or <code>LumaCore/textures/AMCE/</code>.</li>
+        <li>Highlight the game in Luma Core, press X and choose <em>Forged</em>. Pick <em>AYN Thor optimized</em> on a Thor, or <em>Basics</em> on any other device.</li>
+        <li>The game's HD pack can also be switched on or off on its own in its <em>Game settings</em>.</li>
+      </ol>
+
+      <h2 id="dqxi">Dragon Quest XI pack</h2>
+      <ul>
+        <li>This pack was made from the <a href="project.html?id=dqxi-english-patch">English-patched game</a>, so install it on a patched copy. It installs like any other 3DS pack above.</li>
+        <li>It is for the game's 3D mode only, and it is a work in progress.</li>
+        <li>The small <em>title screen add-on</em> in the downloads table holds the title screens for each patch version. Unzip it into the same place as the main pack and let it merge.</li>
+        <li>When the pack is active, the title screen shows an "HD texture pack" line above the English patch version.</li>
+      </ul>
+
+      <h2 id="verify">Check your download</h2>
+      <p>These are large files. To confirm one arrived intact, compare its SHA-256 checksum with the one listed under <em>Checksum</em> on that pack's page.</p>
+      <ul>
+        <li><strong>Windows:</strong> open a terminal in the download folder and run <code>certutil -hashfile the-file.zip SHA256</code></li>
+        <li><strong>macOS or Linux:</strong> run <code>shasum -a 256 the-file.zip</code></li>
+      </ul>
+      <p>If the result doesn't match, download the file again.</p>
+
+      <h2 id="remove">Removing a pack</h2>
+      <p>Delete the game's folder from <code>load/textures</code> (Azahar) or <code>LumaCore/textures</code> (Luma Core). Your game and saves are not touched. To keep the files but stop using them, switch <em>Use custom textures</em> off in Azahar, or set the game's <em>Forged</em> to <em>Off</em> in Luma Core.</p>
+
+      <h2 id="trouble">If it doesn't work</h2>
+      <ul>
+        <li><strong>Nothing looks different.</strong> Check that the folder is named exactly after the game's ID and that <code>pack.json</code> sits directly inside it, not one folder deeper. A common slip is ending up with <code>&lt;game ID&gt;/&lt;game ID&gt;/</code>.</li>
+        <li><strong>Still nothing.</strong> Check that <em>Use custom textures</em> is on in Azahar, or that the game's <em>Forged</em> setting is on in Luma Core.</li>
+        <li><strong>A different region of the game.</strong> A 3DS pack is tied to the game ID in the table. Another region's release has a different ID and won't pick the pack up.</li>
+        <li><strong>The game stutters or closes.</strong> The device is short on memory for that pack. Turn off <em>Preload</em>, or remove the pack.</li>
+      </ul>
+      <p class="disclaimer" id="packDisclaimer"></p>
+    </article>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <p>© <span data-year></span> <span data-site-name></span>. A fan project, and a continuous work in progress. Texture packs are for emulators and do nothing on a real 3DS. Not affiliated with or endorsed by Nintendo or any game publisher.</p>
+      <p>All game names and artwork belong to their respective owners. You need your own legally obtained copies of the games.</p>
+    </div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/common.js"></script>
+  <script>
+    (function () {
+      const { site, projects } = window.LUMA;
+      const UI = window.LumaUI;
+      const rows = [];
+      projects.forEach((p) => {
+        if (!p.pack) return;
+        const name = p.category === "app" ? p.title.replace(" English Patch", "") + " HD pack" : p.title;
+        rows.push([name, p.pack, p.id]);
+        if (p.pack.addon) rows.push([name + ": title screen add-on", Object.assign({ system: p.pack.system, code: p.pack.code, open: p.pack.open }, p.pack.addon), p.id]);
+      });
+      document.getElementById("dlRows").innerHTML = rows.map(([name, k, id]) =>
+        `<tr><td><a href="project.html?id=${id}">${UI.esc(name)}</a></td><td>${k.system}</td><td><code>${k.code}</code></td><td>${k.size}</td>` +
+        `<td>${site.downloadsOpen || k.open ? `<a class="dl" href="${site.packHost}/${k.file}">Download</a>` : `<span class="dl-soon">Coming soon</span>`}</td></tr>`).join("");
+      document.getElementById("dlNote").textContent = site.downloadsOpen
+        ? "Downloads come straight from Luma Core's own storage. They are large, so use Wi-Fi; an interrupted download can be resumed by most browsers and download managers."
+        : site.downloadsNote + " The Dragon Quest XI pack is available now, straight from Luma Core's own storage. It is large, so use Wi-Fi.";
+      if (!site.downloadsOpen) {
+        document.getElementById("openLine").textContent = "The Dragon Quest XI pack can be downloaded now. The other texture packs will be downloadable here once Luma Core comes out for beta testing; until then, this page shows how a manual install will work.";
+      }
+      document.getElementById("packDisclaimer").textContent = site.disclaimers.texture;
+    })();
+  </script>
+</body>
+</html>

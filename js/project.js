@@ -100,6 +100,11 @@
     wall =
       `<section class="block" style="padding-top:0" id="wall"><div class="wrap"><div class="section-head"><h2>${UI.esc(p.wall.title)}</h2>` +
       `<p class="muted">${UI.esc(p.wall.text)}</p></div>` +
+      /* Where the points come from: one segment per tier, as wide as its share of the points. */
+      `<div class="points-bar" role="group" aria-label="Points by tier">` +
+      TIERS.map(([k, label, pts]) => { const n = it.filter((x) => x[3] === k).length;
+        return `<button type="button" class="${k}" data-go-tier="${k}" style="flex:${n * pts}" title="Show ${label}"><b>${n * pts}</b><span>${n} ${label} × ${pts}</span></button>`; }).join("") +
+      `</div><p class="points-sum muted"><b>${it.reduce((t, x) => t + TIERS.find((r) => r[0] === x[3])[2], 0)} points</b> across ${it.length} achievements. Pick a tier to see only those.</p>` +
       `<div class="tabs tier-tabs" role="group" aria-label="Filter by tier"><button type="button" data-tier="all" aria-pressed="true">All <small>${it.length}</small></button>` +
       TIERS.map(([k, label]) => `<button type="button" data-tier="${k}" aria-pressed="false"><i class="${k}"></i>${label} <small>${it.filter((x) => x[3] === k).length}</small></button>`).join("") + `</div>` +
       `<div class="badge-grid">` +
@@ -210,6 +215,8 @@
 
   /* Tier buttons above the achievements. */
   page.addEventListener("click", (e) => {
+    const seg = e.target.closest("[data-go-tier]");
+    if (seg) { const tab = page.querySelector(`.tier-tabs button[data-tier="${seg.dataset.goTier}"]`); if (tab) tab.click(); return; }
     const b = e.target.closest(".tier-tabs button");
     if (!b) return;
     page.querySelectorAll(".tier-tabs button").forEach((x) => x.setAttribute("aria-pressed", x === b));

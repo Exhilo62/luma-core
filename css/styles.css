@@ -1685,3 +1685,29 @@ tbody tr:hover { background: color-mix(in srgb, var(--accent-2) 7%, transparent)
   /* downloads table: keep game names on fewer lines; the table scrolls sideways */
   #dlRows td:first-child { min-width: 190px; }
 }
+
+/* =====================================================================
+   Polish pass 20: where the achievement points come from
+   ===================================================================== */
+.points-bar { display: flex; gap: 5px; margin-bottom: 10px; }
+.points-bar button { min-width: 0; display: grid; gap: 1px; justify-items: start; padding: 12px 14px; border: 0; cursor: pointer; text-align: left; font: inherit; color: #1c1405; border-radius: 8px; overflow: hidden;
+  transition: translate 0.2s, box-shadow 0.2s, filter 0.2s; }
+.points-bar button:first-child { border-radius: 16px 8px 8px 16px; } .points-bar button:last-child { border-radius: 8px 16px 16px 8px; }
+.points-bar button:hover, .points-bar button:focus-visible { translate: 0 -3px; filter: brightness(1.08); box-shadow: 0 12px 26px rgba(0, 0, 0, 0.35); }
+.points-bar b { font-size: 1.5rem; line-height: 1; }
+.points-bar span { font-size: 0.76rem; font-weight: 600; white-space: nowrap; opacity: 0.85; }
+.points-bar .bronze { background: linear-gradient(180deg, #e6a66d, #c07a3e); }
+.points-bar .silver { background: linear-gradient(180deg, #eef2f8, #b9c3d6); }
+.points-bar .gold { background: linear-gradient(180deg, #ffe58a, #ffbf2e); }
+.points-bar .platinum { background: linear-gradient(135deg, #a8ecff, #e6ccff); }
+.points-sum { font-size: 0.93rem; margin-bottom: 18px; }
+.points-sum b { color: var(--text); }
+@media (prefers-reduced-motion: no-preference) {
+  .rv.in .points-bar button, .in .points-bar button { animation: seg-grow 0.7s cubic-bezier(0.2, 0.8, 0.2, 1) backwards; transform-origin: 0 50%; }
+  .points-bar button:nth-child(2) { animation-delay: 0.1s; } .points-bar button:nth-child(3) { animation-delay: 0.2s; } .points-bar button:nth-child(4) { animation-delay: 0.3s; }
+  @keyframes seg-grow { from { transform: scaleX(0); opacity: 0; } }
+}
+@media (max-width: 860px) {
+  .points-bar { flex-wrap: wrap; }
+  .points-bar button { flex: 1 1 40% !important; border-radius: 12px !important; }
+}

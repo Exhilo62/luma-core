@@ -246,6 +246,32 @@
     .join("");
   $("dsGrid").innerHTML = dsGames.map(UI.card).join("");
 
+  /* ---------- the packs in numbers, and what 4x means ---------- */
+  (function () {
+    const stat = (p, name) => (p.stats.find((x) => x[0] === name) || [])[1] || "0";
+    const files = packs.reduce((n, p) => n + +stat(p, "Files").replace(/,/g, ""), 0);
+    const gb = packs.reduce((n, p) => n + parseFloat(stat(p, "Size")), 0);
+    $("packBand").innerHTML =
+      `<div class="stat-tiles">` +
+      [[packs.length, "Packs"], [files.toLocaleString("en-US"), "Pack files"], [gb.toFixed(1) + " GB", "In all"], ["16x", "The pixels"]]
+        .map(([v, l]) => `<div><b>${v}</b><span>${l}</span></div>`).join("") + `</div>` +
+      `<div class="px-demo" role="img" aria-label="One original pixel beside the sixteen that replace it">` +
+      `<span class="px one"></span><span class="px-arrow" aria-hidden="true">→</span>` +
+      `<span class="px many">${"<i></i>".repeat(16)}</span>` +
+      `<p><b>What 4x means.</b> Every texture is redrawn at four times its width and four times its height, so each original pixel becomes sixteen.</p></div>`;
+  })();
+
+  /* ---------- a drifting ribbon of the real Luma achievement badges ---------- */
+  (function () {
+    const a = projects.find((p) => p.id === "achievements"), box = $("badgeRibbon");
+    if (!a || !a.wall || !a.wall.items) { box.remove(); return; }
+    const it = a.wall.items;
+    const row = it.map(([file, , , tier]) => `<img class="${tier}" src="img/badges/${file}.webp" alt="" loading="lazy">`).join("");
+    box.innerHTML =
+      `<span class="ribbon-text"><b>${it.length} Luma achievements</b><small>Bronze to Platinum · see them all <span aria-hidden="true">→</span></small></span>` +
+      `<span class="ribbon-view" aria-hidden="true"><span class="ribbon-track">${row}${row}</span></span>`;
+  })();
+
   /* ---------- progress ---------- */
   function row(p) {
     return (

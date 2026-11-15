@@ -1528,3 +1528,50 @@ i.bronze { background: #d08a4e; } i.silver { background: #cfd6e4; } i.gold { bac
   /* the big faint section numbers crowd the headings at this size */
   main > section.block[id] > .wrap > .section-head::after { display: none; }
 }
+
+/* =====================================================================
+   Polish pass 15: the packs in numbers, what 4x means, a ribbon of badges
+   ===================================================================== */
+.pack-band { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 18px 36px; margin-bottom: 26px; padding: 20px 24px; border-radius: 22px;
+  border: 1px solid var(--line); background: linear-gradient(120deg, color-mix(in srgb, var(--accent) 9%, var(--surface)), color-mix(in srgb, var(--surface) 80%, transparent)); }
+.pack-band .stat-tiles { margin-top: 0; }
+.px-demo { display: grid; grid-template-columns: auto auto auto minmax(0, 1fr); align-items: center; gap: 14px; flex: 1 1 380px; max-width: 560px; }
+.px-demo p { color: var(--muted); font-size: 0.93rem; }
+.px-demo p b { color: var(--text); }
+.px { width: 60px; height: 60px; border-radius: 8px; flex: none; }
+.px.one { background: #c98a2b; box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.25); }
+.px.many { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; }
+.px.many i { border-radius: 2px; background: #c98a2b; }
+.px.many i:nth-child(1) { background: #7a4a12; } .px.many i:nth-child(2) { background: #9a6218; } .px.many i:nth-child(3) { background: #c98a2b; } .px.many i:nth-child(4) { background: #e8b04a; }
+.px.many i:nth-child(5) { background: #9a6218; } .px.many i:nth-child(6) { background: #c98a2b; } .px.many i:nth-child(7) { background: #f2c766; } .px.many i:nth-child(8) { background: #ffe9a3; }
+.px.many i:nth-child(9) { background: #b8791f; } .px.many i:nth-child(10) { background: #e8b04a; } .px.many i:nth-child(11) { background: #ffe9a3; } .px.many i:nth-child(12) { background: #f2c766; }
+.px.many i:nth-child(13) { background: #c98a2b; } .px.many i:nth-child(14) { background: #d99c38; } .px.many i:nth-child(15) { background: #e8b04a; } .px.many i:nth-child(16) { background: #b8791f; }
+.px-arrow { color: var(--accent); font-size: 1.3rem; font-weight: 700; }
+@media (prefers-reduced-motion: no-preference) {
+  .pack-band.in .px.many i, .rv.in .px.many i { animation: px-pop 0.5s backwards; }
+  .px.many i:nth-child(4n + 2) { animation-delay: 0.08s; } .px.many i:nth-child(4n + 3) { animation-delay: 0.16s; } .px.many i:nth-child(4n) { animation-delay: 0.24s; }
+  .px.many i:nth-child(n + 5) { animation-duration: 0.6s; } .px.many i:nth-child(n + 9) { animation-duration: 0.7s; } .px.many i:nth-child(n + 13) { animation-duration: 0.8s; }
+  @keyframes px-pop { from { scale: 0; opacity: 0; } }
+}
+
+.ribbon { display: flex; align-items: center; gap: 22px; margin: 6px 0 26px; padding: 14px 0 14px 22px; border-radius: 20px; border: 1px solid var(--line); overflow: hidden; color: inherit; text-decoration: none;
+  background: linear-gradient(90deg, color-mix(in srgb, var(--accent) 12%, var(--surface)), color-mix(in srgb, var(--surface) 78%, transparent)); transition: border-color 0.2s, translate 0.2s; }
+.ribbon:hover, .ribbon:focus-visible { border-color: var(--accent); translate: 0 -2px; }
+.ribbon-text { display: grid; gap: 2px; flex: none; }
+.ribbon-text b { font-size: 1.1rem; }
+.ribbon-text small { color: var(--muted); font-size: 0.86rem; }
+.ribbon-view { flex: 1; min-width: 0; overflow: hidden; -webkit-mask-image: linear-gradient(90deg, transparent, #000 12%, #000 92%, transparent); mask-image: linear-gradient(90deg, transparent, #000 12%, #000 92%, transparent); }
+.ribbon-track { display: flex; gap: 14px; width: max-content; padding-right: 14px; }
+.ribbon-track img { width: 58px; height: 58px; flex: none; object-fit: contain; filter: drop-shadow(0 5px 10px color-mix(in srgb, var(--ring, #c98a52) 55%, transparent)); }
+.ribbon-track img.bronze { --ring: #c98a52; } .ribbon-track img.silver { --ring: #cfd8e6; } .ribbon-track img.gold { --ring: #ffcf4a; } .ribbon-track img.platinum { --ring: #8ff0ff; }
+@media (prefers-reduced-motion: no-preference) {
+  .ribbon-track { animation: slide 70s linear infinite reverse; }
+}
+@media (max-width: 860px) {
+  .pack-band { padding: 16px; }
+  .px-demo { grid-template-columns: auto auto auto; flex-basis: 100%; }
+  .px-demo p { grid-column: 1 / -1; }
+  .ribbon { flex-direction: column; align-items: stretch; gap: 12px; padding: 14px 0; }
+  .ribbon-text { padding-inline: 16px; }
+  .ribbon-track img { width: 46px; height: 46px; }
+}

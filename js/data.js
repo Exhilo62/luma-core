@@ -66,6 +66,18 @@ window.LUMA = {
     downloadsNote: "Pack downloads open when Luma Core comes out for beta testing.",
     /* Where the texture pack downloads live. Change this one line if the storage moves to its own domain. */
     packHost: "https://pub-8df91139c462411da2e445572576158e.r2.dev",
+    /* "Two screens, one Home": a capture of both screens with numbered points.
+       Each point: [left %, top %, title, text]. Positions are measured on the picture. */
+    anatomy: {
+      img: "guide/img/games-systems.jpg",
+      points: [
+        [50, 17, "What you have highlighted", "The top screen shows the highlighted game's banner, artwork or logo, or the system you are browsing."],
+        [84, 3.5, "Time, battery and Wi-Fi", "Always in view at the top, so you never leave Home to check them."],
+        [50, 55.5, "The Home bar", "A row of icon tabs: Home, Games, Forged, Notifications, Friends and Apps. L and R switch between them."],
+        [40, 80, "Tiles", "Games, folders, badges and Luma apps. A opens one, X opens its menu, and touch works here too."],
+        [50, 96.5, "The Open bar", "Opens whatever is highlighted. When a game is waiting behind Home, it offers Resume."]
+      ]
+    },
     /* The showcase's second mode: Luma Core Home as it looks on the Thor.
        Each picture is a capture of both screens, top screen above bottom screen.
        [picture, title, tagline line 1, tagline line 2, guide section, colour 1, colour 2] */

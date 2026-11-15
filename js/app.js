@@ -188,6 +188,22 @@
       spots.map(([x, y, sz], i) => `<span style="left:${x}%;top:${y}%;font-size:${sz}rem;animation-delay:${(i * 0.37).toFixed(2)}s">✦</span>`).join("") + `</div>`);
   }
 
+  /* ---------- two screens, one Home: a labelled capture ---------- */
+  (function () {
+    const box = $("anatomy"), a = site.anatomy;
+    box.innerHTML =
+      `<div class="anatomy-pic"><img src="${a.img}" alt="Luma Core Home across both screens" loading="lazy">` +
+      a.points.map(([x, y, title], i) => `<button type="button" class="dot-n" data-n="${i}" style="left:${x}%;top:${y}%" aria-label="${i + 1}: ${UI.esc(title)}">${i + 1}</button>`).join("") + `</div>` +
+      `<ol class="anatomy-list">` +
+      a.points.map(([, , title, text], i) => `<li data-n="${i}" tabindex="0"><span class="num">${i + 1}</span><div><b>${UI.esc(title)}</b><p>${UI.esc(text)}</p></div></li>`).join("") + `</ol>`;
+    const mark = (n) => box.querySelectorAll("[data-n]").forEach((el) => el.classList.toggle("on", el.dataset.n === String(n)));
+    ["pointerover", "focusin", "click"].forEach((ev) => box.addEventListener(ev, (e) => {
+      const el = e.target.closest("[data-n]");
+      if (el) mark(el.dataset.n);
+    }));
+    mark(0);
+  })();
+
   /* ---------- app tour ---------- */
   const tourTabs = $("tourTabs"), tourStage = $("tourStage");
   let tourAt = 0, tourTimer = null;

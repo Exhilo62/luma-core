@@ -164,7 +164,12 @@
 
     gallery + wall +
 
-    `<section class="block" style="padding-top:0"><div class="wrap"><div class="section-head"><p class="eyebrow">Keep exploring</p><h2>${isPack ? "More texture packs" : isDs ? "More optimized games" : "More from Luma Core"}</h2></div><div class="pager three">` +
+    `<section class="block" style="padding-top:0"><div class="wrap"><div class="section-head"><p class="eyebrow">Keep exploring</p><h2>${isPack ? "More texture packs" : isDs ? "More optimized games" : "More from Luma Core"}</h2></div>` +
+    (p.category === "app"
+      ? `<nav class="dock" aria-label="Luma apps">` + sameKind.filter((q) => q.images.icon).map((q) =>
+          `<a href="project.html?id=${q.id}" style="--c1:${q.colors[0]}"${q === p ? ` aria-current="page"` : ""}><img src="${q.images.icon}" alt=""><span>${UI.esc(q.title.replace(" English Patch", ""))}</span></a>`).join("") + `</nav>`
+      : "") +
+    `<div class="pager three">` +
     related.map((q) =>
       `<a class="pg" href="project.html?id=${q.id}" style="--c1:${q.colors[0]};--c2:${q.colors[1]}">` +
       `<img src="${q.images.art || UI.shot(q)}" alt="" loading="lazy"${q.images.artFilter ? ` style="filter:${q.images.artFilter}"` : ""}>` +

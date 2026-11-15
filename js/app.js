@@ -262,9 +262,10 @@
     .map(([src, caption]) => `<figure><a href="${src}"><img src="${src}" alt="${UI.esc(caption)}" loading="lazy"></a><figcaption>${UI.esc(caption)}</figcaption></figure>`)
     .join("");
   $("companionGrid").innerHTML = site.companions
-    .map(([title, system, tabs]) =>
+    .map(([title, system, tabs, detail]) =>
       `<div class="comp"><span class="sys ${system.toLowerCase()}">${system}</span><b>${UI.esc(title)}</b>` +
-      `<span class="tabs-line">${tabs.map((t) => `<i>${UI.esc(t)}</i>`).join("")}</span></div>`)
+      `<span class="tabs-line">${tabs.map((t) => `<i>${UI.esc(t)}</i>`).join("")}</span>` +
+      (detail ? `<span class="comp-detail">${UI.esc(detail)}</span>` : "") + `</div>`)
     .join("");
   $("companionGrid").insertAdjacentHTML("beforeend",
     `<a class="comp soon" href="#next"><span class="sys">Planned</span><b>More companions on the way</b>` +

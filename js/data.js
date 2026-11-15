@@ -19,7 +19,7 @@
     features    bullet list for the project page
     wall        optional grid of small pictures: { title, text, images: [...] }
     videos      optional YouTube videos: [["videoId", "Title"], ...]
-    sections    optional extra sections: { h: heading, p: text, list: [..] }
+    sections    optional extra sections: { h: heading, p: text, list: [..], chips: [..] }
     guide       optional links into the guide: [["Label", "section-anchor"], ...]
     stats       optional facts for the side panel: [["Files", "5,937"], ...]
     colors      two colours used for the glow and for placeholder art
@@ -148,7 +148,7 @@ window.LUMA = {
         p: "With the pack installed from the Luma Shop, the game appears on Luma Core's Forged tab with a gold Forged badge. To play without the pack, highlight the game, press X, choose Forged and set it to Off; your files stay where they are."
       }
     ],
-    /* Home page: Game Boy / GBA companions. [title, system, tabs] */
+    /* Home page: Game Boy / GBA companions. [title, system, tabs, what it shows] */
     companionShots: [
       ["guide/img/companion-golden-sun.jpg", "Golden Sun: the party"],
       ["guide/img/companion-crystal.jpg", "Pokémon Crystal: the trainer"],
@@ -158,22 +158,22 @@ window.LUMA = {
       ["img/comp-harvest-moon.jpg", "Harvest Moon: the villagers"]
     ],
     companions: [
-      ["Pokémon Crystal", "GBC", ["Party", "Trainer", "Map"]],
-      ["Pokémon FireRed", "GBA", ["Party", "Trainer", "Map"]],
-      ["Pokémon LeafGreen", "GBA", ["Party", "Trainer", "Map"]],
-      ["Pokémon Emerald", "GBA", ["Party", "Trainer", "Map"]],
-      ["Golden Sun", "GBA", ["Party", "Djinn", "Items", "Map"]],
-      ["Golden Sun: The Lost Age", "GBA", ["Party", "Djinn", "Items", "Map"]],
-      ["Dragon Ball Z: The Legacy of Goku", "GBA", ["Goku", "Bag"]],
-      ["Dragon Ball Z: The Legacy of Goku II", "GBA", ["Party", "Dragon Balls", "Items"]],
-      ["Castlevania: Aria of Sorrow", "GBA", ["Soma", "Souls", "Map"]],
-      ["Metroid Fusion", "GBA", ["Samus", "Map"]],
-      ["Metroid: Zero Mission", "GBA", ["Samus", "Map"]],
-      ["The Legend of Zelda: A Link to the Past", "GBA", ["Link", "Items", "Map"]],
-      ["Harvest Moon: Friends of Mineral Town", "GBA", ["Today", "Field", "Hearts", "Villagers"]],
-      ["Harvest Moon: More Friends of Mineral Town", "GBA", ["Today", "Field", "Hearts", "Villagers"]],
-      ["Fire Emblem (The Blazing Blade)", "GBA", ["Cursor", "Army", "Enemies"]],
-      ["Fire Emblem: The Sacred Stones", "GBA", ["Cursor", "Army", "Enemies"]]
+      ["Pokémon Crystal", "GBC", ["Party", "Trainer", "Map"], "Your party with levels, held items, HP and moves; your trainer card with all 16 badges; and the town map with your spot."],
+      ["Pokémon FireRed", "GBA", ["Party", "Trainer", "Map"], "Party, trainer card and the game's own map, drawn from your ROM."],
+      ["Pokémon LeafGreen", "GBA", ["Party", "Trainer", "Map"], "Party, trainer card and the game's own map, drawn from your ROM."],
+      ["Pokémon Emerald", "GBA", ["Party", "Trainer", "Map"], "Party, trainer card and the game's own map, drawn from your ROM."],
+      ["Golden Sun", "GBA", ["Party", "Djinn", "Items", "Map"], "Levels, classes, HP and PP for the party, every Djinni and who holds it, your items, and a map with your place and coins."],
+      ["Golden Sun: The Lost Age", "GBA", ["Party", "Djinn", "Items", "Map"], "Levels, classes, HP and PP for the party, every Djinni and who holds it, your items, and a map with your place and coins."],
+      ["Dragon Ball Z: The Legacy of Goku", "GBA", ["Goku", "Bag"], "Goku's level, HP and Ki, and what is in his bag."],
+      ["Dragon Ball Z: The Legacy of Goku II", "GBA", ["Party", "Dragon Balls", "Items"], "Your party, the Dragon Balls found so far, your items and where you are."],
+      ["Castlevania: Aria of Sorrow", "GBA", ["Soma", "Souls", "Map"], "Soma's stats, gold and status, the souls collected, and the castle map with the game's own percentage."],
+      ["Metroid Fusion", "GBA", ["Samus", "Map"], "Energy, missiles and power bombs, upgrades found and still missing, and the area map with each area's completion."],
+      ["Metroid: Zero Mission", "GBA", ["Samus", "Map"], "Energy, missiles and power bombs, upgrades found and still missing, and the area map with each area's completion."],
+      ["The Legend of Zelda: A Link to the Past", "GBA", ["Link", "Items", "Map"], "Hearts, rupees, bombs and arrows, crystals and pendants, your gear, and the Light or Dark World map."],
+      ["Harvest Moon: Friends of Mineral Town", "GBA", ["Today", "Field", "Hearts", "Villagers"], "Today's date, weather and forecast, crop days in the field, and every villager's friendship and birthday."],
+      ["Harvest Moon: More Friends of Mineral Town", "GBA", ["Today", "Field", "Hearts", "Villagers"], "Today's date, weather and forecast, crop days in the field, and every villager's friendship and birthday."],
+      ["Fire Emblem (The Blazing Blade)", "GBA", ["Cursor", "Army", "Enemies"], "The unit under the cursor, your army and the enemies, with the turn, phase and gold on top."],
+      ["Fire Emblem: The Sacred Stones", "GBA", ["Cursor", "Army", "Enemies"], "The unit under the cursor, your army and the enemies, with the turn, phase and gold on top."]
     ],
     companionNote:
       "Names and pictures come from your own ROM, and only the exact retail release of each game gets a companion, not ROM hacks. Every companion also has a Saves button for quick save and load. Golden Sun - Dual Screen Companion is a separate extra in the Luma Shop.",
@@ -501,6 +501,7 @@ window.LUMA = {
           "Inside a game, A opens Options: View save, Edit, Back up, Restore a backup, Export, Import and Delete.",
           "Deleted saves go to the Trash, where you can put them back. Deleting for good asks twice."
         ] },
+        { h: "Money and item editors", chips: ["Pokémon FireRed", "Pokémon LeafGreen", "Pokémon Emerald", "Pokémon Crystal", "Golden Sun", "Golden Sun: The Lost Age"] },
         { h: "Viewing and editing", p: "View save is read only: for Pokémon it shows the trainer, party and badges; for Golden Sun the party, Djinn and coins. Money and items can be edited in Pokémon FireRed, LeafGreen, Emerald and Crystal, and coins and items in Golden Sun and The Lost Age." },
         { h: "Built to be safe", list: [
           "Restore, import and every edit back up the current save first.",
@@ -562,6 +563,8 @@ window.LUMA = {
         "A check on every Pokémon: Looks fine, Unusual or Can't happen"
       ],
       sections: [
+        { h: "Read and edit", chips: ["Red", "Blue", "Yellow", "Crystal", "Ruby", "Sapphire", "FireRed", "LeafGreen", "Emerald"] },
+        { h: "View only for now", chips: ["Diamond", "Pearl", "Platinum", "HeartGold", "SoulSilver", "Black", "White", "Black 2", "White 2", "X", "Y", "Omega Ruby", "Alpha Sapphire", "Sun", "Moon", "Ultra Sun", "Ultra Moon"] },
         { h: "Editing", p: "For the Game Boy and Game Boy Advance games you can change a Pokémon's nickname, held item, the moves it can learn, IVs and EVs, and level, with its stats worked out again. Eggs aren't edited, and edits that can't happen are refused." },
         { h: "The Bank", p: "Copy into the Bank works from any game and leaves the save unchanged. Moving into the Bank and putting a Pokémon into a save work for Game Boy and Game Boy Advance box Pokémon, into a save of the same generation." },
         { h: "Built to be safe", list: [

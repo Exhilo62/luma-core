@@ -64,6 +64,7 @@
         `<section><h2>${UI.esc(sec.h)}</h2>` +
         (sec.p ? `<p>${rich(sec.p)}</p>` : "") +
         (sec.list ? `<ul>${sec.list.map((i) => `<li>${rich(i)}</li>`).join("")}</ul>` : "") +
+        (sec.chips ? `<p class="chips">${sec.chips.map((c) => `<span>${UI.esc(c)}</span>`).join("")}</p>` : "") +
         `</section>`).join("") + `</div>`
     : "";
   const guideLinks = p.guide || (isPack ? site.packGuide : isDs ? site.dsGuide : []);

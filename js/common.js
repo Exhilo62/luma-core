@@ -273,6 +273,68 @@
     });
   });
 
+  /* Search across the site: press / or Ctrl+K, or use the button in the top bar. */
+  (function () {
+    const bar = document.querySelector(".nav .wrap"), toggle = document.querySelector("[data-theme-toggle]");
+    if (!bar || !toggle) return;
+    toggle.insertAdjacentHTML("beforebegin", `<button class="icon-btn" type="button" data-search aria-label="Search the site" title="Search ( / )">⌕</button>`);
+    const kinds = { texture: "Texture pack", ds: "DS game", app: "Luma Core" };
+    const plain = (s) => s.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+    const index = [
+      ...L.projects.map((p) => ({ t: p.title, s: kinds[p.category] + " · " + p.platform, u: "project.html?id=" + p.id, i: p.images.icon, k: (p.title + " " + p.platform + " " + p.description).toLowerCase() })),
+      ...(L.site.guideTopics || []).map(([t, s, a]) => ({ t, s: "Guide · " + s, u: "guide.html#" + a, k: (t + " " + s + " guide").toLowerCase() })),
+      ...(L.site.companions || []).map(([t, sys]) => ({ t, s: "Companion · " + sys, u: "index.html#companions", k: (t + " companion").toLowerCase() })),
+      { t: "User guide", s: "Page", u: "guide.html", k: "user guide manual help how" },
+      { t: "Manual install", s: "Page", u: "install.html", k: "manual install download texture pack azahar" },
+      { t: "What's next", s: "Home page", u: "index.html#next", k: "whats next planned roadmap beta" },
+      { t: "Project progress", s: "Home page", u: "index.html#progress", k: "progress status complete" },
+      { t: "Credits", s: "Page", u: "credits.html", k: "credits thanks licence" }
+    ];
+    let box = null, list = null, input = null, at = 0, hits = [];
+    const draw = () => {
+      list.innerHTML = hits.length
+        ? hits.map((h, n) => `<a href="${h.u}" class="${n === at ? "on" : ""}">${h.i ? `<img src="${h.i}" alt="">` : `<span class="dot" aria-hidden="true">✦</span>`}<span><b>${esc(h.t)}</b><small>${esc(h.s)}</small></span></a>`).join("")
+        : `<p class="none">Nothing found. Try another word.</p>`;
+      const on = list.querySelector(".on");
+      if (on) on.scrollIntoView({ block: "nearest" });
+    };
+    const find = () => {
+      const words = plain(input.value).split(/\s+/).filter(Boolean);
+      /* a match in the name counts for more than a match in the description */
+      const score = (x) => { const t = plain(x.t); return words.reduce((n, w) => n + (t.startsWith(w) ? 3 : t.includes(w) ? 2 : 0), 0); };
+      hits = (words.length
+        ? index.filter((x) => words.every((w) => plain(x.k).includes(w))).map((x, n) => [score(x), n, x]).sort((m, o) => o[0] - m[0] || m[1] - o[1]).map((m) => m[2])
+        : index.slice(0, 8)).slice(0, 12);
+      at = 0;
+      draw();
+    };
+    const close = () => { if (box) { box.remove(); box = null; } };
+    const open = () => {
+      if (box) return;
+      box = document.createElement("div");
+      box.className = "search";
+      box.setAttribute("role", "dialog");
+      box.setAttribute("aria-label", "Search the site");
+      box.innerHTML = `<div class="search-panel"><input type="search" placeholder="Search packs, apps, companions and the guide" aria-label="Search" autocomplete="off"><div class="search-list"></div><p class="search-tip">↑ ↓ to move · Enter to open · Esc to close</p></div>`;
+      document.body.appendChild(box);
+      input = box.querySelector("input"); list = box.querySelector(".search-list");
+      input.addEventListener("input", find);
+      box.addEventListener("click", (e) => { if (e.target === box) close(); });
+      find();
+      input.focus();
+    };
+    document.addEventListener("click", (e) => { if (e.target.closest("[data-search]")) open(); });
+    document.addEventListener("keydown", (e) => {
+      const typing = /^(INPUT|TEXTAREA|SELECT)$/.test(e.target.tagName);
+      if ((e.key === "/" && !typing) || ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === "k")) { e.preventDefault(); open(); return; }
+      if (!box) return;
+      if (e.key === "Escape") close();
+      else if (e.key === "ArrowDown") { e.preventDefault(); at = Math.min(hits.length - 1, at + 1); draw(); }
+      else if (e.key === "ArrowUp") { e.preventDefault(); at = Math.max(0, at - 1); draw(); }
+      else if (e.key === "Enter" && hits[at]) { location.href = hits[at].u; close(); }
+    });
+  })();
+
   /* A shooting star now and then. */
   if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
     document.body.insertAdjacentHTML("beforeend", `<div class="shooting" aria-hidden="true"></div>`);

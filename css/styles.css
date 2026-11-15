@@ -1711,3 +1711,14 @@ tbody tr:hover { background: color-mix(in srgb, var(--accent-2) 7%, transparent)
   .points-bar { flex-wrap: wrap; }
   .points-bar button { flex: 1 1 40% !important; border-radius: 12px !important; }
 }
+
+/* =====================================================================
+   The trailer
+   ===================================================================== */
+#trailer { --glow: #b06bff; }
+.trailer { position: relative; max-width: 1040px; margin-inline: auto; padding: 12px; border-radius: 28px; border: 1px solid var(--line);
+  background: linear-gradient(135deg, color-mix(in srgb, var(--accent) 22%, var(--surface)), color-mix(in srgb, var(--accent-2) 16%, var(--surface)));
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.45), 0 0 90px color-mix(in srgb, var(--accent-2) 16%, transparent); }
+.trailer video { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; border-radius: 18px; background: #0a0c13; }
+#trailer .disclaimer { max-width: 1040px; margin-inline: auto; margin-top: 16px; }
+@media (max-width: 860px) { .trailer { padding: 6px; border-radius: 18px; } .trailer video { border-radius: 13px; } }

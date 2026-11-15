@@ -5,3 +5,7 @@
 Thumbs.db
 desktop.ini
 .DS_Store
+
+# the YouTube master is too large for the site; the build script holds local paths
+video/luma-core-promo-youtube.mp4
+tools/

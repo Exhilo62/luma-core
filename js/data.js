@@ -51,9 +51,9 @@ window.LUMA = {
     about:
       "Luma Core turns a dual-screen handheld into a game console with a 3DS-style Home. Game Boy, Game Boy Color, Game Boy Advance, DS and 3DS games share one shelf, and both screens are used everywhere. It is written for the AYN Thor. Alongside it we build 4K texture packs for 3DS games, delivered through the Luma Shop.",
     facts: [
-      ["9", "4K texture packs"],
-      ["135,330", "files across all packs"],
-      ["54 GB", "of upscaled textures"],
+      ["11", "4K texture packs"],
+      ["192,966", "files across all packs"],
+      ["67 GB", "of upscaled textures"],
       ["43", "Luma achievements to earn"]
     ],
     /* THE SWITCH FOR PACK DOWNLOADS.
@@ -112,6 +112,7 @@ window.LUMA = {
     /* "Latest updates" on the home page, newest first: [date, title, text, link]
        An entry whose link is a project with a "github" repo follows that repo's latest release. */
     news: [
+      ["Nov 15, 2026", "Pokémon Omega Ruby and Alpha Sapphire packs", "Two more 4K texture packs, one for each game, bring the count to eleven. They are new and still being checked.", "project.html?id=pokemon-omega-ruby"],
       ["Nov 15, 2026", "Pokémon SoulSilver gets its own HD pack", "SoulSilver now has the full treatment: an HD texture pack, widescreen and tuning for the Thor, like HeartGold.", "project.html?id=pokemon-soulsilver"],
       ["Nov 15, 2026", "DQXI English Patch v0.1.44", "The patch now runs through all three acts, with more official names, text fixes and a new two-minute video. Still a beta.", "project.html?id=dqxi-english-patch"],
       ["Nov 15, 2026", "Pokémon Ultra Sun and Ultra Moon packs", "Two new 4K texture packs, one for each game, bring the count to nine. Like the others, their downloads open with the beta.", "project.html?id=pokemon-ultra-sun"],
@@ -422,6 +423,50 @@ window.LUMA = {
       images: { icon: "img/icon-ultramoon.png", art: "img/art/usum-art.jpg", artPos: "40% 30%", after: "img/ultramoon-logo-after.jpg", before: "img/ultramoon-logo-before.jpg", aspect: "1620 / 880", gallery: ["img/art/usum-art.jpg", "img/usum-after.jpg"] },
       links: { download: "", source: "" }
     },
+    {
+      id: "pokemon-omega-ruby",
+      category: "texture",
+      title: "Pokémon Omega Ruby",
+      platform: "Nintendo 3DS · 4K texture pack",
+      tagline: ["Hoenn, redrawn", "four times sharper."],
+      status: "complete",
+      version: "v1",
+      progress: 100,
+      note: "Installs from the Luma Shop inside Luma Core. Tested through Omega Ruby's intro so far.",
+      description:
+        "A 4x texture pack for Pokémon Omega Ruby. Every texture stored in the game is upscaled: Pokémon models, trainers and other characters, field maps and buildings, battle backgrounds and effects, menus and the game's own font sheets.",
+      features: ["28,718 textures upscaled 4x, plus 99 mip levels", "Pokémon models, trainers, maps, battle effects, menus and the games' own font sheets", "No HD system-font sheets: these games draw text from their own fonts", "For Azahar / Citra-based emulators"],
+      stats: [["Files", "28,818"], ["Size", "6.65 GB"], ["Upscale", "4x"]],
+      sections: [
+        { h: "Checked so far", p: "This pack is new. It has been tested through Omega Ruby's intro so far, and more of the game will be checked before downloads open." }
+      ],
+      pack: { file: "omegaruby-000400000011C400-v1.zip", size: "6.65 GB", system: "3DS", code: "000400000011C400", sha256: "2c5b91e661924a729908de1bf1503a9606193b83e3f0de7ac1739f90abc55e4e" },
+      colors: ["#d8433a", "#5a1418"],
+      images: { icon: "img/icon-omegaruby.png", art: "img/art/oras-art.jpg", artPos: "center 45%", after: "img/omegaruby-logo-after.jpg", before: "img/omegaruby-logo-before.jpg", aspect: "1620 / 880", gallery: ["img/art/oras-art.jpg"] },
+      links: { download: "", source: "" }
+    },
+    {
+      id: "pokemon-alpha-sapphire",
+      category: "texture",
+      title: "Pokémon Alpha Sapphire",
+      platform: "Nintendo 3DS · 4K texture pack",
+      tagline: ["The same sharper Hoenn,", "in sapphire."],
+      status: "complete",
+      version: "v1",
+      progress: 100,
+      note: "Installs from the Luma Shop inside Luma Core. Tested through Omega Ruby's intro so far.",
+      description:
+        "A 4x texture pack for Pokémon Alpha Sapphire. It holds the same images as the Omega Ruby pack, under Alpha Sapphire's own title ID, so each game has a pack of its own.",
+      features: ["28,718 textures upscaled 4x, plus 99 mip levels", "Pokémon models, trainers, maps, battle effects, menus and the games' own font sheets", "No HD system-font sheets: these games draw text from their own fonts", "For Azahar / Citra-based emulators"],
+      stats: [["Files", "28,818"], ["Size", "6.65 GB"], ["Upscale", "4x"]],
+      sections: [
+        { h: "Checked so far", p: "This pack is new. It has been tested through Omega Ruby's intro so far, and more of the game will be checked before downloads open." }
+      ],
+      pack: { file: "alphasapphire-000400000011C500-v1.zip", size: "6.65 GB", system: "3DS", code: "000400000011C500", sha256: "0525b6253a7d1a51aceea3406abdc135fcaba49503cc59a793271c7110bcaa8b" },
+      colors: ["#2f7fe0", "#12265e"],
+      images: { icon: "img/icon-alphasapphire.png", art: "img/art/oras-art.jpg", artPos: "center 45%", after: "img/alphasapphire-logo-after.jpg", before: "img/alphasapphire-logo-before.jpg", aspect: "1620 / 880", gallery: ["img/art/oras-art.jpg"] },
+      links: { download: "", source: "" }
+    },
 
     /* ---------- Optimized DS games ---------- */
     {
@@ -557,7 +602,7 @@ window.LUMA = {
       features: [
         "Apps: Luma Themes, Luma Saves, Luma Dex, Luma Friends, Luma Achievements and Luma Pass",
         "Extras: Golden Sun - Dual Screen Companion and the Dragon Quest XI English Patch (beta)",
-        "Texture packs for nine 3DS games, Pokémon HeartGold, Pokémon SoulSilver and Mario Kart DS",
+        "Texture packs for eleven 3DS games, Pokémon HeartGold, Pokémon SoulSilver and Mario Kart DS",
         "Downloads that carry on in the background"
       ],
       sections: [

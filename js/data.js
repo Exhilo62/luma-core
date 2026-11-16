@@ -532,7 +532,8 @@ window.LUMA = {
       features: ["HD texture pack with 45,743 files", "One set of images shared with SoulSilver", "Widescreen in the 3D world and on 2D screens", "Tuned for the AYN Thor's two screens"],
       stats: [["Pack files", "45,743"], ["Pack size", "81 MB"], ["Widescreen", "3D and 2D"]],
       sections: [
-        { h: "Version 2: one pack for both games", p: "HeartGold and SoulSilver now share one merged HD pack, with every image from both games' packs. HeartGold's pack grew from 14,612 files to 45,743. If you have version 1 installed, the Luma Shop offers an Update." }
+        { h: "Version 2: one pack for both games", p: "HeartGold and SoulSilver now share one merged HD pack, with every image from both games' packs. HeartGold's pack grew from 14,612 files to 45,743. If you have version 1 installed, the Luma Shop offers an Update." },
+        { h: "Tested on the AYN Thor", p: "On November 15, 2026 the Luma Shop offered the update to version 2 over an installed version 1 on an AYN Thor, and it installed all 45,743 files. The game starts to its title screen with the pack. Updating keeps the old pack working until the new one is in place. The last step, clearing out the old files, took several minutes on the Thor (about 30 minutes for SoulSilver's 45,000 files), and the game stays playable while it runs." }
       ],
       pack: { file: "heartgold-IPKE-v2.zip", size: "81 MB", system: "DS", code: "IPKE", sha256: "ac07f8c0a864e5fad65dd3b76c5e78c328127ab7d32dbacf7d350fc2cff50050" },
       colors: ["#e0a832", "#7a4a12"],
@@ -554,8 +555,8 @@ window.LUMA = {
       features: ["HD texture pack with 45,743 files", "One set of images shared with HeartGold, including SoulSilver's own 1,868", "Widescreen in the 3D world and on 2D screens", "Tuned for the AYN Thor's two screens"],
       stats: [["Pack files", "45,743"], ["Pack size", "81 MB"], ["Widescreen", "3D and 2D"]],
       sections: [
-        { h: "Version 2: one pack for both games", p: "Version 2 is the same set of images as HeartGold's pack. Eleven leftover slivers of text were dropped from version 1, taking it from 45,754 files to 45,743. If you have version 1 installed, the Luma Shop offers an Update. The test below was run on version 1; version 2 is being checked on the Thor next." },
-        { h: "Tested on the AYN Thor", p: "On November 15, 2026 the pack was downloaded and installed from the Luma Shop on an AYN Thor. The opening, New Bark Town in widescreen with the HD pack, a battle and the party screen all looked right, and the game's text stays as pixel art." }
+        { h: "Version 2: one pack for both games", p: "Version 2 is the same set of images as HeartGold's pack. Eleven leftover slivers of text were dropped from version 1, taking it from 45,754 files to 45,743. If you have version 1 installed, the Luma Shop offers an Update." },
+        { h: "Tested on the AYN Thor", p: "On November 15, 2026 version 1 was downloaded and installed from the Luma Shop on an AYN Thor, and the opening, New Bark Town in widescreen, a battle and the party screen all looked right, with the game's text staying as pixel art. Later the same day the Shop offered the update to version 2, which installed all 45,743 files; New Bark Town in widescreen with the HD pack and a battle looked right. Updating keeps the old pack working until the new one is in place. The last step, clearing out the old files, took several minutes on the Thor (about 30 minutes for SoulSilver's 45,000 files), and the game stays playable while it runs." }
       ],
       pack: { file: "soulsilver-IPGE-v2.zip", size: "81 MB", system: "DS", code: "IPGE", sha256: "4a8203ff293f0162aaaeab0b19ec13e93caaf9044343922a9be5d70d23f69c41" },
       colors: ["#aab4c8", "#48506a"],

@@ -544,7 +544,7 @@ window.LUMA = {
       category: "ds",
       title: "Pokémon SoulSilver",
       platform: "Nintendo DS · optimized for Luma Core",
-      tagline: ["Johto in widescreen,", "with HD textures of its own."],
+      tagline: ["Johto in widescreen,", "with HD textures."],
       status: "complete",
       version: "v2",
       progress: 100,

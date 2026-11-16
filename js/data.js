@@ -51,9 +51,9 @@ window.LUMA = {
     about:
       "Luma Core turns a dual-screen handheld into a game console with a 3DS-style Home. Game Boy, Game Boy Color, Game Boy Advance, DS and 3DS games share one shelf, and both screens are used everywhere. It is written for the AYN Thor. Alongside it we build 4K texture packs for 3DS games, delivered through the Luma Shop.",
     facts: [
-      ["7", "4K texture packs"],
-      ["62,086", "files across all packs"],
-      ["35 GB", "of upscaled textures"],
+      ["9", "4K texture packs"],
+      ["135,330", "files across all packs"],
+      ["54 GB", "of upscaled textures"],
       ["43", "Luma achievements to earn"]
     ],
     /* THE SWITCH FOR PACK DOWNLOADS.
@@ -112,6 +112,9 @@ window.LUMA = {
     /* "Latest updates" on the home page, newest first: [date, title, text, link]
        An entry whose link is a project with a "github" repo follows that repo's latest release. */
     news: [
+      ["Nov 15, 2026", "Pokémon Ultra Sun and Ultra Moon packs", "Two new 4K texture packs, one for each game, bring the count to nine. Like the others, their downloads open with the beta.", "project.html?id=pokemon-ultra-sun"],
+      ["Nov 15, 2026", "Luma Dex grows: more editing, the Bank and Luma Park", "Editing and Bank moves now reach from Red and Blue to X, Y, Omega Ruby and Alpha Sapphire, and Luma Park moves Pokémon on a generation.", "project.html?id=luma-dex"],
+      ["Nov 15, 2026", "Import from Azahar and melonDS", "Bring your texture packs, mods and saves over from another emulator, from Settings or during setup.", "project.html?id=luma-core"],
       ["Nov 15, 2026", "Manual install guide is ready", "Direct pack downloads will open here when Luma Core comes out for beta testing. The step-by-step install guide is already up.", "install.html"],
       ["Nov 15, 2026", "The user guide is online", "The full Luma Core guide, with screenshots of every feature, can now be read on this site.", "guide.html"],
       ["Nov 14, 2026", "Dragon Quest XI English Patch v0.1.43", "The latest beta of the English translation, with patchers for PC and Android.", "project.html?id=dqxi-english-patch"],
@@ -120,7 +123,7 @@ window.LUMA = {
     /* "What's next" on the home page: [symbol, title, text, where the card links] */
     wip: "Every feature of Luma Core is a continuous work in progress.",
     roadmap: [
-      ["✦", "More 4K texture packs", "The seven packs here are a start. More 3DS games are planned, and the existing packs keep being improved.", "#packs"],
+      ["✦", "More 4K texture packs", "The packs here are a start. More 3DS games are planned, and the existing packs keep being improved.", "#packs"],
       ["◐", "More companions", "More Game Boy and Game Boy Advance games are planned to get a bottom-screen companion of their own.", "#companions"],
       ["★", "Achievements for more 3DS games", "Luma Core's own achievement sets started with one 3DS game. Sets for more 3DS games are planned.", "project.html?id=achievements"]
     ],
@@ -379,6 +382,44 @@ window.LUMA = {
       images: { icon: "img/icon-ssf4.png", art: "img/art/ssf4-art.jpg", artPos: "85% 30%", logo: "img/art/ssf4-logo.png", after: "img/ssf4-after.jpg", before: "img/ssf4-before.jpg", aspect: "1 / 1", gallery: ["img/pack-ssf4.jpg", "img/art/ssf4-art.jpg", "img/art/ssf4-art2.jpg"] },
       links: { download: "", source: "" }
     },
+    {
+      id: "pokemon-ultra-sun",
+      category: "texture",
+      title: "Pokémon Ultra Sun",
+      platform: "Nintendo 3DS · 4K texture pack",
+      tagline: ["All of Alola,", "four times sharper."],
+      status: "complete",
+      version: "v1",
+      progress: 100,
+      note: "Installs from the Luma Shop inside Luma Core.",
+      description:
+        "A 4x texture pack for Pokémon Ultra Sun. Every texture stored in the game is upscaled: Pokémon models, trainers and other characters, field maps and buildings, battle backgrounds and effects, menus and the game's own font sheets. The player character's own textures are not covered, because the game builds them while it runs.",
+      features: ["34,097 textures upscaled 4x, plus 2,524 mip levels", "Pokémon models, trainers, maps, battle effects, menus and the games' own font sheets", "No HD system-font sheets: these games draw text from their own fonts", "For Azahar / Citra-based emulators"],
+      stats: [["Files", "36,622"], ["Size", "9.40 GB"], ["Upscale", "4x"]],
+      pack: { file: "ultrasun-00040000001B5000-v1.zip", size: "9.40 GB", system: "3DS", code: "00040000001B5000", sha256: "d863dcfcf60fa79bb0b7dd8dc48394b0511bc8fb0d48ee51c5d1ee92c0f46f86" },
+      colors: ["#f08a2c", "#7a2a12"],
+      images: { icon: "img/icon-ultrasun.png", art: "img/art/usum-art.jpg", artPos: "40% 30%", after: "img/usum-after.jpg", before: "img/usum-before.jpg", aspect: "1 / 1", gallery: ["img/art/usum-art.jpg"] },
+      links: { download: "", source: "" }
+    },
+    {
+      id: "pokemon-ultra-moon",
+      category: "texture",
+      title: "Pokémon Ultra Moon",
+      platform: "Nintendo 3DS · 4K texture pack",
+      tagline: ["The same sharper Alola,", "under the moon."],
+      status: "complete",
+      version: "v1",
+      progress: 100,
+      note: "Installs from the Luma Shop inside Luma Core.",
+      description:
+        "A 4x texture pack for Pokémon Ultra Moon. It holds the same images as the Ultra Sun pack, under Ultra Moon's own title ID, so each game has a pack of its own. The player character's own textures are not covered, because the game builds them while it runs.",
+      features: ["34,097 textures upscaled 4x, plus 2,524 mip levels", "Pokémon models, trainers, maps, battle effects, menus and the games' own font sheets", "No HD system-font sheets: these games draw text from their own fonts", "For Azahar / Citra-based emulators"],
+      stats: [["Files", "36,622"], ["Size", "9.40 GB"], ["Upscale", "4x"]],
+      pack: { file: "ultramoon-00040000001B5100-v1.zip", size: "9.40 GB", system: "3DS", code: "00040000001B5100", sha256: "2c0a37cf02fd73eaddbb7ac7d8ffcb6ceb1c9d9168b653296762dc786b8f441a" },
+      colors: ["#6a5cff", "#1d1650"],
+      images: { icon: "img/icon-ultramoon.png", art: "img/art/usum-art.jpg", artPos: "40% 30%", after: "img/usum-after.jpg", before: "img/usum-before.jpg", aspect: "1 / 1", gallery: ["img/art/usum-art.jpg"] },
+      links: { download: "", source: "" }
+    },
 
     /* ---------- Optimized DS games ---------- */
     {
@@ -474,6 +515,12 @@ window.LUMA = {
           "Luma Pass: StreetPass by file for your 3DS games.",
           "Luma Friends: friend codes and cards between Luma Core players, with no account and no server."
         ] },
+        { h: "Import from another emulator", list: [
+          "From Azahar: texture packs, mods, cheats, 3DS saves and a few settings, on Settings > 3DS.",
+          "From melonDS: saves, on Settings > DS.",
+          "First-time setup offers both in one step, and each import shows what it found and what it left alone."
+        ] },
+        { h: "Careful with your saves", p: "A safety review on November 15, 2026 led to fixes for restoring save backups, Bank moves in Luma Dex, the Luma Shop's installer and recovery after a crash." },
         { h: "Devices", p: "Written for the AYN Thor. It also runs on other dual-screen handhelds such as the Retroid Pocket Duo, and on phones, where both screens share one display." },
         { h: "Privacy", p: "Luma Core has no servers of its own: no analytics, ads, tracking or accounts. Everything stays on the device, and it goes online only for features you use." }
       ],
@@ -503,7 +550,7 @@ window.LUMA = {
       features: [
         "Apps: Luma Themes, Luma Saves, Luma Dex, Luma Friends, Luma Achievements and Luma Pass",
         "Extras: Golden Sun - Dual Screen Companion and the Dragon Quest XI English Patch (beta)",
-        "Texture packs for seven 3DS games, Pokémon HeartGold and Mario Kart DS",
+        "Texture packs for nine 3DS games, Pokémon HeartGold and Mario Kart DS",
         "Downloads that carry on in the background"
       ],
       sections: [
@@ -581,6 +628,7 @@ window.LUMA = {
         { h: "3DS themes", p: "Real 3DS HOME Menu themes. Installed themes previews yours on both screens, Get themes on ThemePlaza opens the site inside Luma Core so you can download themes, and Build a theme makes your own from parts. A theme's own sounds and music can be on or off, Theme shuffle picks another of your themes each time Home comes back, and you can choose a boot screen and badges." },
         { h: "System theme", p: "Luma Core's own look: Light or Dark Home colors, your favorite color, the Home bar style, your own pictures as top and bottom wallpapers, grid size, the bar's icon style and color, the button style used in hints, and the 3DS banner jingle." },
         { h: "Reimagined", p: "Luma Core's own white Home bar, with every icon in its own color. It is the default. Your theme's colors gives the bar the colors of the applied 3DS theme instead." },
+        { h: "Readable on any theme", p: "Loose text gets a backdrop box behind it on every theme, so it stays readable over a busy wallpaper." },
         { h: "Credit where it's due", p: "Every theme is made by its author. Press Y on a theme to open its ThemePlaza page, which credits them." }
       ],
       guide: [["Luma Themes", "luma-themes"], ["Home and the Home bar", "home-and-the-home-bar"], ["Settings", "settings"]],
@@ -599,18 +647,29 @@ window.LUMA = {
       progress: null,
       note: "Part of Luma Core. Install it from the Luma Shop.",
       description:
-        "Luma Dex is a Pokémon save viewer and editor. It reads the saves Luma Core makes, with names and pictures from your own ROMs, and shows each Pokémon in detail on the top screen.",
+        "Luma Dex is a Pokémon save viewer, editor and Bank, from Red and Blue through Ultra Sun and Ultra Moon. It reads the saves Luma Core makes, with names and pictures from your own ROMs, and shows each Pokémon in detail on the top screen.",
       features: [
         "Tabs for Saves, Boxes, Pokédex, Living Dex, Bank and History",
-        "Read and edit: Red, Blue, Yellow, Crystal, Ruby, Sapphire, FireRed, LeafGreen and Emerald",
-        "View only for now: the DS games and the 3DS games from X and Y to Ultra Sun and Ultra Moon",
+        "Read and edit from Red and Blue through X, Y, Omega Ruby and Alpha Sapphire",
+        "A Bank for moving Pokémon between saves, and Luma Park for moving them on a generation",
+        "Sun, Moon, Ultra Sun and Ultra Moon: view, and copy into the Bank",
         "A check on every Pokémon: Looks fine, Unusual or Can't happen"
       ],
       sections: [
-        { h: "Read and edit", chips: ["Red", "Blue", "Yellow", "Crystal", "Ruby", "Sapphire", "FireRed", "LeafGreen", "Emerald"] },
-        { h: "View only for now", chips: ["Diamond", "Pearl", "Platinum", "HeartGold", "SoulSilver", "Black", "White", "Black 2", "White 2", "X", "Y", "Omega Ruby", "Alpha Sapphire", "Sun", "Moon", "Ultra Sun", "Ultra Moon"] },
-        { h: "Editing", p: "For the Game Boy and Game Boy Advance games you can change a Pokémon's nickname, held item, the moves it can learn, IVs and EVs, and level, with its stats worked out again. Eggs aren't edited, and edits that can't happen are refused." },
-        { h: "The Bank", p: "Copy into the Bank works from any game and leaves the save unchanged. Moving into the Bank and putting a Pokémon into a save work for Game Boy and Game Boy Advance box Pokémon, into a save of the same generation." },
+        { h: "Read and edit", chips: ["Red", "Blue", "Yellow", "Gold", "Silver", "Crystal", "Ruby", "Sapphire", "FireRed", "LeafGreen", "Emerald", "Diamond", "Pearl", "Platinum", "HeartGold", "SoulSilver", "Black", "White", "Black 2", "White 2", "X", "Y", "Omega Ruby", "Alpha Sapphire"] },
+        { h: "View and copy into the Bank", chips: ["Sun", "Moon", "Ultra Sun", "Ultra Moon"] },
+        { h: "Editing", p: "Change a Pokémon's nickname, held item, the moves it can learn, IVs and EVs, and level, with its stats worked out again. That now covers the party and boxes of the Game Boy, Game Boy Advance and DS games and of X, Y, Omega Ruby and Alpha Sapphire. Eggs aren't edited, and edits that can't happen are refused." },
+        { h: "The Bank", p: "Luma Dex's own boxes, kept outside every game. Copy into the Bank works from any game and leaves the save unchanged. Moving into the Bank and putting a Pokémon into a save work from Red and Blue through X, Y, Omega Ruby and Alpha Sapphire. The Living Dex counts what is in the Bank too." },
+        { h: "Luma Park", list: [
+          "Move Pokémon forward a generation: 3 to 4, 4 to 5 and 5 to 6.",
+          "Open it from the Bank tab, pick up to six, and catch them in Luma Core's own park scene.",
+          "It only goes one way, and Luma Dex warns you before it starts.",
+          "Every catch is listed in History."
+        ] },
+        { h: "From your own games", list: [
+          "Every save shows its lead Pokémon's sprite.",
+          "For the 3DS games, level-up moves, the TM and HM list and move PP are read from your own ROM, and the check on each Pokémon covers 3DS moves."
+        ] },
         { h: "Built to be safe", list: [
           "Only real releases with good checksums are written.",
           "A Luma Saves backup is made first, and the new save is checked before and after it's written.",
@@ -620,7 +679,7 @@ window.LUMA = {
       ],
       guide: [["Luma Dex", "luma-dex"], ["Luma Saves", "luma-saves"], ["Luma Shop", "luma-shop"]],
       colors: ["#e8584f", "#7a2330"],
-      images: { icon: "img/tile-dex.webp", art: "img/art/vista-rainbow.jpg", artPos: "center 35%", feature: "img/tile-dex.webp", after: "guide/img/luma-dex.jpg", before: "", aspect: "1280 / 435", gallery: ["guide/img/luma-dex-editor.jpg"] },
+      images: { icon: "img/tile-dex.webp", art: "img/art/vista-rainbow.jpg", artPos: "center 35%", feature: "img/tile-dex.webp", after: "guide/img/luma-dex.jpg", before: "", aspect: "1280 / 435", gallery: ["guide/img/luma-dex-editor.jpg", "img/dex-park.jpg", "img/dex-park-caught.jpg"] },
       links: { download: "", source: "" }
     },
     {

@@ -507,7 +507,7 @@ window.LUMA = {
       ],
       pack: { file: "soulsilver-IPGE-v1.zip", size: "81 MB", system: "DS", code: "IPGE", sha256: "a345fdf38b888eff7c0854a976fedc77c5ecb6d04740b842d3c2b9d4141fb0b2" },
       colors: ["#aab4c8", "#48506a"],
-      images: { icon: "", art: "img/art/vista-purple.jpg", artPos: "center 35%", after: "", before: "", aspect: "16 / 9", gallery: [] },
+      images: { icon: "img/icon-soulsilver.png", art: "img/art/vista-purple.jpg", artPos: "center 35%", after: "", before: "", aspect: "16 / 9", gallery: [] },
       links: { download: "", source: "" }
     },
     {

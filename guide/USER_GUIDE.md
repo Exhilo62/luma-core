@@ -24,7 +24,7 @@ too.
 7. [Forged games](#forged-games)
 8. [Companions](#companions)
 9. [Luma Shop](#luma-shop)
-10. [Luma Dex](#luma-dex)
+10. [Luma Dex](#luma-dex) (and [Luma Park](#luma-park))
 11. [Luma Saves](#luma-saves)
 12. [Luma Themes](#luma-themes)
 13. [Luma Pass](#luma-pass)
@@ -33,7 +33,7 @@ too.
 16. [Achievements and RetroAchievements](#achievements-and-retroachievements)
 17. [Scraping artwork](#scraping-artwork)
 18. [3DS system files](#3ds-system-files)
-19. [Settings](#settings)
+19. [Settings](#settings) (and [importing from Azahar and melonDS](#importing-from-azahar-and-melonds))
 20. [Troubleshooting and FAQ](#troubleshooting-and-faq)
 21. [Privacy](#privacy)
 
@@ -51,8 +51,9 @@ a step. In a pop-up list, Left / Right jump five items.
    and keep saves, states and texture packs in its own folder (`LumaCore`).
 2. **About you:** your name (up to 10 letters, as on a DS), birthday, favorite color and language. Games use these.
 3. **Your games:** add your Game Boy / Game Boy Color / Game Boy Advance folder, your DS folder and your 3DS folder
-   (subfolders count; one folder can hold every system), the optional [3DS system files](#3ds-system-files), and
-   *Download game information* (about 3 MB, once).
+   (subfolders count; one folder can hold every system), the optional [3DS system files](#3ds-system-files),
+   *Import from another emulator* (shown when Azahar or melonDS has a folder on the device: see
+   [Importing](#importing-from-azahar-and-melonds)), and *Download game information* (about 3 MB, once).
 4. **Texture packs:** *Load HD texture packs*. Packs go in `LumaCore/textures`, one folder per game.
 5. **Pick a look:** Home colors (Light or Dark) and the Home bar: *Reimagined* or *Your theme's colors*.
 6. **Choose what's on your Home:** which tabs are on the bar, and which of Luma Core's own apps start on My Home.
@@ -291,8 +292,13 @@ with its status; the bottom screen is the list. **A** does the main action, **X*
   Home.
 - **Extras:** Golden Sun - Dual Screen Companion (*Installed · needs ROMs* → *Pick ROMs* → *Ready*) and the Dragon Quest
   XI English Patch (*Needs your ROM* → *Set up*).
-- **Texture packs:** Luma Core's HD packs for seven 3DS games, Pokémon HeartGold and Mario Kart DS. You need your own
-  copy of the game (*Game not found* otherwise).
+- **Texture packs:** Luma Core's HD packs for Mario Kart DS, Pokémon HeartGold / SoulSilver (v2, one pack for both),
+  and 3DS games including Pokémon X / Y, Omega Ruby / Alpha Sapphire and Ultra Sun / Ultra Moon. You need your own copy
+  of the game (*Game not found* otherwise).
+- **Updates:** when a newer version of an installed pack is out, its row shows **Update**. A installs the new version;
+  the old one is cleaned up in the background afterwards.
+- **Another pack:** a pack for the same game that isn't ours shows *Another pack*; *Replace with ours* swaps it (see
+  Tips).
 
 ![Texture packs and their states](guide/img/shop-packs.jpg)
 
@@ -319,31 +325,45 @@ folder shows *Not managed by Luma* and is never changed.
 **What it is:** a Pokémon save viewer and editor (install it from Luma Shop > Apps). It reads the saves Luma Core makes,
 with names and pictures from your own ROMs.
 
-- **Read and edit:** Red, Blue, Yellow, Crystal, Ruby, Sapphire, FireRed, LeafGreen and Emerald.
-- **View only for now:** Diamond, Pearl, Platinum, HeartGold, SoulSilver, Black, White, Black 2, White 2, and the 3DS
-  games X, Y, Omega Ruby, Alpha Sapphire, Sun, Moon, Ultra Sun and Ultra Moon.
+- **Read and edit:** every game from Red, Blue and Yellow through X, Y, Omega Ruby and Alpha Sapphire (Gen 1-6), Gold
+  and Silver included.
+- **View and copy into the Bank only:** Sun, Moon, Ultra Sun and Ultra Moon.
 
 **Tabs (L / R):** Saves, Boxes, Pokédex, Living Dex, Bank and History. The bottom screen has the lists and box grids;
 the top screen shows the highlighted Pokémon in detail (sprite, level, nature, ability, item, moves, stats, original
-trainer) with a check: *Looks fine*, *Unusual* or *Can't happen*.
+trainer) with a check: *Looks fine*, *Unusual* or *Can't happen*. Every save shows its sprites, and 3DS games' moves
+are checked against your own ROM.
 
 - **Saves:** A opens its boxes; Y looks again. **Boxes:** A for *Options*, X next box, Y previous box. **Pokédex:**
-  Left / Right jump by 10. **Living Dex:** Y switches between *Missing* and *Show all*. **History:** A *Put back*.
+  Left / Right jump by 10. **Living Dex:** Y switches between *Missing* and *Show all*; Pokémon in the Bank count.
+  **Bank:** X opens [Luma Park](#luma-park). **History:** A *Put back*.
 
-**Editing (Gen 1-3):** A > *Edit it*: nickname, held item, moves it can learn, IVs and EVs, and level (stats worked out
-again). Left / Right change, A chooses, Y undoes, X saves (it asks first). Eggs aren't edited, and edits that *can't
-happen* are refused. Money and the bag are in [Luma Saves](#luma-saves).
+**Editing (Gen 1-6, party and boxes):** A > *Edit it*: nickname, held item, moves it can learn, IVs and EVs, and level
+(stats worked out again). Left / Right change, A chooses, Y undoes, X saves (it asks first). Eggs aren't edited, and
+edits that *can't happen* are refused. Money and the bag are in [Luma Saves](#luma-saves).
 
 **The Bank** (`LumaCore/luma-dex/bank`): *Copy into the Bank* works from any game and leaves the save unchanged.
-*Move into the Bank* and *Put into a save* work for Gen 1-3 box Pokémon, into a save of the same generation.
+*Move into the Bank* and *Put into a save* work for Gen 1-6, into a save of the same generation.
 
-**Safety:** only real releases with good checksums are written. The save must be unchanged since Luma Dex read it. A
-Luma Saves backup is made first, the new save is checked before and after it's written, and a move copies before it
-removes, so an interruption leaves a copy, never a loss. Every change is in History, and *Put back* undoes it.
+**Safety:** only real releases with good checksums are written. The save must be unchanged since Luma Dex read it, and
+if the game has a save state newer than the save, Luma Dex warns you first (loading that state later would undo the
+change). A Luma Saves backup is made first, the new save is checked before and after it's written, and a move copies
+before it removes, so an interruption leaves a copy, never a loss. Every question opens on *Cancel*. Every change is in
+History, and *Put back* undoes it, putting a moved Pokémon back where it was.
 
 ![Editing a Pokémon](guide/img/luma-dex-editor.jpg)
 
 ![The Bank](guide/img/luma-dex-bank.jpg)
+
+### Luma Park
+
+![Luma Park: picking Pokémon from the Bank](guide/img/luma-park.jpg)
+
+**What it is:** a way to bring Pokémon forward a generation, Gen 3 → 4 → 5 → 6, by catching them. On the Bank tab press
+**X**, pick up to six Gen 3, 4 or 5 Pokémon from the Bank (A picks, X sends them), then catch them as they walk in the
+park on the top screen. Each one caught goes back into the Bank as the next generation; *Put into a save* from there.
+
+**One way:** a park move can't be put back (History says so). The old record is kept in the Bank's `removed` folder.
 
 ## Luma Saves
 
@@ -400,6 +420,8 @@ can also be set apart.
 - Every theme is made by its author; each theme's ThemePlaza page (Y on it) credits them.
 - A 3DS theme dresses the Home look; applying one keeps your Reimagined bar unless you choose your theme's colors.
 - Settings has no copy of these options any more: everything is here.
+- Whatever the theme (light, dark, a busy picture), Luma Core's titles, notes and hints sit on a soft panel so they
+  stay readable.
 
 ![Settings > General opens Luma Themes](guide/img/settings-luma-themes.jpg)
 
@@ -465,6 +487,12 @@ your Luma friends, and offline friends.
 
 - **Steam and RetroAchievements** need your own keys: Settings > General > Friends. Their pages and chat open in Luma
   Core's own browser.
+- **Steam Chat and Discord** open as the real apps when they're installed: a friend's menu has one *Open Steam Chat*
+  (or *Open Discord*) item, the app opens on the top screen, and Luma Core's dock on the bottom screen has *Back to
+  Luma*, *… on top* and the latest messages. Without the app, the web chat opens in Luma Core's browser instead.
+
+![Steam Chat on the top screen, Luma Core's dock below (blurred)](guide/img/steam-chat-on-top.jpg)
+
 - **Discord's row:** with the Discord app installed, A opens it on the top screen and Luma Core's dock on the bottom
   screen (*Back to Luma*, *Discord on top*, and your latest messages); without it, Discord's web app opens in Luma
   Core's browser. You sign in to Discord yourself. X: Discord's web app, Messages, Discord notifications, *Hide Discord
@@ -511,7 +539,8 @@ App info > ⋮ > *Allow restricted settings*, then try again). Luma Core reads o
 sender, a short preview, the time and a small picture for the last 20 conversations on the device, and never posts,
 answers or dismisses anything. *Forget them* deletes them all.
 
-**Tips:** the same switches are in Settings > General > Notifications. Turning a kind off only hides it.
+**Tips:** swipe an item to the right to clear it. The same switches are in Settings > General > Notifications. Turning
+a kind off only hides it.
 
 ## Achievements and RetroAchievements
 
@@ -524,7 +553,7 @@ page through it), **Y** refreshes, **X** opens Settings. The list opens offline 
 - **Luma Core's own:** 43 achievements (450 points: Bronze, Silver, Gold and Platinum) for playing, your library, My
   Home, themes and more. They stay on the device, are never sent anywhere, and survive a reinstall. Pop-ups wait for a
   menu, never during a game.
-- **3DS games:** Luma Core's own sets, starting with Super Mario 3D Land (USA): a "You have X of N" pop-up at start,
+- **3DS games:** Luma Core's own sets for Super Mario 3D Land, New Super Mario Bros. 2 and Mario Kart 7: a "You have X of N" pop-up at start,
   then unlock pop-ups during the game. Loading a save state can't unlock anything.
 - **RetroAchievements** (DS, Game Boy, Game Boy Color, Game Boy Advance): Settings > General > RetroAchievements >
   *Sign in* with your own account (only a token is kept). **Hardcore mode** is on by default: loading states (Quick
@@ -604,7 +633,17 @@ General tab each group opens with A; the bottom screen explains the highlighted 
 - **Storage:** all-files access. **Android:** Android settings, square app icons, and *Home app*.
 
 **GB, DS and 3DS:** the defaults for every game of that system: video and screen, speed, buttons, textures, audio and
-system options. The 3DS tab starts with the system files.
+system options. The 3DS tab starts with the system files. The DS tab has *Import from melonDS* and the 3DS tab *Import
+from Azahar* (below).
+
+### Importing from Azahar and melonDS
+
+- **Import from melonDS** (Settings > DS) copies your DS saves, from beside your games or melonDS's own folder.
+- **Import from Azahar** (Settings > 3DS) copies texture packs, mods, cheats, saves and a few settings. It lists what it
+  found, one row each, with *Import everything*, and shows what it can't use under *Not brought over*, with the reason.
+
+Every file is checked after it's copied, and the other app's copies stay. Removing an original afterwards is optional
+and asked for each item. The setup offers both in one step.
 
 **About:** the version, what's new, credits for every project built in, privacy and the note on AI use.
 

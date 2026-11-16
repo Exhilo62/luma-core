@@ -629,7 +629,7 @@ window.LUMA = {
         { h: "Devices", p: "Written for the AYN Thor. It also runs on other dual-screen handhelds such as the Retroid Pocket Duo, and on phones, where both screens share one display." },
         { h: "Privacy", p: "Luma Core has no servers of its own: no analytics, ads, tracking or accounts. Everything stays on the device, and it goes online only for features you use." }
       ],
-      guide: [["First-time setup", "first-time-setup"], ["Home and the Home bar", "home-and-the-home-bar"], ["My Home", "my-home"], ["Playing games", "playing-games"], ["Quick Resume", "quick-resume"], ["Forged games", "forged-games"], ["Companions", "companions"], ["Settings", "settings"]],
+      guide: [["First-time setup", "first-time-setup"], ["Home and the Home bar", "home-and-the-home-bar"], ["My Home", "my-home"], ["Playing games", "playing-games"], ["Quick Resume", "quick-resume"], ["Importing from Azahar and melonDS", "importing-from-azahar-and-melonds"], ["Forged games", "forged-games"], ["Companions", "companions"], ["Settings", "settings"]],
       colors: ["#8f7bff", "#2ad4c4"],
       images: {
         icon: "img/logo-icon.png", art: "img/art/vista-moon.jpg", artPos: "center 35%", logo: "img/logo-banner.png",
@@ -782,7 +782,7 @@ window.LUMA = {
           "Every change is in History, and Put back undoes it."
         ] }
       ],
-      guide: [["Luma Dex", "luma-dex"], ["Luma Saves", "luma-saves"], ["Luma Shop", "luma-shop"]],
+      guide: [["Luma Dex", "luma-dex"], ["Luma Park", "luma-park"], ["Luma Saves", "luma-saves"], ["Luma Shop", "luma-shop"]],
       colors: ["#e8584f", "#7a2330"],
       images: { icon: "img/tile-dex.webp", art: "img/art/vista-rainbow.jpg", artPos: "center 35%", feature: "img/tile-dex.webp", after: "guide/img/luma-dex.jpg", before: "", aspect: "1280 / 435", gallery: ["guide/img/luma-dex-editor.jpg", "img/dex-park.jpg", "img/dex-park-caught.jpg"] },
       links: { download: "", source: "" }

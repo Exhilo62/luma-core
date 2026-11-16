@@ -418,6 +418,9 @@ window.LUMA = {
         "A 4x texture pack for Pokémon Ultra Moon. It holds the same images as the Ultra Sun pack, under Ultra Moon's own title ID, so each game has a pack of its own. The player character's own textures are not covered, because the game builds them while it runs.",
       features: ["34,097 textures upscaled 4x, plus 2,524 mip levels", "Pokémon models, trainers, maps, battle effects, menus and the games' own font sheets", "No HD system-font sheets: these games draw text from their own fonts", "For Azahar / Citra-based emulators"],
       stats: [["Files", "36,622"], ["Size", "9.40 GB"], ["Upscale", "4x"]],
+      sections: [
+        { h: "Tested on the AYN Thor", p: "On November 15, 2026 the pack was downloaded and installed from the Luma Shop on an AYN Thor. The download resumed after a pause, the file check passed, all 36,622 files installed, and the game starts with the HD pack." }
+      ],
       pack: { file: "ultramoon-00040000001B5100-v1.zip", size: "9.40 GB", system: "3DS", code: "00040000001B5100", sha256: "2c0a37cf02fd73eaddbb7ac7d8ffcb6ceb1c9d9168b653296762dc786b8f441a" },
       colors: ["#6a5cff", "#1d1650"],
       images: { icon: "img/icon-ultramoon.png", art: "img/art/usum-art.jpg", artPos: "40% 30%", after: "img/ultramoon-logo-after.jpg", before: "img/ultramoon-logo-before.jpg", aspect: "1620 / 880", gallery: ["img/art/usum-art.jpg", "img/usum-after.jpg"] },

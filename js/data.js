@@ -497,13 +497,13 @@ window.LUMA = {
       status: "complete",
       version: "v1",
       progress: 100,
-      note: "The HD pack installs from the Luma Shop inside Luma Core. The install test on the Thor itself is still to come.",
+      note: "The HD pack installs from the Luma Shop inside Luma Core.",
       description:
         "Pokémon SoulSilver, tuned for the AYN Thor the same way as HeartGold: an HD texture pack, and widescreen that fills the screen in both the 3D world and the 2D screens. The pack reuses HeartGold's upscaled images wherever the two games share a texture, and adds SoulSilver's own 1,868 images, upscaled the same way.",
       features: ["HD texture pack with 45,754 files", "HeartGold's images where they match, plus SoulSilver's own 1,868", "Widescreen in the 3D world and on 2D screens", "Tuned for the AYN Thor's two screens"],
       stats: [["Pack files", "45,754"], ["Pack size", "81 MB"], ["Widescreen", "3D and 2D"]],
       sections: [
-        { h: "Checked so far", p: "The title screen, the opening, the overworld, battles and menus have been checked with the pack and widescreen on. The install test on the AYN Thor itself has not been run yet." }
+        { h: "Tested on the AYN Thor", p: "On November 15, 2026 the pack was downloaded and installed from the Luma Shop on an AYN Thor. The opening, New Bark Town in widescreen with the HD pack, a battle and the party screen all looked right, and the game's text stays as pixel art." }
       ],
       pack: { file: "soulsilver-IPGE-v1.zip", size: "81 MB", system: "DS", code: "IPGE", sha256: "a345fdf38b888eff7c0854a976fedc77c5ecb6d04740b842d3c2b9d4141fb0b2" },
       colors: ["#aab4c8", "#48506a"],

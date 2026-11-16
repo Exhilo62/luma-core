@@ -59,7 +59,8 @@
   } else {
     download = `<span class="btn" aria-disabled="true">Download coming soon</span>`;
   }
-  const source = p.links.source ? `<a class="btn" href="${p.links.source}">Source / details</a>` : "";
+  const source = (p.links.source ? `<a class="btn" href="${p.links.source}">Source / details</a>` : "") +
+    (p.links.discord ? `<a class="btn discord" href="${p.links.discord}" target="_blank" rel="noopener">Discord <span aria-hidden="true">↗</span></a>` : "");
 
   const [aw, ah] = (p.images.aspect || "5 / 3").split("/").map(Number);
   const hasSlider = p.images.before || (isPack && !p.images.after);
@@ -83,6 +84,12 @@
     : "";
 
   /* Videos show as a picture with a play button; the player loads only when clicked. */
+  /* Our own video files play on the page itself, and load only when play is pressed. */
+  const clips = p.clips && p.clips.length
+    ? `<div class="p-sections"><section><h2>New video</h2>` + p.clips.map(([src, poster, title, text]) =>
+        `<figure class="clip"><video controls playsinline preload="none" poster="${poster}" width="1280" height="720"><source src="${src}" type="video/mp4"><a href="${src}">Download the video</a></video>` +
+        `<figcaption><b>${UI.esc(title)}</b><span>${UI.esc(text)}</span></figcaption></figure>`).join("") + `</section></div>`
+    : "";
   const videos = p.videos && p.videos.length
     ? `<div class="p-sections"><section><h2>Watch</h2><div class="videos">` +
       p.videos.map(([vid, title]) =>
@@ -172,7 +179,7 @@
     (p.notice ? `<p class="notice"><b>${UI.esc(UI.statusText(p).split(" · ")[0])}</b>${UI.esc(p.notice)}</p>` : "") +
     `<p class="lead">${UI.esc(p.description)}</p>` +
     `<ul class="features">${p.features.map((f) => `<li>${UI.esc(f)}</li>`).join("")}</ul>` +
-    milestones + videos + sections + guide +
+    milestones + clips + videos + sections + guide +
     `</div><aside class="side">` +
     (p.progress == null
       ? `<div><p class="eyebrow">Status</p><p class="pct" style="font-size:1.5rem">${UI.statusHTML(p)}</p></div>`

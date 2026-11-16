@@ -1872,3 +1872,11 @@ html.gate-on .gate { position: fixed; inset: 0; z-index: 1000; display: grid; pl
 .support-btns { display: grid; gap: 10px; }
 .support-btns .btn { justify-content: center; text-align: center; }
 @media (max-width: 860px) { .support-btns { grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); } }
+
+/* a video of our own on a project page, and the Discord button */
+.clip { margin: 12px 0 0; padding: 10px; border-radius: 22px; border: 1px solid var(--line); background: linear-gradient(135deg, color-mix(in srgb, var(--accent) 16%, var(--surface)), color-mix(in srgb, var(--accent-2) 12%, var(--surface))); }
+.clip video { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; border-radius: 14px; background: #0a0c13; }
+.clip figcaption { display: grid; gap: 2px; padding: 12px 6px 4px; }
+.clip figcaption span { color: var(--muted); font-size: 0.9rem; }
+.btn.discord { border-color: color-mix(in srgb, #5865f2 60%, var(--line)); }
+.btn.discord:hover { background: #5865f2; color: #fff; }

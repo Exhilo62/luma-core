@@ -112,6 +112,7 @@ window.LUMA = {
     /* "Latest updates" on the home page, newest first: [date, title, text, link]
        An entry whose link is a project with a "github" repo follows that repo's latest release. */
     news: [
+      ["Nov 15, 2026", "DQXI English Patch v0.1.44", "The patch now runs through all three acts, with more official names, text fixes and a new two-minute video. Still a beta.", "project.html?id=dqxi-english-patch"],
       ["Nov 15, 2026", "Pokémon Ultra Sun and Ultra Moon packs", "Two new 4K texture packs, one for each game, bring the count to nine. Like the others, their downloads open with the beta.", "project.html?id=pokemon-ultra-sun"],
       ["Nov 15, 2026", "Luma Dex grows: more editing, the Bank and Luma Park", "Editing and Bank moves now reach from Red and Blue to X, Y, Omega Ruby and Alpha Sapphire, and Luma Park moves Pokémon on a generation.", "project.html?id=luma-dex"],
       ["Nov 15, 2026", "Import from Azahar and melonDS", "Bring your texture packs, mods and saves over from another emulator, from Settings or during setup.", "project.html?id=luma-core"],
@@ -864,7 +865,7 @@ window.LUMA = {
       platform: "Nintendo 3DS · translation patch",
       tagline: ["The 3DS version, in English.", "Beta: translation in progress."],
       status: "beta",
-      version: "v0.1.43",
+      version: "v0.1.44",
       progress: null,
       note: "Beta: the English translation is still being worked on. Patchers for Windows, Linux, Steam Deck, macOS and Android; also built into Luma Core.",
       notice: "This is a beta. We are still working on the English translation, so some text is unfinished and will change between versions.",
@@ -877,12 +878,27 @@ window.LUMA = {
         "Optional HD texture pack, downloadable from the Luma Shop",
         "Patchers for Windows, Linux, Steam Deck and macOS"
       ],
-      stats: [["Patch", "v0.1.43"], ["HD pack files", "15,460"], ["HD pack size", "6.16 GB"]],
+      stats: [["Patch", "v0.1.44"], ["HD pack files", "15,460"], ["HD pack size", "6.16 GB"]],
+      /* Our own video files, played on the page: [file, poster picture, title, line underneath] */
+      clips: [
+        ["video/dqxi-english-patch-v0.1.44.mp4", "video/dqxi-english-patch-v0.1.44-poster.jpg", "The journey so far: v0.1.44", "Two minutes through all three acts in English. The music is an original piece made for the video."]
+      ],
       videos: [
         ["JagQnseBXvo", "The English patch in action"],
         ["I9z172vRZDI", "Patching on an Android device"]
       ],
       sections: [
+        { h: "New in v0.1.44 (November 15, 2026)", list: [
+          "The English patch now runs through all three acts of the game.",
+          "Official names from Sola's testing: Torban, Tenda, Stickle, Tickle, Galapagod, Rom Baro, the Altar of an Elusive Age, the Hall of Remembrance and more.",
+          "Fixed the garbled header after Sylvando's Ladies First.",
+          "Fixed the altar statue and monument text printing over its box.",
+          "Stats screen: the equipment list no longer wraps the +3 of long item names.",
+          "Forge Record lists use a smaller font, so long item names are not cut off.",
+          "Includes everything from v0.1.43. Make a new game, or patch again with this version.",
+          "The HD texture pack still works, and the title-screen file for v0.1.44 is included with the release."
+        ] },
+        { h: "Fan translation", p: "This is an unofficial fan translation. It is not affiliated with Square Enix, and you need your own copy of the game." },
         { h: "Built into Luma Core", p: "Luma Core has the patcher built in. Open the Luma Shop, go to Extras and choose Dragon Quest XI English Patch. It shows Needs your ROM until you point it at your own copy, then Set up builds the English game. The result is a 3DS game in your library and counts as a Forged game, with the gold Forged badge." },
         { h: "Android patcher app", list: [
           "Install the patcher app, choose your decrypted Japanese `.3ds` or `.cia`, and press Patch.",
@@ -905,7 +921,7 @@ window.LUMA = {
       github: "Exhilo62/DQXI-3DS-English-Patch", // the page reads the latest release from here
       colors: ["#4a8fe8", "#243a8f"],
       images: { icon: "img/icon-dqxi.png", art: "img/art/vista-moon.jpg", artPos: "center 35%", artFilter: "hue-rotate(-45deg) saturate(1.1)", feature: "img/art/dqxi-logo.png", featureWide: true, after: "img/art/dqxi-hero.jpg", before: "", aspect: "16 / 9", gallery: [] },
-      links: { download: "https://github.com/Exhilo62/DQXI-3DS-English-Patch/releases", source: "https://github.com/Exhilo62/DQXI-3DS-English-Patch" }
+      links: { download: "https://github.com/Exhilo62/DQXI-3DS-English-Patch/releases", source: "https://github.com/Exhilo62/DQXI-3DS-English-Patch", discord: "https://discord.gg/w2DSajEUx" }
     }
   ]
 };

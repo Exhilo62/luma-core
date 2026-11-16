@@ -112,6 +112,7 @@ window.LUMA = {
     /* "Latest updates" on the home page, newest first: [date, title, text, link]
        An entry whose link is a project with a "github" repo follows that repo's latest release. */
     news: [
+      ["Nov 15, 2026", "Pokémon SoulSilver gets its own HD pack", "SoulSilver now has the full treatment: an HD texture pack, widescreen and tuning for the Thor, like HeartGold.", "project.html?id=pokemon-soulsilver"],
       ["Nov 15, 2026", "DQXI English Patch v0.1.44", "The patch now runs through all three acts, with more official names, text fixes and a new two-minute video. Still a beta.", "project.html?id=dqxi-english-patch"],
       ["Nov 15, 2026", "Pokémon Ultra Sun and Ultra Moon packs", "Two new 4K texture packs, one for each game, bring the count to nine. Like the others, their downloads open with the beta.", "project.html?id=pokemon-ultra-sun"],
       ["Nov 15, 2026", "Luma Dex grows: more editing, the Bank and Luma Park", "Editing and Bank moves now reach from Red and Blue to X, Y, Omega Ruby and Alpha Sapphire, and Luma Park moves Pokémon on a generation.", "project.html?id=luma-dex"],
@@ -447,14 +448,19 @@ window.LUMA = {
       category: "ds",
       title: "Pokémon SoulSilver",
       platform: "Nintendo DS · optimized for Luma Core",
-      tagline: ["The same treatment", "as HeartGold."],
-      status: "dev",
-      version: "",
-      progress: null,
-      note: "Not yet checked on its own. There is no SoulSilver texture pack.",
+      tagline: ["Johto in widescreen,", "with HD textures of its own."],
+      status: "complete",
+      version: "v1",
+      progress: 100,
+      note: "The HD pack installs from the Luma Shop inside Luma Core. The install test on the Thor itself is still to come.",
       description:
-        "Pokémon SoulSilver shares HeartGold's engine, so it gets the same widescreen and settings treatment in Luma Core. It has no HD texture pack of its own, and it has not been checked separately from HeartGold yet.",
-      features: ["Widescreen and tuned settings, as in HeartGold", "No texture pack yet"],
+        "Pokémon SoulSilver, tuned for the AYN Thor the same way as HeartGold: an HD texture pack, and widescreen that fills the screen in both the 3D world and the 2D screens. The pack reuses HeartGold's upscaled images wherever the two games share a texture, and adds SoulSilver's own 1,868 images, upscaled the same way.",
+      features: ["HD texture pack with 45,754 files", "HeartGold's images where they match, plus SoulSilver's own 1,868", "Widescreen in the 3D world and on 2D screens", "Tuned for the AYN Thor's two screens"],
+      stats: [["Pack files", "45,754"], ["Pack size", "81 MB"], ["Widescreen", "3D and 2D"]],
+      sections: [
+        { h: "Checked so far", p: "The title screen, the opening, the overworld, battles and menus have been checked with the pack and widescreen on. The install test on the AYN Thor itself has not been run yet." }
+      ],
+      pack: { file: "soulsilver-IPGE-v1.zip", size: "81 MB", system: "DS", code: "IPGE", sha256: "a345fdf38b888eff7c0854a976fedc77c5ecb6d04740b842d3c2b9d4141fb0b2" },
       colors: ["#aab4c8", "#48506a"],
       images: { icon: "", art: "img/art/vista-purple.jpg", artPos: "center 35%", after: "", before: "", aspect: "16 / 9", gallery: [] },
       links: { download: "", source: "" }
@@ -551,7 +557,7 @@ window.LUMA = {
       features: [
         "Apps: Luma Themes, Luma Saves, Luma Dex, Luma Friends, Luma Achievements and Luma Pass",
         "Extras: Golden Sun - Dual Screen Companion and the Dragon Quest XI English Patch (beta)",
-        "Texture packs for nine 3DS games, Pokémon HeartGold and Mario Kart DS",
+        "Texture packs for nine 3DS games, Pokémon HeartGold, Pokémon SoulSilver and Mario Kart DS",
         "Downloads that carry on in the background"
       ],
       sections: [

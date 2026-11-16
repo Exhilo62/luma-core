@@ -479,14 +479,17 @@ window.LUMA = {
       platform: "Nintendo DS · optimized for Luma Core",
       tagline: ["Johto in widescreen,", "with HD textures."],
       status: "complete",
-      version: "v1",
+      version: "v2",
       progress: 100,
       note: "The HD pack installs from the Luma Shop inside Luma Core.",
       description:
         "Pokémon HeartGold, tuned for the AYN Thor. Luma Core adds an HD texture pack and widescreen that fills the screen in both the 3D world and the 2D screens, instead of the DS's 4:3 picture with bars at the sides.",
-      features: ["HD texture pack with 14,612 files", "Widescreen in the 3D world and on 2D screens", "Tuned for the AYN Thor's two screens"],
-      stats: [["Pack files", "14,612"], ["Pack size", "25 MB"], ["Widescreen", "3D and 2D"]],
-      pack: { file: "heartgold-IPKE-v1.zip", size: "25 MB", system: "DS", code: "IPKE", sha256: "e9fc63e5d1368573af0f082861a47d8710562892637a440640dc7a4ebe6af68b" },
+      features: ["HD texture pack with 45,743 files", "One set of images shared with SoulSilver", "Widescreen in the 3D world and on 2D screens", "Tuned for the AYN Thor's two screens"],
+      stats: [["Pack files", "45,743"], ["Pack size", "81 MB"], ["Widescreen", "3D and 2D"]],
+      sections: [
+        { h: "Version 2: one pack for both games", p: "HeartGold and SoulSilver now share one merged HD pack, with every image from both games' packs. HeartGold's pack grew from 14,612 files to 45,743. If you have version 1 installed, the Luma Shop offers an Update." }
+      ],
+      pack: { file: "heartgold-IPKE-v2.zip", size: "81 MB", system: "DS", code: "IPKE", sha256: "ac07f8c0a864e5fad65dd3b76c5e78c328127ab7d32dbacf7d350fc2cff50050" },
       colors: ["#e0a832", "#7a4a12"],
       images: { icon: "img/icon-heartgold.png", art: "img/ds-hg-wide.jpg", artPos: "center", after: "img/ds-hg-wide.jpg", before: "img/ds-hg-43.jpg", labels: ["4:3", "Widescreen"], aspect: "16 / 9", gallery: ["img/ds-hg-battle.jpg"] },
       links: { download: "", source: "" }
@@ -498,17 +501,18 @@ window.LUMA = {
       platform: "Nintendo DS · optimized for Luma Core",
       tagline: ["Johto in widescreen,", "with HD textures of its own."],
       status: "complete",
-      version: "v1",
+      version: "v2",
       progress: 100,
       note: "The HD pack installs from the Luma Shop inside Luma Core.",
       description:
-        "Pokémon SoulSilver, tuned for the AYN Thor the same way as HeartGold: an HD texture pack, and widescreen that fills the screen in both the 3D world and the 2D screens. The pack reuses HeartGold's upscaled images wherever the two games share a texture, and adds SoulSilver's own 1,868 images, upscaled the same way.",
-      features: ["HD texture pack with 45,754 files", "HeartGold's images where they match, plus SoulSilver's own 1,868", "Widescreen in the 3D world and on 2D screens", "Tuned for the AYN Thor's two screens"],
-      stats: [["Pack files", "45,754"], ["Pack size", "81 MB"], ["Widescreen", "3D and 2D"]],
+        "Pokémon SoulSilver, tuned for the AYN Thor the same way as HeartGold: an HD texture pack, and widescreen that fills the screen in both the 3D world and the 2D screens. HeartGold and SoulSilver share one merged pack: every image from both games' packs, including SoulSilver's own 1,868.",
+      features: ["HD texture pack with 45,743 files", "One set of images shared with HeartGold, including SoulSilver's own 1,868", "Widescreen in the 3D world and on 2D screens", "Tuned for the AYN Thor's two screens"],
+      stats: [["Pack files", "45,743"], ["Pack size", "81 MB"], ["Widescreen", "3D and 2D"]],
       sections: [
+        { h: "Version 2: one pack for both games", p: "Version 2 is the same set of images as HeartGold's pack. Eleven leftover slivers of text were dropped from version 1, taking it from 45,754 files to 45,743. If you have version 1 installed, the Luma Shop offers an Update. The test below was run on version 1; version 2 is being checked on the Thor next." },
         { h: "Tested on the AYN Thor", p: "On November 15, 2026 the pack was downloaded and installed from the Luma Shop on an AYN Thor. The opening, New Bark Town in widescreen with the HD pack, a battle and the party screen all looked right, and the game's text stays as pixel art." }
       ],
-      pack: { file: "soulsilver-IPGE-v1.zip", size: "81 MB", system: "DS", code: "IPGE", sha256: "a345fdf38b888eff7c0854a976fedc77c5ecb6d04740b842d3c2b9d4141fb0b2" },
+      pack: { file: "soulsilver-IPGE-v2.zip", size: "81 MB", system: "DS", code: "IPGE", sha256: "4a8203ff293f0162aaaeab0b19ec13e93caaf9044343922a9be5d70d23f69c41" },
       colors: ["#aab4c8", "#48506a"],
       images: { icon: "img/icon-soulsilver.png", art: "img/ds-ss-wide.jpg", artPos: "center", after: "img/ds-ss-wide.jpg", before: "img/ds-ss-43.jpg", labels: ["4:3", "Widescreen"], aspect: "16 / 9", gallery: [] },
       links: { download: "", source: "" }

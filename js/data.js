@@ -399,7 +399,7 @@ window.LUMA = {
       stats: [["Files", "36,622"], ["Size", "9.40 GB"], ["Upscale", "4x"]],
       pack: { file: "ultrasun-00040000001B5000-v1.zip", size: "9.40 GB", system: "3DS", code: "00040000001B5000", sha256: "d863dcfcf60fa79bb0b7dd8dc48394b0511bc8fb0d48ee51c5d1ee92c0f46f86" },
       colors: ["#f08a2c", "#7a2a12"],
-      images: { icon: "img/icon-ultrasun.png", art: "img/art/usum-art.jpg", artPos: "40% 30%", after: "img/usum-after.jpg", before: "img/usum-before.jpg", aspect: "1 / 1", gallery: ["img/art/usum-art.jpg"] },
+      images: { icon: "img/icon-ultrasun.png", art: "img/art/usum-art.jpg", artPos: "40% 30%", after: "img/ultrasun-logo-after.jpg", before: "img/ultrasun-logo-before.jpg", aspect: "1586 / 880", gallery: ["img/art/usum-art.jpg", "img/usum-after.jpg"] },
       links: { download: "", source: "" }
     },
     {
@@ -418,7 +418,7 @@ window.LUMA = {
       stats: [["Files", "36,622"], ["Size", "9.40 GB"], ["Upscale", "4x"]],
       pack: { file: "ultramoon-00040000001B5100-v1.zip", size: "9.40 GB", system: "3DS", code: "00040000001B5100", sha256: "2c0a37cf02fd73eaddbb7ac7d8ffcb6ceb1c9d9168b653296762dc786b8f441a" },
       colors: ["#6a5cff", "#1d1650"],
-      images: { icon: "img/icon-ultramoon.png", art: "img/art/usum-art.jpg", artPos: "40% 30%", after: "img/usum-after.jpg", before: "img/usum-before.jpg", aspect: "1 / 1", gallery: ["img/art/usum-art.jpg"] },
+      images: { icon: "img/icon-ultramoon.png", art: "img/art/usum-art.jpg", artPos: "40% 30%", after: "img/ultramoon-logo-after.jpg", before: "img/ultramoon-logo-before.jpg", aspect: "1602 / 826", gallery: ["img/art/usum-art.jpg", "img/usum-after.jpg"] },
       links: { download: "", source: "" }
     },
 

@@ -112,7 +112,8 @@ window.LUMA = {
     /* "Latest updates" on the home page, newest first: [date, title, text, link]
        An entry whose link is a project with a "github" repo follows that repo's latest release. */
     news: [
-      ["Nov 17, 2026", "Mario Kart DS v3: every course in HD", "The Mario Kart DS pack now covers all 32 courses, the 7 battle stages and the mission stages. Rainbow Road, Bowser Castle, Tick-Tock Clock and the rest are HD for the first time. Download it below or update it in the Luma Shop.", "project.html?id=mario-kart-ds"],
+      ["Nov 17, 2026", "HeartGold and SoulSilver v5: all of Johto and Kanto", "The HeartGold and SoulSilver packs now cover the rest of Johto and all of Kanto, plus every overworld character and following Pokémon in normal and shiny colors. Download them below or update them in the Luma Shop.", "project.html?id=pokemon-heartgold"],
+      ["Nov 17, 2026", "Mario Kart DS: every course in HD", "The Mario Kart DS pack now covers all 32 courses, the 7 battle stages and the mission stages. Rainbow Road, Bowser Castle, Tick-Tock Clock and the rest are HD for the first time. Download it below or update it in the Luma Shop.", "project.html?id=mario-kart-ds"],
       ["Nov 16, 2026", "Texture pack updates", "Every Pokémon pack is rebuilt with cleaner grass, edges and menu icons, and Dragon Quest XI, Ever Oasis, Final Fantasy Explorers, 7th Dragon III, Street Fighter IV, HeartGold, SoulSilver and Mario Kart DS get fixes too. Installed packs offer an Update in the Luma Shop.", "#packs"],
       ["Nov 16, 2026", "DQXI English Patch v0.1.45", "More official names and a round of layout fixes, after a tester played the whole game to 99.9%. Still a beta.", "project.html?id=dqxi-english-patch"],
       ["Nov 15, 2026", "Pokémon X and Y packs", "Two more 4K texture packs, one for each game, bring the count to thirteen. They are new and tested through the intro so far.", "project.html?id=pokemon-x"],
@@ -547,19 +548,20 @@ window.LUMA = {
       platform: "Nintendo DS · optimized for Luma Core",
       tagline: ["Johto in widescreen,", "with HD textures."],
       status: "complete",
-      version: "v3",
+      version: "v5",
       progress: 100,
       note: "The HD pack installs from the Luma Shop inside Luma Core.",
       description:
         "Pokémon HeartGold, tuned for the AYN Thor. Luma Core adds an HD texture pack and widescreen that fills the screen in both the 3D world and the 2D screens, instead of the DS's 4:3 picture with bars at the sides.",
-      features: ["HD texture pack with 45,741 files", "One set of images shared with SoulSilver", "Widescreen in the 3D world and on 2D screens", "Tuned for the AYN Thor's two screens"],
-      stats: [["Pack files", "45,741"], ["Pack size", "79 MB"], ["Widescreen", "3D and 2D"]],
+      features: ["HD texture pack with 60,110 files", "One set of images shared with SoulSilver", "Widescreen in the 3D world and on 2D screens", "Tuned for the AYN Thor's two screens"],
+      stats: [["Pack files", "60,110"], ["Pack size", "169 MB"], ["Widescreen", "3D and 2D"]],
       sections: [
+        { h: "Version 5 (November 17, 2026)", p: "The rest of Johto and all of Kanto: 3,071 more map, building and object textures, read straight from the game. Every overworld character and following Pokémon is in too, 11,402 sprites in normal and shiny colors, redrawn with a pixel-art scaler so they keep their sprite style. Version 3 images are unchanged. Checked in the desktop build; the AYN Thor test is still to come." },
         { h: "Version 3 (November 16, 2026)", p: "365 small sprites redrawn pixel-sharp, the see-through effects (like the opening's flames) soft again, and the party screen's \"HP\" label back to the original pixels. Tested on the AYN Thor." },
         { h: "Version 2: one pack for both games", p: "HeartGold and SoulSilver now share one merged HD pack, with every image from both games' packs. HeartGold's pack grew from 14,612 files to 45,743. If you have version 1 installed, the Luma Shop offers an Update." },
         { h: "Tested on the AYN Thor", p: "On November 15, 2026 the Luma Shop offered the update to version 2 over an installed version 1 on an AYN Thor, and it installed all 45,743 files. The game starts to its title screen with the pack. Updating keeps the old pack working until the new one is in place. The last step, clearing out the old files, took several minutes on the Thor (about 30 minutes for SoulSilver's 45,000 files), and the game stays playable while it runs." }
       ],
-      pack: { file: "heartgold-IPKE-v3.zip", size: "79 MB", system: "DS", code: "IPKE", sha256: "d3bfe940928507e8d6672fc14becbe1683eb10d4dbd43e43aaeffe0cbedb069d" },
+      pack: { file: "heartgold-IPKE-v5.zip", size: "169 MB", system: "DS", code: "IPKE", sha256: "8d7638912ff62ab7e6518a4a8483d811239f260a61266bc2af4562bab1404b99" },
       colors: ["#e0a832", "#7a4a12"],
       images: { icon: "img/icon-heartgold.png", art: "img/ds-hg-wide.jpg", artPos: "center", after: "img/ds-hg-wide.jpg", before: "img/ds-hg-43.jpg", labels: ["4:3", "Widescreen"], aspect: "16 / 9", gallery: ["img/ds-hg-battle.jpg"] },
       links: { download: "", source: "" }
@@ -571,19 +573,20 @@ window.LUMA = {
       platform: "Nintendo DS · optimized for Luma Core",
       tagline: ["Johto in widescreen,", "with HD textures."],
       status: "complete",
-      version: "v3",
+      version: "v5",
       progress: 100,
       note: "The HD pack installs from the Luma Shop inside Luma Core.",
       description:
         "Pokémon SoulSilver, tuned for the AYN Thor the same way as HeartGold: an HD texture pack, and widescreen that fills the screen in both the 3D world and the 2D screens. HeartGold and SoulSilver share one merged pack: every image from both games' packs, including SoulSilver's own 1,868.",
-      features: ["HD texture pack with 45,741 files", "One set of images shared with HeartGold, including SoulSilver's own 1,868", "Widescreen in the 3D world and on 2D screens", "Tuned for the AYN Thor's two screens"],
-      stats: [["Pack files", "45,741"], ["Pack size", "79 MB"], ["Widescreen", "3D and 2D"]],
+      features: ["HD texture pack with 60,110 files", "One set of images shared with HeartGold, including SoulSilver's own 1,868", "Widescreen in the 3D world and on 2D screens", "Tuned for the AYN Thor's two screens"],
+      stats: [["Pack files", "60,110"], ["Pack size", "169 MB"], ["Widescreen", "3D and 2D"]],
       sections: [
+        { h: "Version 5 (November 17, 2026)", p: "The rest of Johto and all of Kanto: 3,071 more map, building and object textures, read straight from the game. Every overworld character and following Pokémon is in too, 11,402 sprites in normal and shiny colors, redrawn with a pixel-art scaler so they keep their sprite style. Version 3 images are unchanged. Checked in the desktop build; the AYN Thor test is still to come." },
         { h: "Version 3 (November 16, 2026)", p: "The same fixes as HeartGold's version 3, since the two games share one pack: 365 small sprites redrawn pixel-sharp, the see-through effects soft again, and the party screen's \"HP\" label back to the original pixels." },
         { h: "Version 2: one pack for both games", p: "Version 2 is the same set of images as HeartGold's pack. Eleven leftover slivers of text were dropped from version 1, taking it from 45,754 files to 45,743. If you have version 1 installed, the Luma Shop offers an Update." },
         { h: "Tested on the AYN Thor", p: "On November 15, 2026 version 1 was downloaded and installed from the Luma Shop on an AYN Thor, and the opening, New Bark Town in widescreen, a battle and the party screen all looked right, with the game's text staying as pixel art. Later the same day the Shop offered the update to version 2, which installed all 45,743 files; New Bark Town in widescreen with the HD pack and a battle looked right. Updating keeps the old pack working until the new one is in place. The last step, clearing out the old files, took several minutes on the Thor (about 30 minutes for SoulSilver's 45,000 files), and the game stays playable while it runs." }
       ],
-      pack: { file: "soulsilver-IPGE-v3.zip", size: "79 MB", system: "DS", code: "IPGE", sha256: "0f50a2dedec8ff608bce0444d428c6c6052e7a12e1abc7cb68affda0c836f57c" },
+      pack: { file: "soulsilver-IPGE-v5.zip", size: "169 MB", system: "DS", code: "IPGE", sha256: "3110c34d19f428239b1ae6c9014a04ca5abd62c499160047fd586575de47f2d0" },
       colors: ["#aab4c8", "#48506a"],
       images: { icon: "img/icon-soulsilver.png", art: "img/ds-ss-wide.jpg", artPos: "center", after: "img/ds-ss-wide.jpg", before: "img/ds-ss-43.jpg", labels: ["4:3", "Widescreen"], aspect: "16 / 9", gallery: [] },
       links: { download: "", source: "" }
@@ -595,18 +598,19 @@ window.LUMA = {
       platform: "Nintendo DS · optimized for Luma Core",
       tagline: ["A wider view", "of every track."],
       status: "complete",
-      version: "v3",
+      version: "v4",
       progress: 100,
       note: "The HD pack installs from the Luma Shop inside Luma Core.",
       description:
         "Mario Kart DS, tuned for the AYN Thor. Luma Core adds an HD texture pack and widescreen, so races fill the top screen instead of sitting in a 4:3 box.",
-      features: ["HD texture pack with 15,740 files, covering every course and battle stage", "Widescreen racing", "Tuned for the AYN Thor's two screens"],
-      stats: [["Pack files", "15,740"], ["Pack size", "181 MB"]],
+      features: ["HD texture pack with 15,737 files, covering every course and battle stage", "Widescreen racing", "Tuned for the AYN Thor's two screens"],
+      stats: [["Pack files", "15,737"], ["Pack size", "181 MB"]],
       sections: [
-        { h: "Version 3 (November 17, 2026)", p: "Every course in HD: all 32 Grand Prix courses, the 7 battle stages and the mission stages, with their textures read straight from the game and upscaled the same way as version 2. Rainbow Road, Bowser Castle, Tick-Tock Clock, Airship Fortress and the rest are in HD for the first time. Tested on the AYN Thor." },
+        { h: "Version 4 (November 17, 2026)", p: "Three tiny course textures go back to the original pixels, so their edges no longer smear. Checked in the desktop build." },
+        { h: "Version 3 (November 17, 2026)", p: "Every course in HD: all 32 Grand Prix courses, the 7 battle stages and the mission stages, with their textures read straight from the game and upscaled the same way as version 2. Rainbow Road, Bowser Castle, Tick-Tock Clock, Airship Fortress and the rest are in HD for the first time." },
         { h: "Version 2 (November 16, 2026)", p: "Eight more courses in HD (Mario Circuit, Delfino Square, Cheep Cheep Beach, Peach Gardens and four retro courses), plus Figure-8 Circuit's missing art. Small sprites and the course maps are redrawn pixel-sharp, so a flower bed keeps one style. Tested on the AYN Thor." }
       ],
-      pack: { file: "mariokartds-AMCE-v3.zip", size: "181 MB", system: "DS", code: "AMCE", sha256: "fa4a9c6140b246095d730e0d443551121d890df85b9bfb6f61ae9e4a1c1e522d" },
+      pack: { file: "mariokartds-AMCE-v4.zip", size: "181 MB", system: "DS", code: "AMCE", sha256: "d1995ad629684824f0c03c8b7383dd46329e5d9298d97f14e58e0d84c0fa2eb7" },
       colors: ["#e04a3a", "#1f4fa8"],
       images: { icon: "img/icon-mariokartds.png", art: "img/ds-mk-wide.jpg", artPos: "center 40%", after: "img/ds-mk-wide.jpg", before: "img/ds-mk-43.jpg", labels: ["4:3", "Widescreen"], aspect: "16 / 9", gallery: ["img/ds-mk-select.jpg"] },
       links: { download: "", source: "" }

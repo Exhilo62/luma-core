@@ -189,7 +189,7 @@ window.LUMA = {
           "Open the Luma Shop and go to Texture packs. You need your own copy of the game, or the shop shows Game not found.",
           "Downloads run in the background, so you can leave the shop while one carries on. Each download is checked before it installs.",
           "Keep about twice the pack's size free while it installs.",
-          "Packs install to `LumaCore/textures`, one folder per game. Uninstalling removes only the pack; your game and saves are not touched."
+          "Packs install to Luma Core's own app storage (`Android/data/com.prismds.android/files/textures`), one folder per game, and only one installs at a time. Unpacking waits while you play. Uninstalling removes only the pack; your game and saves are not touched. Uninstalling the Luma Core app removes its packs too."
         ]
       },
       {
@@ -691,7 +691,7 @@ window.LUMA = {
           "You need your own copy of the game, or the shop shows Game not found.",
           "Leave the shop and downloads carry on, with a notification you can pause from.",
           "Each download is checked before it installs, and needs about twice the pack's size free.",
-          "Replace with ours moves someone else's pack to `LumaCore/textures-backup` and never deletes it."
+          "Replace with ours moves someone else's pack to `textures-backup` in Luma Core's app storage and never deletes it."
         ] },
         { h: "Uninstalling", p: "Uninstalling asks first, and asks again before deleting anything you made. Every question starts on Cancel or keep, and your saves always stay." }
       ],

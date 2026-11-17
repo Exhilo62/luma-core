@@ -54,7 +54,7 @@ a step. In a pop-up list, Left / Right jump five items.
    (subfolders count; one folder can hold every system), the optional [3DS system files](#3ds-system-files),
    *Import from another emulator* (shown when Azahar or melonDS has a folder on the device: see
    [Importing](#importing-from-azahar-and-melonds)), and *Download game information* (about 3 MB, once).
-4. **Texture packs:** *Load HD texture packs*. Packs go in `LumaCore/textures`, one folder per game.
+4. **Texture packs:** *Load HD texture packs*. Packs come from the Luma Shop, or from a .zip through a game's *Texture pack* button.
 5. **Pick a look:** Home colors (Light or Dark) and the Home bar: *Reimagined* or *Your theme's colors*.
 6. **Choose what's on your Home:** which tabs are on the bar, and which of Luma Core's own apps start on My Home.
 
@@ -310,11 +310,17 @@ stay.
 downloads*, with Pause; Android 13 and later ask once for notification permission). *Stop* keeps what's downloaded, and
 *Install* then carries on from there. X > *Cancel* stops and deletes it; X > *Delete the partial download* clears a
 stopped one. Each download is checked before it installs, and needs about twice the pack's size free (The Alliance
-Alive: about 18 GB). Packs install to `LumaCore/textures/`.
+Alive: about 18 GB). One pack installs at a time; the rest wait their turn. Packs install to Luma Core's own app storage
+(`Android/data/com.prismds.android/files/textures`), and unpacking waits while you play a game.
+
+**Where packs are kept:** Luma Core's app storage keeps Android from re-indexing tens of thousands of pack files, which
+slowed games down. Two things to know: uninstalling the Luma Core app removes its packs too, and Android's Files app can't
+open that folder. To add a pack by hand, use the game's *Texture pack* button on Home (it installs from a .zip), or copy
+the folder there with a PC or adb.
 
 ![A pack downloading](guide/img/shop-download.jpg)
 
-**Tips:** *Replace with ours* moves someone else's pack to `LumaCore/textures-backup` and never deletes it.
+**Tips:** *Replace with ours* moves someone else's pack to `textures-backup` in Luma Core's app storage and never deletes it.
 Uninstalling a pack removes only our files; your game and saves aren't touched. A pack kept in the Azahar app's own
 folder shows *Not managed by Luma* and is never changed.
 

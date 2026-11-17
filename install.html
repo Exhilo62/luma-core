@@ -97,20 +97,21 @@
       </ol>
 
       <h2 id="luma-core">3DS packs: Luma Core by hand</h2>
-      <p>Luma Core keeps its packs in its own folder on your storage, and looks there first.</p>
+      <p>Luma Core keeps its packs in its own app storage, and looks there first. The easiest way to add a pack is from inside Luma Core.</p>
       <ol>
-        <li>Unzip the pack with a file manager. You get one folder named after the game's ID.</li>
-        <li>Move that folder into <code>LumaCore/textures</code>, so the path is <code>LumaCore/textures/&lt;game ID&gt;/</code>.</li>
+        <li>Download the pack's .zip to your device. You don't need to unzip it.</li>
+        <li>In Luma Core, highlight the game on Home and open its <em>Texture pack</em> button, then pick the .zip. Luma Core unpacks it into the right folder.</li>
         <li>Make sure HD texture packs are switched on: it is step 4 of the first-time setup, and you can run the setup again from <em>Settings &gt; General &gt; Library</em>.</li>
         <li>Start the game. To play without the pack, highlight the game, press X, choose <em>Forged</em> and set it to <em>Off</em>.</li>
       </ol>
+      <p>Copying the folder by hand also works, but only from a PC or with adb: the folder is <code>Android/data/com.prismds.android/files/textures/&lt;game ID&gt;/</code>, and Android's Files app can't open <code>Android/data</code>. Packs there are removed if you uninstall Luma Core.</p>
       <p>Luma Core checks a hand-installed pack's files, and treats a copy that matches as one of ours. Don't mix files from another pack into the same folder.</p>
 
       <h2 id="ds">DS packs</h2>
       <p>The Pokémon HeartGold, Pokémon SoulSilver and Mario Kart DS packs are made for Luma Core's DS player. They don't work in other DS emulators.</p>
       <ol>
         <li>Unzip the pack. You get one folder named after the game's code: <code>IPKE</code> for HeartGold, <code>IPGE</code> for SoulSilver, <code>AMCE</code> for Mario Kart DS.</li>
-        <li>Move that folder into <code>LumaCore/textures</code>, so the path is <code>LumaCore/textures/IPKE/</code> or <code>LumaCore/textures/AMCE/</code>.</li>
+        <li>In Luma Core, highlight the game on Home, open its <em>Texture pack</em> button and pick the .zip. (By hand from a PC or adb, the folder goes in <code>Android/data/com.prismds.android/files/textures/</code>, so the path ends in <code>textures/IPKE/</code> or <code>textures/AMCE/</code>.)</li>
         <li>Highlight the game in Luma Core, press X and choose <em>Forged</em>. Pick <em>AYN Thor optimized</em> on a Thor, or <em>Basics</em> on any other device.</li>
         <li>The game's HD pack can also be switched on or off on its own in its <em>Game settings</em>.</li>
       </ol>
@@ -132,7 +133,7 @@
       <p>If the result doesn't match, download the file again.</p>
 
       <h2 id="remove">Removing a pack</h2>
-      <p>Delete the game's folder from <code>load/textures</code> (Azahar) or <code>LumaCore/textures</code> (Luma Core). Your game and saves are not touched. To keep the files but stop using them, switch <em>Use custom textures</em> off in Azahar, or set the game's <em>Forged</em> to <em>Off</em> in Luma Core.</p>
+      <p>In Luma Core, uninstall it from the Luma Shop, or use the game's <em>Texture pack</em> button on Home. In Azahar, delete the game's folder from <code>load/textures</code>. Your game and saves are not touched. To keep the files but stop using them, switch <em>Use custom textures</em> off in Azahar, or set the game's <em>Forged</em> to <em>Off</em> in Luma Core.</p>
 
       <h2 id="trouble">If it doesn't work</h2>
       <ul>

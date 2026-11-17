@@ -112,6 +112,7 @@ window.LUMA = {
     /* "Latest updates" on the home page, newest first: [date, title, text, link]
        An entry whose link is a project with a "github" repo follows that repo's latest release. */
     news: [
+      ["Nov 16, 2026", "DQXI English Patch v0.1.45", "More official names and a round of layout fixes, after a tester played the whole game to 99.9%. Still a beta.", "project.html?id=dqxi-english-patch"],
       ["Nov 15, 2026", "Pokémon X and Y packs", "Two more 4K texture packs, one for each game, bring the count to thirteen. They are new and tested through the intro so far.", "project.html?id=pokemon-x"],
       ["Nov 15, 2026", "Pokémon Omega Ruby and Alpha Sapphire packs", "Two more 4K texture packs, one for each game, bring the count to eleven. They are new and still being checked.", "project.html?id=pokemon-omega-ruby"],
       ["Nov 15, 2026", "Pokémon SoulSilver gets its own HD pack", "SoulSilver now has the full treatment: an HD texture pack, widescreen and tuning for the Thor, like HeartGold.", "project.html?id=pokemon-soulsilver"],
@@ -969,7 +970,7 @@ window.LUMA = {
       platform: "Nintendo 3DS · translation patch",
       tagline: ["The 3DS version, in English.", "Beta: translation in progress."],
       status: "beta",
-      version: "v0.1.44",
+      version: "v0.1.45",
       progress: null,
       note: "Beta: the English translation is still being worked on. Patchers for Windows, Linux, Steam Deck, macOS and Android; also built into Luma Core.",
       notice: "This is a beta. We are still working on the English translation, so some text is unfinished and will change between versions.",
@@ -982,7 +983,7 @@ window.LUMA = {
         "Optional HD texture pack, downloadable from the Luma Shop",
         "Patchers for Windows, Linux, Steam Deck and macOS"
       ],
-      stats: [["Patch", "v0.1.44"], ["HD pack files", "15,460"], ["HD pack size", "6.16 GB"]],
+      stats: [["Patch", "v0.1.45"], ["HD pack files", "15,460"], ["HD pack size", "6.16 GB"]],
       /* Our own video files, played on the page: [file, poster picture, title, line underneath] */
       clips: [
         ["video/dqxi-english-patch-v0.1.44.mp4", "video/dqxi-english-patch-v0.1.44-poster.jpg", "The journey so far: v0.1.44", "Two minutes through all three acts in English. The music is an original piece made for the video."]
@@ -992,6 +993,15 @@ window.LUMA = {
         ["I9z172vRZDI", "Patching on an Android device"]
       ],
       sections: [
+        { h: "New in v0.1.45 (November 16, 2026)", list: [
+          "A tester, Sola, played the whole game to 99.9% and every menu of that save was gone through.",
+          "More official names: Mortamammoth, End of Time, Friend of Time, Deepest Recesses of the Past and Holy Dragon Protection.",
+          "Forge Record: long names fit, and so does the line for items without a recipe.",
+          "Monster List: the habitat names fit their box.",
+          "Layout fixes on the Link tab, in battle skill lists and on item perk lines.",
+          "Includes everything from v0.1.44. Make a new game, or patch again with this version.",
+          "The title-screen file for v0.1.45 is included with the release."
+        ] },
         { h: "New in v0.1.44 (November 15, 2026)", list: [
           "The English patch now runs through all three acts of the game.",
           "Official names from Sola's testing: Torban, Tenda, Stickle, Tickle, Galapagod, Rom Baro, the Altar of an Elusive Age, the Hall of Remembrance and more.",

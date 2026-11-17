@@ -598,19 +598,20 @@ window.LUMA = {
       platform: "Nintendo DS · optimized for Luma Core",
       tagline: ["A wider view", "of every track."],
       status: "complete",
-      version: "v4",
+      version: "v5",
       progress: 100,
       note: "The HD pack installs from the Luma Shop inside Luma Core.",
       description:
         "Mario Kart DS, tuned for the AYN Thor. Luma Core adds an HD texture pack and widescreen, so races fill the top screen instead of sitting in a 4:3 box.",
       features: ["HD texture pack with 15,737 files, covering every course and battle stage", "Widescreen racing", "Tuned for the AYN Thor's two screens"],
-      stats: [["Pack files", "15,737"], ["Pack size", "181 MB"]],
+      stats: [["Pack files", "15,737"], ["Pack size", "180 MB"]],
       sections: [
+        { h: "Version 5 (November 17, 2026)", p: "Six textures that the upscale had smoothed flat, including the Peach Gardens start-line pavement, get their fine grain back. Checked in the desktop build." },
         { h: "Version 4 (November 17, 2026)", p: "Three tiny course textures go back to the original pixels, so their edges no longer smear. Checked in the desktop build." },
         { h: "Version 3 (November 17, 2026)", p: "Every course in HD: all 32 Grand Prix courses, the 7 battle stages and the mission stages, with their textures read straight from the game and upscaled the same way as version 2. Rainbow Road, Bowser Castle, Tick-Tock Clock, Airship Fortress and the rest are in HD for the first time." },
         { h: "Version 2 (November 16, 2026)", p: "Eight more courses in HD (Mario Circuit, Delfino Square, Cheep Cheep Beach, Peach Gardens and four retro courses), plus Figure-8 Circuit's missing art. Small sprites and the course maps are redrawn pixel-sharp, so a flower bed keeps one style. Tested on the AYN Thor." }
       ],
-      pack: { file: "mariokartds-AMCE-v4.zip", size: "181 MB", system: "DS", code: "AMCE", sha256: "d1995ad629684824f0c03c8b7383dd46329e5d9298d97f14e58e0d84c0fa2eb7" },
+      pack: { file: "mariokartds-AMCE-v5.zip", size: "180 MB", system: "DS", code: "AMCE", sha256: "47be6a82905b47a7fc354dd1a79057b13199de3abd12f746bf2db07348ed176f" },
       colors: ["#e04a3a", "#1f4fa8"],
       images: { icon: "img/icon-mariokartds.png", art: "img/ds-mk-wide.jpg", artPos: "center 40%", after: "img/ds-mk-wide.jpg", before: "img/ds-mk-43.jpg", labels: ["4:3", "Widescreen"], aspect: "16 / 9", gallery: ["img/ds-mk-select.jpg"] },
       links: { download: "", source: "" }

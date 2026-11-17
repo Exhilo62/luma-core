@@ -112,6 +112,7 @@ window.LUMA = {
     /* "Latest updates" on the home page, newest first: [date, title, text, link]
        An entry whose link is a project with a "github" repo follows that repo's latest release. */
     news: [
+      ["Nov 17, 2026", "Mario Kart DS v3: every course in HD", "The Mario Kart DS pack now covers all 32 courses, the 7 battle stages and the mission stages. Rainbow Road, Bowser Castle, Tick-Tock Clock and the rest are HD for the first time. Download it below or update it in the Luma Shop.", "project.html?id=mario-kart-ds"],
       ["Nov 16, 2026", "Texture pack updates", "Every Pokémon pack is rebuilt with cleaner grass, edges and menu icons, and Dragon Quest XI, Ever Oasis, Final Fantasy Explorers, 7th Dragon III, Street Fighter IV, HeartGold, SoulSilver and Mario Kart DS get fixes too. Installed packs offer an Update in the Luma Shop.", "#packs"],
       ["Nov 16, 2026", "DQXI English Patch v0.1.45", "More official names and a round of layout fixes, after a tester played the whole game to 99.9%. Still a beta.", "project.html?id=dqxi-english-patch"],
       ["Nov 15, 2026", "Pokémon X and Y packs", "Two more 4K texture packs, one for each game, bring the count to thirteen. They are new and tested through the intro so far.", "project.html?id=pokemon-x"],
@@ -594,17 +595,18 @@ window.LUMA = {
       platform: "Nintendo DS · optimized for Luma Core",
       tagline: ["A wider view", "of every track."],
       status: "complete",
-      version: "v2",
+      version: "v3",
       progress: 100,
       note: "The HD pack installs from the Luma Shop inside Luma Core.",
       description:
         "Mario Kart DS, tuned for the AYN Thor. Luma Core adds an HD texture pack and widescreen, so races fill the top screen instead of sitting in a 4:3 box.",
-      features: ["HD texture pack with 15,028 files", "Widescreen racing", "Tuned for the AYN Thor's two screens"],
-      stats: [["Pack files", "15,028"], ["Pack size", "65 MB"]],
+      features: ["HD texture pack with 15,740 files, covering every course and battle stage", "Widescreen racing", "Tuned for the AYN Thor's two screens"],
+      stats: [["Pack files", "15,740"], ["Pack size", "181 MB"]],
       sections: [
+        { h: "Version 3 (November 17, 2026)", p: "Every course in HD: all 32 Grand Prix courses, the 7 battle stages and the mission stages, with their textures read straight from the game and upscaled the same way as version 2. Rainbow Road, Bowser Castle, Tick-Tock Clock, Airship Fortress and the rest are in HD for the first time. Tested on the AYN Thor." },
         { h: "Version 2 (November 16, 2026)", p: "Eight more courses in HD (Mario Circuit, Delfino Square, Cheep Cheep Beach, Peach Gardens and four retro courses), plus Figure-8 Circuit's missing art. Small sprites and the course maps are redrawn pixel-sharp, so a flower bed keeps one style. Tested on the AYN Thor." }
       ],
-      pack: { file: "mariokartds-AMCE-v2.zip", size: "65 MB", system: "DS", code: "AMCE", sha256: "47a46a4e19a20e9871872b1dadc83be7fe5a2a1a232f1beaf95ba2af621c564e" },
+      pack: { file: "mariokartds-AMCE-v3.zip", size: "181 MB", system: "DS", code: "AMCE", sha256: "fa4a9c6140b246095d730e0d443551121d890df85b9bfb6f61ae9e4a1c1e522d" },
       colors: ["#e04a3a", "#1f4fa8"],
       images: { icon: "img/icon-mariokartds.png", art: "img/ds-mk-wide.jpg", artPos: "center 40%", after: "img/ds-mk-wide.jpg", before: "img/ds-mk-43.jpg", labels: ["4:3", "Widescreen"], aspect: "16 / 9", gallery: ["img/ds-mk-select.jpg"] },
       links: { download: "", source: "" }

@@ -249,7 +249,7 @@ window.LUMA = {
     packGuide: [["Luma Shop", "luma-shop"], ["Forged games", "forged-games"], ["First-time setup", "first-time-setup"]],
     links: {
       github: "",
-      discord: ""
+      discord: "https://discord.gg/xq4H2Dz3ra"
     }
   },
 

@@ -60,7 +60,7 @@
     download = `<span class="btn" aria-disabled="true">Download coming soon</span>`;
   }
   const source = (p.links.source ? `<a class="btn" href="${p.links.source}">Source / details</a>` : "") +
-    (p.links.discord ? `<a class="btn discord" href="${p.links.discord}" target="_blank" rel="noopener">Discord <span aria-hidden="true">↗</span></a>` : "");
+    (p.links.discord ? `<a class="btn discord" href="${p.links.discord}" target="_blank" rel="noopener">Support on Discord <span aria-hidden="true">↗</span></a>` : "");
 
   const [aw, ah] = (p.images.aspect || "5 / 3").split("/").map(Number);
   const hasSlider = p.images.before || (isPack && !p.images.after);

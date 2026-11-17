@@ -385,7 +385,7 @@
 
   const links = [];
   if (site.links.github) links.push(`<a class="btn" href="${site.links.github}">GitHub</a>`);
-  if (site.links.discord) links.push(`<a class="btn" href="${site.links.discord}">Discord</a>`);
+  if (site.links.discord) links.push(`<a class="btn discord" href="${site.links.discord}" target="_blank" rel="noopener">Discord <span aria-hidden="true">↗</span></a>`);
   $("aboutLinks").innerHTML = links.join("");
   if (site.logo) $("aboutLogo").innerHTML = `<img src="${site.logo}" alt="${UI.esc(site.name)} logo">`;
   $("facts").innerHTML = site.facts.map(([n, t]) => `<div class="fact"><b>${n}</b><span>${t}</span></div>`).join("");

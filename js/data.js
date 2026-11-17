@@ -1062,7 +1062,7 @@ window.LUMA = {
       github: "Exhilo62/DQXI-3DS-English-Patch", // the page reads the latest release from here
       colors: ["#4a8fe8", "#243a8f"],
       images: { icon: "img/icon-dqxi.png", art: "img/art/vista-moon.jpg", artPos: "center 35%", artFilter: "hue-rotate(-45deg) saturate(1.1)", feature: "img/art/dqxi-logo.png", featureWide: true, after: "img/art/dqxi-hero.jpg", before: "", aspect: "16 / 9", gallery: [] },
-      links: { download: "https://github.com/Exhilo62/DQXI-3DS-English-Patch/releases", source: "https://github.com/Exhilo62/DQXI-3DS-English-Patch", discord: "https://discord.gg/w2DSajEUx" }
+      links: { download: "https://github.com/Exhilo62/DQXI-3DS-English-Patch/releases", source: "https://github.com/Exhilo62/DQXI-3DS-English-Patch", discord: "https://discord.gg/xq4H2Dz3ra" }
     }
   ]
 };

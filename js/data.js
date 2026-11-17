@@ -112,6 +112,7 @@ window.LUMA = {
     /* "Latest updates" on the home page, newest first: [date, title, text, link]
        An entry whose link is a project with a "github" repo follows that repo's latest release. */
     news: [
+      ["Nov 16, 2026", "Texture pack updates", "Every Pokémon pack is rebuilt with cleaner grass, edges and menu icons, and Dragon Quest XI, Ever Oasis, Final Fantasy Explorers, 7th Dragon III, Street Fighter IV, HeartGold, SoulSilver and Mario Kart DS get fixes too. Installed packs offer an Update in the Luma Shop.", "#packs"],
       ["Nov 16, 2026", "DQXI English Patch v0.1.45", "More official names and a round of layout fixes, after a tester played the whole game to 99.9%. Still a beta.", "project.html?id=dqxi-english-patch"],
       ["Nov 15, 2026", "Pokémon X and Y packs", "Two more 4K texture packs, one for each game, bring the count to thirteen. They are new and tested through the intro so far.", "project.html?id=pokemon-x"],
       ["Nov 15, 2026", "Pokémon Omega Ruby and Alpha Sapphire packs", "Two more 4K texture packs, one for each game, bring the count to eleven. They are new and still being checked.", "project.html?id=pokemon-omega-ruby"],
@@ -299,14 +300,17 @@ window.LUMA = {
       platform: "Nintendo 3DS · 4K texture pack",
       tagline: ["Hunt the eidolons.", "See every crystal shine."],
       status: "complete",
-      version: "v1",
+      version: "v2",
       progress: 100,
       note: "Installs from the Luma Shop inside Luma Core.",
       description:
         "A 4x texture pack for Final Fantasy Explorers. Every texture stored in the game is upscaled: monsters, gear, the HUD, menus and the dialogue font.",
       features: ["Every in-game texture upscaled 4x", "Sharper HUD, menus and dialogue font", "For Azahar / Citra-based emulators"],
-      stats: [["Files", "7,501"], ["Size", "2.03 GB"], ["Upscale", "4x"]],
-      pack: { file: "ffexplorers-000400000016ED00-v1.zip", size: "2.03 GB", system: "3DS", code: "000400000016ED00", sha256: "3cab838941a8b4731c9a1d61bcf7c9e900480ecd1bd2acccd6f93a4a672541cb" },
+      stats: [["Files", "7,501"], ["Size", "1.97 GB"], ["Upscale", "4x"]],
+      sections: [
+        { h: "Version 2 (November 16, 2026)", p: "Cleaner edges on cut-out art, where the upscale had left dark fringes." }
+      ],
+      pack: { file: "ffexplorers-000400000016ED00-v2.zip", size: "1.97 GB", system: "3DS", code: "000400000016ED00", sha256: "f0deeaaa50ad46c61efbe3bcd342addd6c3762c4501b51a121ce257ec138a191" },
       colors: ["#4fc3e8", "#1b3f7a"],
       images: { icon: "img/icon-ffe.png", art: "img/art/ffe-art.jpg", artPos: "center 20%", logo: "img/art/ffe-logo.png", after: "img/ffe-after.jpg", before: "img/ffe-before.jpg", aspect: "524 / 468", gallery: ["img/pack-ffe.jpg", "img/art/ffe-art.jpg", "img/art/ffe-art2.jpg"] },
       links: { download: "", source: "" }
@@ -318,14 +322,17 @@ window.LUMA = {
       platform: "Nintendo 3DS · 4K texture pack",
       tagline: ["Three eras. Seven dragons.", "One much sharper Tokyo."],
       status: "complete",
-      version: "v1",
+      version: "v2",
       progress: 100,
       note: "Installs from the Luma Shop inside Luma Core.",
       description:
         "An HD texture pack for 7th Dragon III Code: VFD. Game textures are upscaled 4x, and the system font is replaced with HD glyphs so dialogue boxes read cleanly.",
       features: ["Game textures upscaled 4x", "HD system-font sheets for sharp text", "For Azahar / Citra-based emulators"],
       stats: [["Files", "13,381"], ["Size", "4.28 GB"], ["Upscale", "4x"]],
-      pack: { file: "7thdragon3-000400000018F800-v1.zip", size: "4.28 GB", system: "3DS", code: "000400000018F800", sha256: "5628a0dc533e0aa378dfb9d39cb5d89e3e2260eb8b01de030ec87c777bd2a594" },
+      sections: [
+        { h: "Version 2 (November 16, 2026)", p: "Cleaner edges on glows and other see-through effects, where the upscale had left dark fringes." }
+      ],
+      pack: { file: "7thdragon3-000400000018F800-v2.zip", size: "4.28 GB", system: "3DS", code: "000400000018F800", sha256: "8666f7a22ab7fc2529a2ec9cbca29cb08e6715c1142fcc13205e7e49b6086d08" },
       colors: ["#3fc9b8", "#1d4a5e"],
       images: { icon: "img/icon-7d3.png", art: "img/art/7d3-art.jpg", artPos: "70% center", logo: "img/art/7d3-logo.png", after: "img/art/7d3-art.jpg", before: "", aspect: "1800 / 900", gallery: ["img/art/7d3-art2.jpg"] },
       links: { download: "", source: "" }
@@ -356,14 +363,17 @@ window.LUMA = {
       platform: "Nintendo 3DS · 4K texture pack",
       tagline: ["Grow your oasis.", "Watch the desert bloom in 4K."],
       status: "complete",
-      version: "v1",
+      version: "v2",
       progress: 100,
       note: "Installs from the Luma Shop inside Luma Core.",
       description:
         "A 4x texture pack for Ever Oasis. Characters, effects and the oasis itself are upscaled so the game looks at home on a modern screen.",
-      features: ["12,014 unique textures upscaled 4x", "For Azahar / Citra-based emulators"],
-      stats: [["Files", "13,506"], ["Size", "3.03 GB"], ["Upscale", "4x"]],
-      pack: { file: "everoasis-00040000001A4800-v1.zip", size: "3.03 GB", system: "3DS", code: "00040000001A4800", sha256: "636812b1d4574ead62063b30059ede0785820a4495182207c0490eb7f0019ab3" },
+      features: ["Textures upscaled 4x; the game's 245 lookup maps stay at their original size", "For Azahar / Citra-based emulators"],
+      stats: [["Files", "13,261"], ["Size", "2.98 GB"], ["Upscale", "4x"]],
+      sections: [
+        { h: "Version 2 (November 16, 2026)", p: "The game's 245 lookup maps are no longer replaced. They are data the game reads, not pictures, and upscaling them changed how some surfaces looked." }
+      ],
+      pack: { file: "everoasis-00040000001A4800-v2.zip", size: "2.98 GB", system: "3DS", code: "00040000001A4800", sha256: "24c4864d3c7064a9847973a0fc449efb5f670fbf2dcf390a8a21379a405770e0" },
       colors: ["#f2c14e", "#c2552d"],
       images: { icon: "img/icon-everoasis.png", art: "img/art/everoasis-art.jpg", artPos: "center 40%", logo: "img/art/everoasis-logo.png", after: "img/everoasis-after.jpg", before: "img/everoasis-before.jpg", aspect: "1 / 1", gallery: ["img/art/everoasis-art.jpg", "img/art/everoasis-art2.jpg"] },
       links: { download: "", source: "" }
@@ -375,14 +385,17 @@ window.LUMA = {
       platform: "Nintendo 3DS · 4K texture pack",
       tagline: ["Every fighter. Every stage.", "Ready for a bigger screen."],
       status: "complete",
-      version: "v1",
+      version: "v2",
       progress: 100,
       note: "Installs from the Luma Shop inside Luma Core. Menu text is not covered yet.",
       description:
         "A 4x texture pack for Super Street Fighter IV 3D Edition. Fighter models, character portraits and stage textures are all upscaled.",
       features: ["5,444 unique textures upscaled 4x", "Fighters, portraits and stages", "For Azahar / Citra-based emulators"],
       stats: [["Files", "6,936"], ["Size", "6.36 GB"], ["Upscale", "4x"]],
-      pack: { file: "ssf4-0004000000032D00-v1.zip", size: "6.36 GB", system: "3DS", code: "0004000000032D00", sha256: "19b4efbee17694d905c1a1d33c5f98ac7333bdc34c6d72e66e0ca362f834fbc2" },
+      sections: [
+        { h: "Version 2 (November 16, 2026)", p: "Cleaner edges on the flames and trees, where the upscale had left dark fringes." }
+      ],
+      pack: { file: "ssf4-0004000000032D00-v2.zip", size: "6.36 GB", system: "3DS", code: "0004000000032D00", sha256: "e5245a3fc11a07e76227fa828c29caa8c1e388373c72d4564774afdd34e64d00" },
       colors: ["#d94a3a", "#2b2f4f"],
       images: { icon: "img/icon-ssf4.png", art: "img/art/ssf4-art.jpg", artPos: "85% 30%", logo: "img/art/ssf4-logo.png", after: "img/ssf4-after.jpg", before: "img/ssf4-before.jpg", aspect: "1 / 1", gallery: ["img/pack-ssf4.jpg", "img/art/ssf4-art.jpg", "img/art/ssf4-art2.jpg"] },
       links: { download: "", source: "" }
@@ -394,14 +407,17 @@ window.LUMA = {
       platform: "Nintendo 3DS · 4K texture pack",
       tagline: ["All of Alola,", "four times sharper."],
       status: "complete",
-      version: "v1",
+      version: "v3",
       progress: 100,
       note: "Installs from the Luma Shop inside Luma Core.",
       description:
         "A 4x texture pack for Pokémon Ultra Sun. Every texture stored in the game is upscaled: Pokémon models, trainers and other characters, field maps and buildings, battle backgrounds and effects, menus and the game's own font sheets. The player character's own textures are not covered, because the game builds them while it runs.",
-      features: ["34,097 textures upscaled 4x, plus 2,524 mip levels", "Pokémon models, trainers, maps, battle effects, menus and the games' own font sheets", "No HD system-font sheets: these games draw text from their own fonts", "For Azahar / Citra-based emulators"],
-      stats: [["Files", "36,622"], ["Size", "9.40 GB"], ["Upscale", "4x"]],
-      pack: { file: "ultrasun-00040000001B5000-v1.zip", size: "9.40 GB", system: "3DS", code: "00040000001B5000", sha256: "d863dcfcf60fa79bb0b7dd8dc48394b0511bc8fb0d48ee51c5d1ee92c0f46f86" },
+      features: ["26,076 files upscaled 4x, with a method picked for each kind of picture", "Pokémon models, trainers, maps, battle effects, menus and the games' own font sheets", "No HD system-font sheets: these games draw text from their own fonts", "For Azahar / Citra-based emulators"],
+      stats: [["Files", "26,076"], ["Size", "8.92 GB"], ["Upscale", "4x"]],
+      sections: [
+        { h: "Version 3 (November 16, 2026)", p: "Rebuilt with a method picked for each kind of picture: a model that keeps detail for Pokémon and trainers, smooth clean edges for cut-out art like grass, flowers and fences, painted grounds that keep their brushwork, and masks, particles and lighting left at the original size so the game handles them as before. That is why it has fewer files than version 1. Menu and battle icons fixed: no more thin line under the Poké Balls and other small icons, and small icons drawn crisply instead of with invented outlines." }
+      ],
+      pack: { file: "ultrasun-00040000001B5000-v3.zip", size: "8.92 GB", system: "3DS", code: "00040000001B5000", sha256: "3036450ed45147a4329065eee84242d099f3306dd513590a172a9b6ded7f0a04" },
       colors: ["#f08a2c", "#7a2a12"],
       images: { icon: "img/icon-ultrasun.png", art: "img/art/usum-art.jpg", artPos: "40% 30%", after: "img/ultrasun-logo-after.jpg", before: "img/ultrasun-logo-before.jpg", aspect: "1620 / 880", gallery: ["img/art/usum-art.jpg", "img/usum-after.jpg"] },
       links: { download: "", source: "" }
@@ -413,17 +429,18 @@ window.LUMA = {
       platform: "Nintendo 3DS · 4K texture pack",
       tagline: ["The same sharper Alola,", "under the moon."],
       status: "complete",
-      version: "v1",
+      version: "v3",
       progress: 100,
       note: "Installs from the Luma Shop inside Luma Core.",
       description:
         "A 4x texture pack for Pokémon Ultra Moon. It holds the same images as the Ultra Sun pack, under Ultra Moon's own title ID, so each game has a pack of its own. The player character's own textures are not covered, because the game builds them while it runs.",
-      features: ["34,097 textures upscaled 4x, plus 2,524 mip levels", "Pokémon models, trainers, maps, battle effects, menus and the games' own font sheets", "No HD system-font sheets: these games draw text from their own fonts", "For Azahar / Citra-based emulators"],
-      stats: [["Files", "36,622"], ["Size", "9.40 GB"], ["Upscale", "4x"]],
+      features: ["26,076 files upscaled 4x, with a method picked for each kind of picture", "Pokémon models, trainers, maps, battle effects, menus and the games' own font sheets", "No HD system-font sheets: these games draw text from their own fonts", "For Azahar / Citra-based emulators"],
+      stats: [["Files", "26,076"], ["Size", "8.92 GB"], ["Upscale", "4x"]],
       sections: [
+        { h: "Version 3 (November 16, 2026)", p: "Rebuilt with a method picked for each kind of picture: a model that keeps detail for Pokémon and trainers, smooth clean edges for cut-out art like grass, flowers and fences, painted grounds that keep their brushwork, and masks, particles and lighting left at the original size so the game handles them as before. That is why it has fewer files than version 1. Menu and battle icons fixed: no more thin line under the Poké Balls and other small icons, and small icons drawn crisply instead of with invented outlines." },
         { h: "Tested on the AYN Thor", p: "On November 15, 2026 the pack was downloaded and installed from the Luma Shop on an AYN Thor. The download resumed after a pause, the file check passed, all 36,622 files installed, and the game starts with the HD pack." }
       ],
-      pack: { file: "ultramoon-00040000001B5100-v1.zip", size: "9.40 GB", system: "3DS", code: "00040000001B5100", sha256: "2c0a37cf02fd73eaddbb7ac7d8ffcb6ceb1c9d9168b653296762dc786b8f441a" },
+      pack: { file: "ultramoon-00040000001B5100-v3.zip", size: "8.92 GB", system: "3DS", code: "00040000001B5100", sha256: "f053d2863dfbeaf6315f67124a22a46a0159bebfaf532d591a4832eb3be89e8d" },
       colors: ["#6a5cff", "#1d1650"],
       images: { icon: "img/icon-ultramoon.png", art: "img/art/usum-art.jpg", artPos: "40% 30%", after: "img/ultramoon-logo-after.jpg", before: "img/ultramoon-logo-before.jpg", aspect: "1620 / 880", gallery: ["img/art/usum-art.jpg", "img/usum-after.jpg"] },
       links: { download: "", source: "" }
@@ -435,17 +452,18 @@ window.LUMA = {
       platform: "Nintendo 3DS · 4K texture pack",
       tagline: ["Hoenn, redrawn", "four times sharper."],
       status: "complete",
-      version: "v1",
+      version: "v2",
       progress: 100,
       note: "Installs from the Luma Shop inside Luma Core. Tested through Omega Ruby's intro so far.",
       description:
         "A 4x texture pack for Pokémon Omega Ruby. Every texture stored in the game is upscaled: Pokémon models, trainers and other characters, field maps and buildings, battle backgrounds and effects, menus and the game's own font sheets.",
-      features: ["28,718 textures upscaled 4x, plus 99 mip levels", "Pokémon models, trainers, maps, battle effects, menus and the games' own font sheets", "No HD system-font sheets: these games draw text from their own fonts", "For Azahar / Citra-based emulators"],
-      stats: [["Files", "28,818"], ["Size", "6.65 GB"], ["Upscale", "4x"]],
+      features: ["25,199 files upscaled 4x, with a method picked for each kind of picture", "Pokémon models, trainers, maps, battle effects, menus and the games' own font sheets", "No HD system-font sheets: these games draw text from their own fonts", "For Azahar / Citra-based emulators"],
+      stats: [["Files", "25,199"], ["Size", "8.58 GB"], ["Upscale", "4x"]],
       sections: [
+        { h: "Version 2 (November 16, 2026)", p: "Rebuilt with a method picked for each kind of picture: a model that keeps detail for Pokémon and trainers, smooth clean edges for cut-out art like grass, flowers and fences, painted grounds that keep their brushwork, and masks, particles and lighting left at the original size so the game handles them as before. That is why it has fewer files than version 1. Menu and battle icons fixed: no more thin line under the Poké Balls and other small icons, and small icons drawn crisply instead of with invented outlines." },
         { h: "Checked so far", p: "This pack is new. It has been tested through Omega Ruby's intro so far, and more of the game will be checked before downloads open." }
       ],
-      pack: { file: "omegaruby-000400000011C400-v1.zip", size: "6.65 GB", system: "3DS", code: "000400000011C400", sha256: "2c5b91e661924a729908de1bf1503a9606193b83e3f0de7ac1739f90abc55e4e" },
+      pack: { file: "omegaruby-000400000011C400-v2.zip", size: "8.58 GB", system: "3DS", code: "000400000011C400", sha256: "b79861a8024436bc0e3d2de7e22973942d361526dc6c3ab11f39dc95901175c9" },
       colors: ["#d8433a", "#5a1418"],
       images: { icon: "img/icon-omegaruby.png", art: "img/art/oras-art.jpg", artPos: "center 45%", after: "img/omegaruby-logo-after.jpg", before: "img/omegaruby-logo-before.jpg", aspect: "1620 / 880", gallery: ["img/art/oras-art.jpg"] },
       links: { download: "", source: "" }
@@ -457,17 +475,18 @@ window.LUMA = {
       platform: "Nintendo 3DS · 4K texture pack",
       tagline: ["The same sharper Hoenn,", "in sapphire."],
       status: "complete",
-      version: "v1",
+      version: "v2",
       progress: 100,
       note: "Installs from the Luma Shop inside Luma Core. Tested through Omega Ruby's intro so far.",
       description:
         "A 4x texture pack for Pokémon Alpha Sapphire. It holds the same images as the Omega Ruby pack, under Alpha Sapphire's own title ID, so each game has a pack of its own.",
-      features: ["28,718 textures upscaled 4x, plus 99 mip levels", "Pokémon models, trainers, maps, battle effects, menus and the games' own font sheets", "No HD system-font sheets: these games draw text from their own fonts", "For Azahar / Citra-based emulators"],
-      stats: [["Files", "28,818"], ["Size", "6.65 GB"], ["Upscale", "4x"]],
+      features: ["25,199 files upscaled 4x, with a method picked for each kind of picture", "Pokémon models, trainers, maps, battle effects, menus and the games' own font sheets", "No HD system-font sheets: these games draw text from their own fonts", "For Azahar / Citra-based emulators"],
+      stats: [["Files", "25,199"], ["Size", "8.58 GB"], ["Upscale", "4x"]],
       sections: [
+        { h: "Version 2 (November 16, 2026)", p: "Rebuilt with a method picked for each kind of picture: a model that keeps detail for Pokémon and trainers, smooth clean edges for cut-out art like grass, flowers and fences, painted grounds that keep their brushwork, and masks, particles and lighting left at the original size so the game handles them as before. That is why it has fewer files than version 1. Menu and battle icons fixed: no more thin line under the Poké Balls and other small icons, and small icons drawn crisply instead of with invented outlines." },
         { h: "Checked so far", p: "This pack is new. It has been tested through Omega Ruby's intro so far, and more of the game will be checked before downloads open." }
       ],
-      pack: { file: "alphasapphire-000400000011C500-v1.zip", size: "6.65 GB", system: "3DS", code: "000400000011C500", sha256: "0525b6253a7d1a51aceea3406abdc135fcaba49503cc59a793271c7110bcaa8b" },
+      pack: { file: "alphasapphire-000400000011C500-v2.zip", size: "8.58 GB", system: "3DS", code: "000400000011C500", sha256: "5299d223a3023d8e0dde025da68bd50645372eaeb36e96e624b6ef3f1e7ba4b6" },
       colors: ["#2f7fe0", "#12265e"],
       images: { icon: "img/icon-alphasapphire.png", art: "img/art/oras-art.jpg", artPos: "center 45%", after: "img/alphasapphire-logo-after.jpg", before: "img/alphasapphire-logo-before.jpg", aspect: "1620 / 880", gallery: ["img/art/oras-art.jpg"] },
       links: { download: "", source: "" }
@@ -479,17 +498,18 @@ window.LUMA = {
       platform: "Nintendo 3DS · 4K texture pack",
       tagline: ["Kalos, redrawn", "four times sharper."],
       status: "complete",
-      version: "v1",
+      version: "v3",
       progress: 100,
       note: "Installs from the Luma Shop inside Luma Core. Tested through the intro so far.",
       description:
         "A 4x texture pack for Pokémon X. The textures stored in the game are upscaled: Pokémon models, trainers and other characters, field maps and buildings, battle backgrounds and effects, and menus.",
-      features: ["24,453 textures upscaled 4x, plus 19 mip levels", "Pokémon models, trainers, maps, battle effects and menus", "No HD system-font sheets, like the other Pokémon packs", "For Azahar / Citra-based emulators"],
-      stats: [["Files", "24,473"], ["Size", "6.03 GB"], ["Upscale", "4x"]],
+      features: ["20,904 files upscaled 4x, with a method picked for each kind of picture", "Pokémon models, trainers, maps, battle effects and menus", "No HD system-font sheets, like the other Pokémon packs", "For Azahar / Citra-based emulators"],
+      stats: [["Files", "20,904"], ["Size", "7.86 GB"], ["Upscale", "4x"]],
       sections: [
+        { h: "Version 3 (November 16, 2026)", p: "Rebuilt with a method picked for each kind of picture: a model that keeps detail for Pokémon and trainers, smooth clean edges for cut-out art like grass, flowers and fences, painted grounds that keep their brushwork, and masks, particles and lighting left at the original size so the game handles them as before. That is why it has fewer files than version 1. The grass is redrawn without the dark outlines and dashes of version 1. Menu and battle icons fixed: no more thin line under the Poké Balls and other small icons, and small icons drawn crisply instead of with invented outlines." },
         { h: "Checked so far", p: "This pack is new. It has been tested from the start of the game through the intro to the player's bedroom. The overworld beyond that, battles and menus have not been checked yet, and will be before downloads open." }
       ],
-      pack: { file: "pokemonx-0004000000055D00-v1.zip", size: "6.03 GB", system: "3DS", code: "0004000000055D00", sha256: "03c03ff9e388c52433e2178002250daa355e9e4b04404b864e412b7206e5ece9" },
+      pack: { file: "pokemonx-0004000000055D00-v3.zip", size: "7.86 GB", system: "3DS", code: "0004000000055D00", sha256: "790e1bb98049ca09af58641ada50bad63a08fe30f9456a1fd09568ee172099e3" },
       colors: ["#2f6fd8", "#101f52"],
       images: { icon: "img/icon-pokemonx.png", art: "img/pokemonx-logo-after.jpg", artPos: "center", after: "img/pokemonx-logo-after.jpg", before: "img/pokemonx-logo-before.jpg", aspect: "1620 / 880", gallery: [] },
       links: { download: "", source: "" }
@@ -501,17 +521,18 @@ window.LUMA = {
       platform: "Nintendo 3DS · 4K texture pack",
       tagline: ["The same sharper Kalos,", "in red."],
       status: "complete",
-      version: "v1",
+      version: "v3",
       progress: 100,
       note: "Installs from the Luma Shop inside Luma Core. Tested through the intro so far.",
       description:
         "A 4x texture pack for Pokémon Y. It holds the same images as the Pokémon X pack, under Pokémon Y's own title ID, so each game has a pack of its own.",
-      features: ["24,453 textures upscaled 4x, plus 19 mip levels", "Pokémon models, trainers, maps, battle effects and menus", "No HD system-font sheets, like the other Pokémon packs", "For Azahar / Citra-based emulators"],
-      stats: [["Files", "24,473"], ["Size", "6.03 GB"], ["Upscale", "4x"]],
+      features: ["20,904 files upscaled 4x, with a method picked for each kind of picture", "Pokémon models, trainers, maps, battle effects and menus", "No HD system-font sheets, like the other Pokémon packs", "For Azahar / Citra-based emulators"],
+      stats: [["Files", "20,904"], ["Size", "7.86 GB"], ["Upscale", "4x"]],
       sections: [
+        { h: "Version 3 (November 16, 2026)", p: "Rebuilt with a method picked for each kind of picture: a model that keeps detail for Pokémon and trainers, smooth clean edges for cut-out art like grass, flowers and fences, painted grounds that keep their brushwork, and masks, particles and lighting left at the original size so the game handles them as before. That is why it has fewer files than version 1. The grass is redrawn without the dark outlines and dashes of version 1. Menu and battle icons fixed: no more thin line under the Poké Balls and other small icons, and small icons drawn crisply instead of with invented outlines." },
         { h: "Checked so far", p: "This pack is new. It has been tested from the start of the game through the intro to the player's bedroom. The overworld beyond that, battles and menus have not been checked yet, and will be before downloads open." }
       ],
-      pack: { file: "pokemony-0004000000055E00-v1.zip", size: "6.03 GB", system: "3DS", code: "0004000000055E00", sha256: "f2dbd5bfb716902773457fe625f056d79d05b6aa6100431799da91ffbc8aef4c" },
+      pack: { file: "pokemony-0004000000055E00-v3.zip", size: "7.86 GB", system: "3DS", code: "0004000000055E00", sha256: "e7f919cc3be0d9b0615fca3adc448f3480e26cf52547aea589c3d1383786099d" },
       colors: ["#d83a4a", "#5a1220"],
       images: { icon: "img/icon-pokemony.png", art: "img/pokemony-logo-after.jpg", artPos: "center", after: "img/pokemony-logo-after.jpg", before: "img/pokemony-logo-before.jpg", aspect: "1620 / 880", gallery: [] },
       links: { download: "", source: "" }
@@ -525,18 +546,19 @@ window.LUMA = {
       platform: "Nintendo DS · optimized for Luma Core",
       tagline: ["Johto in widescreen,", "with HD textures."],
       status: "complete",
-      version: "v2",
+      version: "v3",
       progress: 100,
       note: "The HD pack installs from the Luma Shop inside Luma Core.",
       description:
         "Pokémon HeartGold, tuned for the AYN Thor. Luma Core adds an HD texture pack and widescreen that fills the screen in both the 3D world and the 2D screens, instead of the DS's 4:3 picture with bars at the sides.",
-      features: ["HD texture pack with 45,743 files", "One set of images shared with SoulSilver", "Widescreen in the 3D world and on 2D screens", "Tuned for the AYN Thor's two screens"],
-      stats: [["Pack files", "45,743"], ["Pack size", "81 MB"], ["Widescreen", "3D and 2D"]],
+      features: ["HD texture pack with 45,741 files", "One set of images shared with SoulSilver", "Widescreen in the 3D world and on 2D screens", "Tuned for the AYN Thor's two screens"],
+      stats: [["Pack files", "45,741"], ["Pack size", "79 MB"], ["Widescreen", "3D and 2D"]],
       sections: [
+        { h: "Version 3 (November 16, 2026)", p: "365 small sprites redrawn pixel-sharp, the see-through effects (like the opening's flames) soft again, and the party screen's \"HP\" label back to the original pixels. Tested on the AYN Thor." },
         { h: "Version 2: one pack for both games", p: "HeartGold and SoulSilver now share one merged HD pack, with every image from both games' packs. HeartGold's pack grew from 14,612 files to 45,743. If you have version 1 installed, the Luma Shop offers an Update." },
         { h: "Tested on the AYN Thor", p: "On November 15, 2026 the Luma Shop offered the update to version 2 over an installed version 1 on an AYN Thor, and it installed all 45,743 files. The game starts to its title screen with the pack. Updating keeps the old pack working until the new one is in place. The last step, clearing out the old files, took several minutes on the Thor (about 30 minutes for SoulSilver's 45,000 files), and the game stays playable while it runs." }
       ],
-      pack: { file: "heartgold-IPKE-v2.zip", size: "81 MB", system: "DS", code: "IPKE", sha256: "ac07f8c0a864e5fad65dd3b76c5e78c328127ab7d32dbacf7d350fc2cff50050" },
+      pack: { file: "heartgold-IPKE-v3.zip", size: "79 MB", system: "DS", code: "IPKE", sha256: "d3bfe940928507e8d6672fc14becbe1683eb10d4dbd43e43aaeffe0cbedb069d" },
       colors: ["#e0a832", "#7a4a12"],
       images: { icon: "img/icon-heartgold.png", art: "img/ds-hg-wide.jpg", artPos: "center", after: "img/ds-hg-wide.jpg", before: "img/ds-hg-43.jpg", labels: ["4:3", "Widescreen"], aspect: "16 / 9", gallery: ["img/ds-hg-battle.jpg"] },
       links: { download: "", source: "" }
@@ -548,18 +570,19 @@ window.LUMA = {
       platform: "Nintendo DS · optimized for Luma Core",
       tagline: ["Johto in widescreen,", "with HD textures."],
       status: "complete",
-      version: "v2",
+      version: "v3",
       progress: 100,
       note: "The HD pack installs from the Luma Shop inside Luma Core.",
       description:
         "Pokémon SoulSilver, tuned for the AYN Thor the same way as HeartGold: an HD texture pack, and widescreen that fills the screen in both the 3D world and the 2D screens. HeartGold and SoulSilver share one merged pack: every image from both games' packs, including SoulSilver's own 1,868.",
-      features: ["HD texture pack with 45,743 files", "One set of images shared with HeartGold, including SoulSilver's own 1,868", "Widescreen in the 3D world and on 2D screens", "Tuned for the AYN Thor's two screens"],
-      stats: [["Pack files", "45,743"], ["Pack size", "81 MB"], ["Widescreen", "3D and 2D"]],
+      features: ["HD texture pack with 45,741 files", "One set of images shared with HeartGold, including SoulSilver's own 1,868", "Widescreen in the 3D world and on 2D screens", "Tuned for the AYN Thor's two screens"],
+      stats: [["Pack files", "45,741"], ["Pack size", "79 MB"], ["Widescreen", "3D and 2D"]],
       sections: [
+        { h: "Version 3 (November 16, 2026)", p: "The same fixes as HeartGold's version 3, since the two games share one pack: 365 small sprites redrawn pixel-sharp, the see-through effects soft again, and the party screen's \"HP\" label back to the original pixels." },
         { h: "Version 2: one pack for both games", p: "Version 2 is the same set of images as HeartGold's pack. Eleven leftover slivers of text were dropped from version 1, taking it from 45,754 files to 45,743. If you have version 1 installed, the Luma Shop offers an Update." },
         { h: "Tested on the AYN Thor", p: "On November 15, 2026 version 1 was downloaded and installed from the Luma Shop on an AYN Thor, and the opening, New Bark Town in widescreen, a battle and the party screen all looked right, with the game's text staying as pixel art. Later the same day the Shop offered the update to version 2, which installed all 45,743 files; New Bark Town in widescreen with the HD pack and a battle looked right. Updating keeps the old pack working until the new one is in place. The last step, clearing out the old files, took several minutes on the Thor (about 30 minutes for SoulSilver's 45,000 files), and the game stays playable while it runs." }
       ],
-      pack: { file: "soulsilver-IPGE-v2.zip", size: "81 MB", system: "DS", code: "IPGE", sha256: "4a8203ff293f0162aaaeab0b19ec13e93caaf9044343922a9be5d70d23f69c41" },
+      pack: { file: "soulsilver-IPGE-v3.zip", size: "79 MB", system: "DS", code: "IPGE", sha256: "0f50a2dedec8ff608bce0444d428c6c6052e7a12e1abc7cb68affda0c836f57c" },
       colors: ["#aab4c8", "#48506a"],
       images: { icon: "img/icon-soulsilver.png", art: "img/ds-ss-wide.jpg", artPos: "center", after: "img/ds-ss-wide.jpg", before: "img/ds-ss-43.jpg", labels: ["4:3", "Widescreen"], aspect: "16 / 9", gallery: [] },
       links: { download: "", source: "" }
@@ -571,14 +594,17 @@ window.LUMA = {
       platform: "Nintendo DS · optimized for Luma Core",
       tagline: ["A wider view", "of every track."],
       status: "complete",
-      version: "v1",
+      version: "v2",
       progress: 100,
       note: "The HD pack installs from the Luma Shop inside Luma Core.",
       description:
         "Mario Kart DS, tuned for the AYN Thor. Luma Core adds an HD texture pack and widescreen, so races fill the top screen instead of sitting in a 4:3 box.",
-      features: ["HD texture pack with 7,430 files", "Widescreen racing", "Tuned for the AYN Thor's two screens"],
-      stats: [["Pack files", "7,430"], ["Pack size", "33 MB"]],
-      pack: { file: "mariokartds-AMCE-v1.zip", size: "33 MB", system: "DS", code: "AMCE", sha256: "9dd491842295c566a543f0139cb338007812e8def344de4b9662e192f3f57eb2" },
+      features: ["HD texture pack with 15,028 files", "Widescreen racing", "Tuned for the AYN Thor's two screens"],
+      stats: [["Pack files", "15,028"], ["Pack size", "65 MB"]],
+      sections: [
+        { h: "Version 2 (November 16, 2026)", p: "Eight more courses in HD (Mario Circuit, Delfino Square, Cheep Cheep Beach, Peach Gardens and four retro courses), plus Figure-8 Circuit's missing art. Small sprites and the course maps are redrawn pixel-sharp, so a flower bed keeps one style. Tested on the AYN Thor." }
+      ],
+      pack: { file: "mariokartds-AMCE-v2.zip", size: "65 MB", system: "DS", code: "AMCE", sha256: "47a46a4e19a20e9871872b1dadc83be7fe5a2a1a232f1beaf95ba2af621c564e" },
       colors: ["#e04a3a", "#1f4fa8"],
       images: { icon: "img/icon-mariokartds.png", art: "img/ds-mk-wide.jpg", artPos: "center 40%", after: "img/ds-mk-wide.jpg", before: "img/ds-mk-43.jpg", labels: ["4:3", "Widescreen"], aspect: "16 / 9", gallery: ["img/ds-mk-select.jpg"] },
       links: { download: "", source: "" }
@@ -983,7 +1009,7 @@ window.LUMA = {
         "Optional HD texture pack, downloadable from the Luma Shop",
         "Patchers for Windows, Linux, Steam Deck and macOS"
       ],
-      stats: [["Patch", "v0.1.45"], ["HD pack files", "15,460"], ["HD pack size", "6.16 GB"]],
+      stats: [["Patch", "v0.1.45"], ["HD pack files", "15,460"], ["HD pack size", "6.03 GB"]],
       /* Our own video files, played on the page: [file, poster picture, title, line underneath] */
       clips: [
         ["video/dqxi-english-patch-v0.1.44.mp4", "video/dqxi-english-patch-v0.1.44-poster.jpg", "The journey so far: v0.1.44", "Two minutes through all three acts in English. The music is an original piece made for the video."]
@@ -1025,13 +1051,14 @@ window.LUMA = {
           "More than 15,000 of the game's textures upscaled 4x, made from the English-patched game so the English menus and banners are sharp too.",
           "Download and install it from the Luma Shop inside Luma Core, like the other texture packs.",
           "Optional, and for emulators only: it is not needed for the English patch and does nothing on a real 3DS.",
+          "Version 2 (November 16, 2026): the 961 small character sprites are redrawn pixel-sharp instead of smoothed by the AI.",
           "For the game's 3D mode, and still a work in progress."
         ] },
         { h: "What you need", p: "Your own decrypted Japanese copy of the game. The patch contains no game data. Keep about twice the game's size free while patching." }
       ],
       guide: [["Luma Shop", "luma-shop"], ["Forged games", "forged-games"]],
-      pack: { open: true, file: "dqxi-0004000000199200-v1.zip", size: "6.16 GB", system: "3DS", code: "0004000000199200", sha256: "0a2ef1885dcfdcbc8b3eebfee3a3697614065457cbd9e30af771acbf1f99ad7d",
-        addon: { file: "dqxi-title-0004000000199200-v0.1.43.zip", size: "21 MB", sha256: "0bd99f20167e0dcbeb56b231aafc9b81a61df71d2da596c684418662cb094451" } },
+      pack: { open: true, file: "dqxi-0004000000199200-v2.zip", size: "6.03 GB", system: "3DS", code: "0004000000199200", sha256: "462ed9cd010efde556397926abb7d729d02985fab40bd5e2010fa950e1b2b259",
+        addon: { file: "dqxi-title-0004000000199200-v0.1.45.zip", size: "26 MB", sha256: "1b058b3e2f9dad2c096862ad3fdc37b0fbad1b4032f1010609ea5d9ca51eca7a" } },
       github: "Exhilo62/DQXI-3DS-English-Patch", // the page reads the latest release from here
       colors: ["#4a8fe8", "#243a8f"],
       images: { icon: "img/icon-dqxi.png", art: "img/art/vista-moon.jpg", artPos: "center 35%", artFilter: "hue-rotate(-45deg) saturate(1.1)", feature: "img/art/dqxi-logo.png", featureWide: true, after: "img/art/dqxi-hero.jpg", before: "", aspect: "16 / 9", gallery: [] },

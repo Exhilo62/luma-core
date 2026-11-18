@@ -112,7 +112,7 @@ window.LUMA = {
     /* "Latest updates" on the home page, newest first: [date, title, text, link]
        An entry whose link is a project with a "github" repo follows that repo's latest release. */
     news: [
-      ["Nov 17, 2026", "HeartGold and SoulSilver v5: all of Johto and Kanto", "The HeartGold and SoulSilver packs now cover the rest of Johto and all of Kanto, plus every overworld character and following Pokémon in normal and shiny colors. Download them below or update them in the Luma Shop.", "project.html?id=pokemon-heartgold"],
+      ["Nov 17, 2026", "HeartGold and SoulSilver v6: all of Johto and Kanto", "The HeartGold and SoulSilver packs now cover the rest of Johto and all of Kanto, plus every overworld character and following Pokémon in normal and shiny colors, redrawn with smooth pixel-art edges. Download them below or update them in the Luma Shop.", "project.html?id=pokemon-heartgold"],
       ["Nov 17, 2026", "Mario Kart DS: every course in HD", "The Mario Kart DS pack now covers all 32 courses, the 7 battle stages and the mission stages. Rainbow Road, Bowser Castle, Tick-Tock Clock and the rest are HD for the first time. Download it below or update it in the Luma Shop.", "project.html?id=mario-kart-ds"],
       ["Nov 16, 2026", "Texture pack updates", "Every Pokémon pack is rebuilt with cleaner grass, edges and menu icons, and Dragon Quest XI, Ever Oasis, Final Fantasy Explorers, 7th Dragon III, Street Fighter IV, HeartGold, SoulSilver and Mario Kart DS get fixes too. Installed packs offer an Update in the Luma Shop.", "#packs"],
       ["Nov 16, 2026", "DQXI English Patch v0.1.45", "More official names and a round of layout fixes, after a tester played the whole game to 99.9%. Still a beta.", "project.html?id=dqxi-english-patch"],
@@ -548,20 +548,21 @@ window.LUMA = {
       platform: "Nintendo DS · optimized for Luma Core",
       tagline: ["Johto in widescreen,", "with HD textures."],
       status: "complete",
-      version: "v5",
+      version: "v6",
       progress: 100,
       note: "The HD pack installs from the Luma Shop inside Luma Core.",
       description:
         "Pokémon HeartGold, tuned for the AYN Thor. Luma Core adds an HD texture pack and widescreen that fills the screen in both the 3D world and the 2D screens, instead of the DS's 4:3 picture with bars at the sides.",
       features: ["HD texture pack with 60,110 files", "One set of images shared with SoulSilver", "Widescreen in the 3D world and on 2D screens", "Tuned for the AYN Thor's two screens"],
-      stats: [["Pack files", "60,110"], ["Pack size", "169 MB"], ["Widescreen", "3D and 2D"]],
+      stats: [["Pack files", "60,110"], ["Pack size", "189 MB"], ["Widescreen", "3D and 2D"]],
       sections: [
+        { h: "Version 6 (November 17, 2026)", p: "Every overworld character and following Pokémon is redrawn with xBR, a pixel-art scaler that rounds off the jagged edges while keeping each face and outline true to the original. Maps, menus and text are unchanged. Checked in the desktop build." },
         { h: "Version 5 (November 17, 2026)", p: "The rest of Johto and all of Kanto: 3,071 more map, building and object textures, read straight from the game. Every overworld character and following Pokémon is in too, 11,402 sprites in normal and shiny colors, redrawn with a pixel-art scaler so they keep their sprite style. Version 3 images are unchanged. Checked in the desktop build; the AYN Thor test is still to come." },
         { h: "Version 3 (November 16, 2026)", p: "365 small sprites redrawn pixel-sharp, the see-through effects (like the opening's flames) soft again, and the party screen's \"HP\" label back to the original pixels. Tested on the AYN Thor." },
         { h: "Version 2: one pack for both games", p: "HeartGold and SoulSilver now share one merged HD pack, with every image from both games' packs. HeartGold's pack grew from 14,612 files to 45,743. If you have version 1 installed, the Luma Shop offers an Update." },
         { h: "Tested on the AYN Thor", p: "On November 15, 2026 the Luma Shop offered the update to version 2 over an installed version 1 on an AYN Thor, and it installed all 45,743 files. The game starts to its title screen with the pack. Updating keeps the old pack working until the new one is in place. The last step, clearing out the old files, took several minutes on the Thor (about 30 minutes for SoulSilver's 45,000 files), and the game stays playable while it runs." }
       ],
-      pack: { file: "heartgold-IPKE-v5.zip", size: "169 MB", system: "DS", code: "IPKE", sha256: "8d7638912ff62ab7e6518a4a8483d811239f260a61266bc2af4562bab1404b99" },
+      pack: { file: "heartgold-IPKE-v6.zip", size: "189 MB", system: "DS", code: "IPKE", sha256: "b154f72fe8f94a03623f6976440fdc9550d1828c619882c543ee469d2c2b80e3" },
       colors: ["#e0a832", "#7a4a12"],
       images: { icon: "img/icon-heartgold.png", art: "img/ds-hg-wide.jpg", artPos: "center", after: "img/ds-hg-wide.jpg", before: "img/ds-hg-43.jpg", labels: ["4:3", "Widescreen"], aspect: "16 / 9", gallery: ["img/ds-hg-battle.jpg"] },
       links: { download: "", source: "" }
@@ -573,20 +574,21 @@ window.LUMA = {
       platform: "Nintendo DS · optimized for Luma Core",
       tagline: ["Johto in widescreen,", "with HD textures."],
       status: "complete",
-      version: "v5",
+      version: "v6",
       progress: 100,
       note: "The HD pack installs from the Luma Shop inside Luma Core.",
       description:
         "Pokémon SoulSilver, tuned for the AYN Thor the same way as HeartGold: an HD texture pack, and widescreen that fills the screen in both the 3D world and the 2D screens. HeartGold and SoulSilver share one merged pack: every image from both games' packs, including SoulSilver's own 1,868.",
       features: ["HD texture pack with 60,110 files", "One set of images shared with HeartGold, including SoulSilver's own 1,868", "Widescreen in the 3D world and on 2D screens", "Tuned for the AYN Thor's two screens"],
-      stats: [["Pack files", "60,110"], ["Pack size", "169 MB"], ["Widescreen", "3D and 2D"]],
+      stats: [["Pack files", "60,110"], ["Pack size", "189 MB"], ["Widescreen", "3D and 2D"]],
       sections: [
+        { h: "Version 6 (November 17, 2026)", p: "Every overworld character and following Pokémon is redrawn with xBR, a pixel-art scaler that rounds off the jagged edges while keeping each face and outline true to the original. Maps, menus and text are unchanged. Checked in the desktop build." },
         { h: "Version 5 (November 17, 2026)", p: "The rest of Johto and all of Kanto: 3,071 more map, building and object textures, read straight from the game. Every overworld character and following Pokémon is in too, 11,402 sprites in normal and shiny colors, redrawn with a pixel-art scaler so they keep their sprite style. Version 3 images are unchanged. Checked in the desktop build; the AYN Thor test is still to come." },
         { h: "Version 3 (November 16, 2026)", p: "The same fixes as HeartGold's version 3, since the two games share one pack: 365 small sprites redrawn pixel-sharp, the see-through effects soft again, and the party screen's \"HP\" label back to the original pixels." },
         { h: "Version 2: one pack for both games", p: "Version 2 is the same set of images as HeartGold's pack. Eleven leftover slivers of text were dropped from version 1, taking it from 45,754 files to 45,743. If you have version 1 installed, the Luma Shop offers an Update." },
         { h: "Tested on the AYN Thor", p: "On November 15, 2026 version 1 was downloaded and installed from the Luma Shop on an AYN Thor, and the opening, New Bark Town in widescreen, a battle and the party screen all looked right, with the game's text staying as pixel art. Later the same day the Shop offered the update to version 2, which installed all 45,743 files; New Bark Town in widescreen with the HD pack and a battle looked right. Updating keeps the old pack working until the new one is in place. The last step, clearing out the old files, took several minutes on the Thor (about 30 minutes for SoulSilver's 45,000 files), and the game stays playable while it runs." }
       ],
-      pack: { file: "soulsilver-IPGE-v5.zip", size: "169 MB", system: "DS", code: "IPGE", sha256: "3110c34d19f428239b1ae6c9014a04ca5abd62c499160047fd586575de47f2d0" },
+      pack: { file: "soulsilver-IPGE-v6.zip", size: "189 MB", system: "DS", code: "IPGE", sha256: "6acbc27c0d554b4d1574fc13bb34b6349ddca7fb08f1de3bf2e936acd24efbd8" },
       colors: ["#aab4c8", "#48506a"],
       images: { icon: "img/icon-soulsilver.png", art: "img/ds-ss-wide.jpg", artPos: "center", after: "img/ds-ss-wide.jpg", before: "img/ds-ss-43.jpg", labels: ["4:3", "Widescreen"], aspect: "16 / 9", gallery: [] },
       links: { download: "", source: "" }

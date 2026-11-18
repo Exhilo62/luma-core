@@ -117,7 +117,6 @@ window.LUMA = {
       ["Nov 17, 2026", "Mario Kart DS: every course in HD", "The Mario Kart DS pack now covers all 32 courses, the 7 battle stages and the mission stages. Rainbow Road, Bowser Castle, Tick-Tock Clock and the rest are HD for the first time. Download it below or update it in the Luma Shop.", "project.html?id=mario-kart-ds"],
       ["Nov 16, 2026", "Texture pack updates", "Every Pokémon pack is rebuilt with cleaner grass, edges and menu icons, and Dragon Quest XI, Ever Oasis, Final Fantasy Explorers, 7th Dragon III, Street Fighter IV, HeartGold, SoulSilver and Mario Kart DS get fixes too. Installed packs offer an Update in the Luma Shop.", "#packs"],
       ["Nov 16, 2026", "DQXI English Patch v0.1.45", "More official names and a round of layout fixes, after a tester played the whole game to 99.9%. Still a beta.", "project.html?id=dqxi-english-patch"],
-      ["Nov 15, 2026", "Pokémon X and Y packs", "Two more 4K texture packs, one for each game, bring the count to thirteen. They are new and tested through the intro so far.", "project.html?id=pokemon-x"],
       ["Nov 15, 2026", "Pokémon SoulSilver gets its own HD pack", "SoulSilver now has the full treatment: an HD texture pack, widescreen and tuning for the Thor, like HeartGold.", "project.html?id=pokemon-soulsilver"],
       ["Nov 15, 2026", "DQXI English Patch v0.1.44", "The patch now runs through all three acts, with more official names, text fixes and a new two-minute video. Still a beta.", "project.html?id=dqxi-english-patch"],
       ["Nov 15, 2026", "Luma Dex grows: more editing, the Bank and Luma Park", "Editing and Bank moves now reach from Red and Blue to X, Y, Omega Ruby and Alpha Sapphire, and Luma Park moves Pokémon on a generation.", "project.html?id=luma-dex"],
@@ -401,52 +400,6 @@ window.LUMA = {
       images: { icon: "img/icon-ssf4.png", art: "img/art/ssf4-art.jpg", artPos: "85% 30%", logo: "img/art/ssf4-logo.png", after: "img/ssf4-after.jpg", before: "img/ssf4-before.jpg", aspect: "1 / 1", gallery: ["img/pack-ssf4.jpg", "img/art/ssf4-art.jpg", "img/art/ssf4-art2.jpg"] },
       links: { download: "", source: "" }
     },
-    {
-      id: "pokemon-x",
-      category: "texture",
-      title: "Pokémon X",
-      platform: "Nintendo 3DS · 4K texture pack",
-      tagline: ["Kalos, redrawn", "four times sharper."],
-      status: "complete",
-      version: "v3",
-      progress: 100,
-      note: "Installs from the Luma Shop inside Luma Core. Tested through the intro so far.",
-      description:
-        "A 4x texture pack for Pokémon X. The textures stored in the game are upscaled: Pokémon models, trainers and other characters, field maps and buildings, battle backgrounds and effects, and menus.",
-      features: ["20,904 files upscaled 4x, with a method picked for each kind of picture", "Pokémon models, trainers, maps, battle effects and menus", "No HD system-font sheets, like the other Pokémon packs", "For Azahar / Citra-based emulators"],
-      stats: [["Files", "20,904"], ["Size", "7.86 GB"], ["Upscale", "4x"]],
-      sections: [
-        { h: "Version 3 (November 16, 2026)", p: "Rebuilt with a method picked for each kind of picture: a model that keeps detail for Pokémon and trainers, smooth clean edges for cut-out art like grass, flowers and fences, painted grounds that keep their brushwork, and masks, particles and lighting left at the original size so the game handles them as before. That is why it has fewer files than version 1. The grass is redrawn without the dark outlines and dashes of version 1. Menu and battle icons fixed: no more thin line under the Poké Balls and other small icons, and small icons drawn crisply instead of with invented outlines." },
-        { h: "Checked so far", p: "This pack is new. It has been tested from the start of the game through the intro to the player's bedroom. The overworld beyond that, battles and menus have not been checked yet, and will be before downloads open." }
-      ],
-      pack: { file: "pokemonx-0004000000055D00-v3.zip", size: "7.86 GB", system: "3DS", code: "0004000000055D00", sha256: "790e1bb98049ca09af58641ada50bad63a08fe30f9456a1fd09568ee172099e3" },
-      colors: ["#2f6fd8", "#101f52"],
-      images: { icon: "img/icon-pokemonx.png", art: "img/pokemonx-logo-after.jpg", artPos: "center", after: "img/pokemonx-logo-after.jpg", before: "img/pokemonx-logo-before.jpg", aspect: "1620 / 880", gallery: [] },
-      links: { download: "", source: "" }
-    },
-    {
-      id: "pokemon-y",
-      category: "texture",
-      title: "Pokémon Y",
-      platform: "Nintendo 3DS · 4K texture pack",
-      tagline: ["The same sharper Kalos,", "in red."],
-      status: "complete",
-      version: "v3",
-      progress: 100,
-      note: "Installs from the Luma Shop inside Luma Core. Tested through the intro so far.",
-      description:
-        "A 4x texture pack for Pokémon Y. It holds the same images as the Pokémon X pack, under Pokémon Y's own title ID, so each game has a pack of its own.",
-      features: ["20,904 files upscaled 4x, with a method picked for each kind of picture", "Pokémon models, trainers, maps, battle effects and menus", "No HD system-font sheets, like the other Pokémon packs", "For Azahar / Citra-based emulators"],
-      stats: [["Files", "20,904"], ["Size", "7.86 GB"], ["Upscale", "4x"]],
-      sections: [
-        { h: "Version 3 (November 16, 2026)", p: "Rebuilt with a method picked for each kind of picture: a model that keeps detail for Pokémon and trainers, smooth clean edges for cut-out art like grass, flowers and fences, painted grounds that keep their brushwork, and masks, particles and lighting left at the original size so the game handles them as before. That is why it has fewer files than version 1. The grass is redrawn without the dark outlines and dashes of version 1. Menu and battle icons fixed: no more thin line under the Poké Balls and other small icons, and small icons drawn crisply instead of with invented outlines." },
-        { h: "Checked so far", p: "This pack is new. It has been tested from the start of the game through the intro to the player's bedroom. The overworld beyond that, battles and menus have not been checked yet, and will be before downloads open." }
-      ],
-      pack: { file: "pokemony-0004000000055E00-v3.zip", size: "7.86 GB", system: "3DS", code: "0004000000055E00", sha256: "e7f919cc3be0d9b0615fca3adc448f3480e26cf52547aea589c3d1383786099d" },
-      colors: ["#d83a4a", "#5a1220"],
-      images: { icon: "img/icon-pokemony.png", art: "img/pokemony-logo-after.jpg", artPos: "center", after: "img/pokemony-logo-after.jpg", before: "img/pokemony-logo-before.jpg", aspect: "1620 / 880", gallery: [] },
-      links: { download: "", source: "" }
-    },
 
     /* ---------- Optimized DS games ---------- */
     {
@@ -599,7 +552,7 @@ window.LUMA = {
       features: [
         "Apps: Luma Themes, Luma Saves, Luma Dex, Luma Friends, Luma Achievements and Luma Pass",
         "Extras: Golden Sun - Dual Screen Companion and the Dragon Quest XI English Patch (beta)",
-        "Texture packs for ten 3DS games, Pokémon HeartGold, Pokémon SoulSilver and Mario Kart DS",
+        "Texture packs for eight 3DS games, Pokémon HeartGold, Pokémon SoulSilver, Pokémon Platinum and Mario Kart DS",
         "Downloads that carry on in the background"
       ],
       sections: [

@@ -117,10 +117,8 @@ window.LUMA = {
       ["Nov 16, 2026", "Texture pack updates", "Every Pokémon pack is rebuilt with cleaner grass, edges and menu icons, and Dragon Quest XI, Ever Oasis, Final Fantasy Explorers, 7th Dragon III, Street Fighter IV, HeartGold, SoulSilver and Mario Kart DS get fixes too. Installed packs offer an Update in the Luma Shop.", "#packs"],
       ["Nov 16, 2026", "DQXI English Patch v0.1.45", "More official names and a round of layout fixes, after a tester played the whole game to 99.9%. Still a beta.", "project.html?id=dqxi-english-patch"],
       ["Nov 15, 2026", "Pokémon X and Y packs", "Two more 4K texture packs, one for each game, bring the count to thirteen. They are new and tested through the intro so far.", "project.html?id=pokemon-x"],
-      ["Nov 15, 2026", "Pokémon Omega Ruby and Alpha Sapphire packs", "Two more 4K texture packs, one for each game, bring the count to eleven. They are new and still being checked.", "project.html?id=pokemon-omega-ruby"],
       ["Nov 15, 2026", "Pokémon SoulSilver gets its own HD pack", "SoulSilver now has the full treatment: an HD texture pack, widescreen and tuning for the Thor, like HeartGold.", "project.html?id=pokemon-soulsilver"],
       ["Nov 15, 2026", "DQXI English Patch v0.1.44", "The patch now runs through all three acts, with more official names, text fixes and a new two-minute video. Still a beta.", "project.html?id=dqxi-english-patch"],
-      ["Nov 15, 2026", "Pokémon Ultra Sun and Ultra Moon packs", "Two new 4K texture packs, one for each game, bring the count to nine. Like the others, their downloads open with the beta.", "project.html?id=pokemon-ultra-sun"],
       ["Nov 15, 2026", "Luma Dex grows: more editing, the Bank and Luma Park", "Editing and Bank moves now reach from Red and Blue to X, Y, Omega Ruby and Alpha Sapphire, and Luma Park moves Pokémon on a generation.", "project.html?id=luma-dex"],
       ["Nov 15, 2026", "Import from Azahar and melonDS", "Bring your texture packs, mods and saves over from another emulator, from Settings or during setup.", "project.html?id=luma-core"],
       ["Nov 15, 2026", "Manual install guide is ready", "Direct pack downloads will open here when Luma Core comes out for beta testing. The step-by-step install guide is already up.", "install.html"],
@@ -403,97 +401,6 @@ window.LUMA = {
       links: { download: "", source: "" }
     },
     {
-      id: "pokemon-ultra-sun",
-      category: "texture",
-      title: "Pokémon Ultra Sun",
-      platform: "Nintendo 3DS · 4K texture pack",
-      tagline: ["All of Alola,", "four times sharper."],
-      status: "complete",
-      version: "v3",
-      progress: 100,
-      note: "Installs from the Luma Shop inside Luma Core.",
-      description:
-        "A 4x texture pack for Pokémon Ultra Sun. Every texture stored in the game is upscaled: Pokémon models, trainers and other characters, field maps and buildings, battle backgrounds and effects, menus and the game's own font sheets. The player character's own textures are not covered, because the game builds them while it runs.",
-      features: ["26,076 files upscaled 4x, with a method picked for each kind of picture", "Pokémon models, trainers, maps, battle effects, menus and the games' own font sheets", "No HD system-font sheets: these games draw text from their own fonts", "For Azahar / Citra-based emulators"],
-      stats: [["Files", "26,076"], ["Size", "8.92 GB"], ["Upscale", "4x"]],
-      sections: [
-        { h: "Version 3 (November 16, 2026)", p: "Rebuilt with a method picked for each kind of picture: a model that keeps detail for Pokémon and trainers, smooth clean edges for cut-out art like grass, flowers and fences, painted grounds that keep their brushwork, and masks, particles and lighting left at the original size so the game handles them as before. That is why it has fewer files than version 1. Menu and battle icons fixed: no more thin line under the Poké Balls and other small icons, and small icons drawn crisply instead of with invented outlines." }
-      ],
-      pack: { file: "ultrasun-00040000001B5000-v3.zip", size: "8.92 GB", system: "3DS", code: "00040000001B5000", sha256: "3036450ed45147a4329065eee84242d099f3306dd513590a172a9b6ded7f0a04" },
-      colors: ["#f08a2c", "#7a2a12"],
-      images: { icon: "img/icon-ultrasun.png", art: "img/art/usum-art.jpg", artPos: "40% 30%", after: "img/ultrasun-logo-after.jpg", before: "img/ultrasun-logo-before.jpg", aspect: "1620 / 880", gallery: ["img/art/usum-art.jpg", "img/usum-after.jpg"] },
-      links: { download: "", source: "" }
-    },
-    {
-      id: "pokemon-ultra-moon",
-      category: "texture",
-      title: "Pokémon Ultra Moon",
-      platform: "Nintendo 3DS · 4K texture pack",
-      tagline: ["The same sharper Alola,", "under the moon."],
-      status: "complete",
-      version: "v3",
-      progress: 100,
-      note: "Installs from the Luma Shop inside Luma Core.",
-      description:
-        "A 4x texture pack for Pokémon Ultra Moon. It holds the same images as the Ultra Sun pack, under Ultra Moon's own title ID, so each game has a pack of its own. The player character's own textures are not covered, because the game builds them while it runs.",
-      features: ["26,076 files upscaled 4x, with a method picked for each kind of picture", "Pokémon models, trainers, maps, battle effects, menus and the games' own font sheets", "No HD system-font sheets: these games draw text from their own fonts", "For Azahar / Citra-based emulators"],
-      stats: [["Files", "26,076"], ["Size", "8.92 GB"], ["Upscale", "4x"]],
-      sections: [
-        { h: "Version 3 (November 16, 2026)", p: "Rebuilt with a method picked for each kind of picture: a model that keeps detail for Pokémon and trainers, smooth clean edges for cut-out art like grass, flowers and fences, painted grounds that keep their brushwork, and masks, particles and lighting left at the original size so the game handles them as before. That is why it has fewer files than version 1. Menu and battle icons fixed: no more thin line under the Poké Balls and other small icons, and small icons drawn crisply instead of with invented outlines." },
-        { h: "Tested on the AYN Thor", p: "On November 15, 2026 the pack was downloaded and installed from the Luma Shop on an AYN Thor. The download resumed after a pause, the file check passed, all 36,622 files installed, and the game starts with the HD pack." }
-      ],
-      pack: { file: "ultramoon-00040000001B5100-v3.zip", size: "8.92 GB", system: "3DS", code: "00040000001B5100", sha256: "f053d2863dfbeaf6315f67124a22a46a0159bebfaf532d591a4832eb3be89e8d" },
-      colors: ["#6a5cff", "#1d1650"],
-      images: { icon: "img/icon-ultramoon.png", art: "img/art/usum-art.jpg", artPos: "40% 30%", after: "img/ultramoon-logo-after.jpg", before: "img/ultramoon-logo-before.jpg", aspect: "1620 / 880", gallery: ["img/art/usum-art.jpg", "img/usum-after.jpg"] },
-      links: { download: "", source: "" }
-    },
-    {
-      id: "pokemon-omega-ruby",
-      category: "texture",
-      title: "Pokémon Omega Ruby",
-      platform: "Nintendo 3DS · 4K texture pack",
-      tagline: ["Hoenn, redrawn", "four times sharper."],
-      status: "complete",
-      version: "v2",
-      progress: 100,
-      note: "Installs from the Luma Shop inside Luma Core. Tested through Omega Ruby's intro so far.",
-      description:
-        "A 4x texture pack for Pokémon Omega Ruby. Every texture stored in the game is upscaled: Pokémon models, trainers and other characters, field maps and buildings, battle backgrounds and effects, menus and the game's own font sheets.",
-      features: ["25,199 files upscaled 4x, with a method picked for each kind of picture", "Pokémon models, trainers, maps, battle effects, menus and the games' own font sheets", "No HD system-font sheets: these games draw text from their own fonts", "For Azahar / Citra-based emulators"],
-      stats: [["Files", "25,199"], ["Size", "8.58 GB"], ["Upscale", "4x"]],
-      sections: [
-        { h: "Version 2 (November 16, 2026)", p: "Rebuilt with a method picked for each kind of picture: a model that keeps detail for Pokémon and trainers, smooth clean edges for cut-out art like grass, flowers and fences, painted grounds that keep their brushwork, and masks, particles and lighting left at the original size so the game handles them as before. That is why it has fewer files than version 1. Menu and battle icons fixed: no more thin line under the Poké Balls and other small icons, and small icons drawn crisply instead of with invented outlines." },
-        { h: "Checked so far", p: "This pack is new. It has been tested through Omega Ruby's intro so far, and more of the game will be checked before downloads open." }
-      ],
-      pack: { file: "omegaruby-000400000011C400-v2.zip", size: "8.58 GB", system: "3DS", code: "000400000011C400", sha256: "b79861a8024436bc0e3d2de7e22973942d361526dc6c3ab11f39dc95901175c9" },
-      colors: ["#d8433a", "#5a1418"],
-      images: { icon: "img/icon-omegaruby.png", art: "img/art/oras-art.jpg", artPos: "center 45%", after: "img/omegaruby-logo-after.jpg", before: "img/omegaruby-logo-before.jpg", aspect: "1620 / 880", gallery: ["img/art/oras-art.jpg"] },
-      links: { download: "", source: "" }
-    },
-    {
-      id: "pokemon-alpha-sapphire",
-      category: "texture",
-      title: "Pokémon Alpha Sapphire",
-      platform: "Nintendo 3DS · 4K texture pack",
-      tagline: ["The same sharper Hoenn,", "in sapphire."],
-      status: "complete",
-      version: "v2",
-      progress: 100,
-      note: "Installs from the Luma Shop inside Luma Core. Tested through Omega Ruby's intro so far.",
-      description:
-        "A 4x texture pack for Pokémon Alpha Sapphire. It holds the same images as the Omega Ruby pack, under Alpha Sapphire's own title ID, so each game has a pack of its own.",
-      features: ["25,199 files upscaled 4x, with a method picked for each kind of picture", "Pokémon models, trainers, maps, battle effects, menus and the games' own font sheets", "No HD system-font sheets: these games draw text from their own fonts", "For Azahar / Citra-based emulators"],
-      stats: [["Files", "25,199"], ["Size", "8.58 GB"], ["Upscale", "4x"]],
-      sections: [
-        { h: "Version 2 (November 16, 2026)", p: "Rebuilt with a method picked for each kind of picture: a model that keeps detail for Pokémon and trainers, smooth clean edges for cut-out art like grass, flowers and fences, painted grounds that keep their brushwork, and masks, particles and lighting left at the original size so the game handles them as before. That is why it has fewer files than version 1. Menu and battle icons fixed: no more thin line under the Poké Balls and other small icons, and small icons drawn crisply instead of with invented outlines." },
-        { h: "Checked so far", p: "This pack is new. It has been tested through Omega Ruby's intro so far, and more of the game will be checked before downloads open." }
-      ],
-      pack: { file: "alphasapphire-000400000011C500-v2.zip", size: "8.58 GB", system: "3DS", code: "000400000011C500", sha256: "5299d223a3023d8e0dde025da68bd50645372eaeb36e96e624b6ef3f1e7ba4b6" },
-      colors: ["#2f7fe0", "#12265e"],
-      images: { icon: "img/icon-alphasapphire.png", art: "img/art/oras-art.jpg", artPos: "center 45%", after: "img/alphasapphire-logo-after.jpg", before: "img/alphasapphire-logo-before.jpg", aspect: "1620 / 880", gallery: ["img/art/oras-art.jpg"] },
-      links: { download: "", source: "" }
-    },
-    {
       id: "pokemon-x",
       category: "texture",
       title: "Pokémon X",
@@ -691,7 +598,7 @@ window.LUMA = {
       features: [
         "Apps: Luma Themes, Luma Saves, Luma Dex, Luma Friends, Luma Achievements and Luma Pass",
         "Extras: Golden Sun - Dual Screen Companion and the Dragon Quest XI English Patch (beta)",
-        "Texture packs for thirteen 3DS games, Pokémon HeartGold, Pokémon SoulSilver and Mario Kart DS",
+        "Texture packs for ten 3DS games, Pokémon HeartGold, Pokémon SoulSilver and Mario Kart DS",
         "Downloads that carry on in the background"
       ],
       sections: [

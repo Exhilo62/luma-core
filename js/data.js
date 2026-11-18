@@ -112,6 +112,7 @@ window.LUMA = {
     /* "Latest updates" on the home page, newest first: [date, title, text, link]
        An entry whose link is a project with a "github" repo follows that repo's latest release. */
     news: [
+      ["Nov 17, 2026", "DQXI English Patch v0.1.46", "Layout fixes for the Magic list, the Stats screen, battle skill lists and a map label. Still a beta.", "project.html?id=dqxi-english-patch"],
       ["Nov 17, 2026", "HeartGold and SoulSilver v6: all of Johto and Kanto", "The HeartGold and SoulSilver packs now cover the rest of Johto and all of Kanto, plus every overworld character and following Pokémon in normal and shiny colors, redrawn with smooth pixel-art edges. Download them below or update them in the Luma Shop.", "project.html?id=pokemon-heartgold"],
       ["Nov 17, 2026", "Mario Kart DS: every course in HD", "The Mario Kart DS pack now covers all 32 courses, the 7 battle stages and the mission stages. Rainbow Road, Bowser Castle, Tick-Tock Clock and the rest are HD for the first time. Download it below or update it in the Luma Shop.", "project.html?id=mario-kart-ds"],
       ["Nov 16, 2026", "Texture pack updates", "Every Pokémon pack is rebuilt with cleaner grass, edges and menu icons, and Dragon Quest XI, Ever Oasis, Final Fantasy Explorers, 7th Dragon III, Street Fighter IV, HeartGold, SoulSilver and Mario Kart DS get fixes too. Installed packs offer an Update in the Luma Shop.", "#packs"],
@@ -912,7 +913,7 @@ window.LUMA = {
       platform: "Nintendo 3DS · translation patch",
       tagline: ["The 3DS version, in English.", "Beta: translation in progress."],
       status: "beta",
-      version: "v0.1.45",
+      version: "v0.1.46",
       progress: null,
       note: "Beta: the English translation is still being worked on. Patchers for Windows, Linux, Steam Deck, macOS and Android; also built into Luma Core.",
       notice: "This is a beta. We are still working on the English translation, so some text is unfinished and will change between versions.",
@@ -925,7 +926,7 @@ window.LUMA = {
         "Optional HD texture pack, downloadable from the Luma Shop",
         "Patchers for Windows, Linux, Steam Deck and macOS"
       ],
-      stats: [["Patch", "v0.1.45"], ["HD pack files", "15,460"], ["HD pack size", "6.03 GB"]],
+      stats: [["Patch", "v0.1.46"], ["HD pack files", "15,460"], ["HD pack size", "6.03 GB"]],
       /* Our own video files, played on the page: [file, poster picture, title, line underneath] */
       clips: [
         ["video/dqxi-english-patch-v0.1.44.mp4", "video/dqxi-english-patch-v0.1.44-poster.jpg", "The journey so far: v0.1.44", "Two minutes through all three acts in English. The music is an original piece made for the video."]
@@ -935,6 +936,15 @@ window.LUMA = {
         ["I9z172vRZDI", "Patching on an Android device"]
       ],
       sections: [
+        { h: "New in v0.1.46 (November 17, 2026)", list: [
+          "Layout fixes from Sola's level 99 save.",
+          "Magic list: the window is wider and the names are smaller, so Holy Protection and Benediction no longer wrap.",
+          "Stats screen: the Skills and Equipment Effects pages fit their boxes, and \"Dispels buffs on attack\" now reads \"Dispels buffs on hit\".",
+          "Battle skill and spell lists use a smaller font, so long names like Blade of Ultimate Power stay on their row.",
+          "The \"Da and Son's House\" map label uses a smaller font.",
+          "Includes everything from v0.1.45. Make a new game, or patch again with this version.",
+          "The HD texture pack still works. The title-screen file for v0.1.46 is in the release and in the Luma Shop's add-on."
+        ] },
         { h: "New in v0.1.45 (November 16, 2026)", list: [
           "A tester, Sola, played the whole game to 99.9% and every menu of that save was gone through.",
           "More official names: Mortamammoth, End of Time, Friend of Time, Deepest Recesses of the Past and Holy Dragon Protection.",
@@ -974,7 +984,7 @@ window.LUMA = {
       ],
       guide: [["Luma Shop", "luma-shop"], ["Forged games", "forged-games"]],
       pack: { open: true, file: "dqxi-0004000000199200-v2.zip", size: "6.03 GB", system: "3DS", code: "0004000000199200", sha256: "462ed9cd010efde556397926abb7d729d02985fab40bd5e2010fa950e1b2b259",
-        addon: { file: "dqxi-title-0004000000199200-v0.1.45.zip", size: "26 MB", sha256: "1b058b3e2f9dad2c096862ad3fdc37b0fbad1b4032f1010609ea5d9ca51eca7a" } },
+        addon: { file: "dqxi-title-0004000000199200-v0.1.46.zip", size: "28 MB", sha256: "2363b4a8c5adfce9464e8ce2678806f2ddb62ab0f88c2967d13b2555bde569d6" } },
       github: "Exhilo62/DQXI-3DS-English-Patch", // the page reads the latest release from here
       colors: ["#4a8fe8", "#243a8f"],
       images: { icon: "img/icon-dqxi.png", art: "img/art/vista-moon.jpg", artPos: "center 35%", artFilter: "hue-rotate(-45deg) saturate(1.1)", feature: "img/art/dqxi-logo.png", featureWide: true, after: "img/art/dqxi-hero.jpg", before: "", aspect: "16 / 9", gallery: [] },

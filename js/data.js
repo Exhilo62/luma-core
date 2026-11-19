@@ -112,6 +112,7 @@ window.LUMA = {
     /* "Latest updates" on the home page, newest first: [date, title, text, link]
        An entry whose link is a project with a "github" repo follows that repo's latest release. */
     news: [
+      ["Nov 18, 2026", "Pokémon Platinum: HD pack and full-width boxes", "A new HD texture pack for Platinum covers every town, route and building, with every overworld character redrawn. In widescreen, battle and dialogue boxes now stretch to the full width in Platinum, HeartGold and SoulSilver.", "project.html?id=pokemon-platinum"],
       ["Nov 17, 2026", "DQXI English Patch v0.1.46", "Layout fixes for the Magic list, the Stats screen, battle skill lists and a map label. Still a beta.", "project.html?id=dqxi-english-patch"],
       ["Nov 17, 2026", "HeartGold and SoulSilver v6: all of Johto and Kanto", "The HeartGold and SoulSilver packs now cover the rest of Johto and all of Kanto, plus every overworld character and following Pokémon in normal and shiny colors, redrawn with smooth pixel-art edges. Download them below or update them in the Luma Shop.", "project.html?id=pokemon-heartgold"],
       ["Nov 17, 2026", "Mario Kart DS: every course in HD", "The Mario Kart DS pack now covers all 32 courses, the 7 battle stages and the mission stages. Rainbow Road, Bowser Castle, Tick-Tock Clock and the rest are HD for the first time. Download it below or update it in the Luma Shop.", "project.html?id=mario-kart-ds"],
@@ -484,6 +485,31 @@ window.LUMA = {
       pack: { file: "soulsilver-IPGE-v6.zip", size: "189 MB", system: "DS", code: "IPGE", sha256: "6acbc27c0d554b4d1574fc13bb34b6349ddca7fb08f1de3bf2e936acd24efbd8" },
       colors: ["#aab4c8", "#48506a"],
       images: { icon: "img/icon-soulsilver.png", art: "img/ds-ss-wide.jpg", artPos: "center", after: "img/ds-ss-wide.jpg", before: "img/ds-ss-43.jpg", labels: ["4:3", "Widescreen"], aspect: "16 / 9", gallery: [] },
+      links: { download: "", source: "" }
+    },
+    {
+      id: "pokemon-platinum",
+      category: "ds",
+      title: "Pokémon Platinum",
+      platform: "Nintendo DS · optimized for Luma Core",
+      tagline: ["Sinnoh in widescreen,", "with HD textures."],
+      status: "complete",
+      version: "v3",
+      progress: 100,
+      note: "The HD pack installs from the Luma Shop inside Luma Core.",
+      description:
+        "Pokémon Platinum, tuned for the AYN Thor. Luma Core adds an HD texture pack and widescreen that fills the screen in the 3D world, and the message boxes in battles and conversations stretch to the full width.",
+      features: ["HD texture pack with 28,998 files", "Every town, route and building, read straight from the game", "Widescreen with full-width message boxes", "Tuned for the AYN Thor's two screens"],
+      stats: [["Pack files", "28,998"], ["Pack size", "183 MB"], ["Widescreen", "3D and boxes"]],
+      sections: [
+        { h: "Full-width message boxes (November 18, 2026)", p: "In widescreen, the battle message box and the dialogue box stretch to the edges of the screen, with the text kept where it belongs. In rooms the game draws at 4:3, the box stays 4:3 to match. Checked on the AYN Thor, with the bottom screen extended." },
+        { h: "Version 3 (November 17, 2026)", p: "Every overworld character is redrawn with xBR, a pixel-art scaler that rounds off the jagged edges while keeping each face and outline true to the original." },
+        { h: "Version 2 (November 17, 2026)", p: "All 2,451 overworld people and player sprites, read straight from the game, so every town's characters are in HD, not just the ones seen while playing." },
+        { h: "Version 1 (November 17, 2026)", p: "Every map, building and animated tile in Sinnoh, read straight from the game, plus menus and battle screens. Text stays as the game's own crisp pixels. Battle Pokémon and trainer art are built while the game runs, so they cover what has been played so far." }
+      ],
+      pack: { file: "platinum-CPUE-v3.zip", size: "183 MB", system: "DS", code: "CPUE", sha256: "db71af92fec1135522675d820c91bffe32955c71b2aec6b9f41abb6a6efba617" },
+      colors: ["#8a96a8", "#2f3a52"],
+      images: { icon: "img/icon-platinum.png", art: "img/ds-plat-wide.jpg", artPos: "center", after: "img/ds-plat-after.jpg", before: "img/ds-plat-before.jpg", labels: ["Original", "HD pack"], aspect: "761 / 571", gallery: ["img/ds-plat-wide.jpg", "img/ds-plat-battle.jpg"] },
       links: { download: "", source: "" }
     },
     {

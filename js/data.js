@@ -256,6 +256,38 @@ window.LUMA = {
   projects: [
     /* ---------- 4K texture packs ---------- */
     {
+      id: "dqxi-texture-pack",
+      category: "texture",
+      title: "Dragon Quest XI",
+      platform: "Nintendo 3DS · 4K texture pack",
+      tagline: ["Erdrea in 4K,", "in English."],
+      status: "complete",
+      version: "v2",
+      progress: 100,
+      note: "Installs from the Luma Shop inside Luma Core. Made for the English-patched game.",
+      description:
+        "A 4x texture pack for the 3DS version of Dragon Quest XI, made from the English-patched game so the English menus, banners and title screen are sharp too. It goes with our English patch, which is built into Luma Core.",
+      features: [
+        "More than 15,000 textures upscaled 4x",
+        "English menus, banners and title screen in HD",
+        "The 961 small character sprites redrawn pixel-sharp",
+        "A small title add-on for each patch version, so the title screen always matches"
+      ],
+      stats: [["Files", "15,460"], ["Size", "6.03 GB"], ["Upscale", "4x"]],
+      sections: [
+        { h: "Needs the English patch", p: "The pack's textures are made from the English-patched game, so they only match a game patched with our Dragon Quest XI English Patch. In Luma Core, set up the patch from the Luma Shop's Extras first, then install the pack." },
+        { h: "Title add-on 0.1.46 (November 17, 2026)", p: "The title screen picture for patch 0.1.46, so the HD label shows, plus HD versions of the banners changed in patches 0.1.36 to 0.1.38. The Luma Shop installs it with the pack." },
+        { h: "Version 2 (November 16, 2026)", p: "The 961 small character sprites are redrawn pixel-sharp instead of smoothed by the AI." },
+        { h: "For the 3D mode", p: "Made for the game's 3D mode, and still a work in progress. It is for emulators only and does nothing on a real 3DS." }
+      ],
+      guide: [["Luma Shop", "luma-shop"]],
+      pack: { open: true, file: "dqxi-0004000000199200-v2.zip", size: "6.03 GB", system: "3DS", code: "0004000000199200", sha256: "462ed9cd010efde556397926abb7d729d02985fab40bd5e2010fa950e1b2b259",
+        addon: { file: "dqxi-title-0004000000199200-v0.1.46.zip", size: "28 MB", sha256: "2363b4a8c5adfce9464e8ce2678806f2ddb62ab0f88c2967d13b2555bde569d6" } },
+      colors: ["#4a8fe8", "#243a8f"],
+      images: { icon: "img/icon-dqxi.png", art: "img/art/vista-moon.jpg", artPos: "center 35%", artFilter: "hue-rotate(-45deg) saturate(1.1)", logo: "img/art/dqxi-logo.png", after: "img/art/dqxi-hero.jpg", before: "", aspect: "16 / 9", gallery: [] },
+      links: { download: "", source: "project.html?id=dqxi-english-patch" }
+    },
+    {
       id: "legend-of-legacy",
       category: "texture",
       title: "The Legend of Legacy",
@@ -552,7 +584,7 @@ window.LUMA = {
       features: [
         "Apps: Luma Themes, Luma Saves, Luma Dex, Luma Friends, Luma Achievements and Luma Pass",
         "Extras: Golden Sun - Dual Screen Companion and the Dragon Quest XI English Patch (beta)",
-        "Texture packs for eight 3DS games, Pokémon HeartGold, Pokémon SoulSilver, Pokémon Platinum and Mario Kart DS",
+        "Texture packs for eight 3DS games including Dragon Quest XI, Pokémon HeartGold, Pokémon SoulSilver, Pokémon Platinum and Mario Kart DS",
         "Downloads that carry on in the background"
       ],
       sections: [
